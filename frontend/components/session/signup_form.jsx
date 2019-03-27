@@ -1,13 +1,12 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { username: '', password: '' };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
     handleUpdate(field) {
@@ -16,17 +15,9 @@ class SessionForm extends React.Component {
         )
     }
 
-    handleDemoUser(e) {
-        e.preventDefault();
-        this.props.formAction({
-            username: 'daddyzaddyyy',
-            password: 'racksonracks'
-        })
-    }
-
     handleSubmit(e) {
         e.preventDefault();
-        this.props.formAction(this.state)
+        this.props.signup(this.state)
             .then(() => this.props.history.push('/show'));
     }
 
@@ -46,11 +37,11 @@ class SessionForm extends React.Component {
         return (
             <>
             <div>
-                <h1>Pgram</h1>
-                <form onSubmit={this.handleSubmit}>
+                <h1>SAVE</h1>
+                    <form onSubmit={this.handleSubmit} value={this.props.formType}>
                     <label>
                         <input
-                            className="login-form"
+                            className="signup-form"
                             type="text"
                             value={this.state.username}
                             onChange={this.handleUpdate('username')}
@@ -58,25 +49,19 @@ class SessionForm extends React.Component {
                     </label>
                     <label>
                         <input 
-                            className="login-form"
+                            className="signup-form"
                             type="password"
                             value={this.state.password}
                             onChange={this.handleUpdate('password')}
                             placeholder="Password" />
                     </label>
-                    <label>
-                        <input className="demo-login"
-                                type="submit" 
-                                value="Demo Log In" 
-                                onClick={this.handleDemoUser}/>
-                    </label>
-
-                        <button onClick={this.handleSubmit}>{this.props.formType}</button>
+    
+                        <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
                         <ul>{this.renderErrors()}</ul>
                 </form>
-                    <div className="signup-link">
-                        <p>Don't have an account?
-                <Link to="/signup"> Sign up</Link>
+                    <div className="Login-button">
+                        <p>Have an account?
+                <Link to="/login"> Login</Link>
                         </p>
                     </div>
             </div>
@@ -85,4 +70,4 @@ class SessionForm extends React.Component {
     }
 };
 
-export default withRouter(SessionForm);
+export default withRouter(SignUpForm);

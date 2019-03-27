@@ -2,12 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 
-// custom components to limit page views to login/logout privelages
 
-
-// auth route - redirect if already logged-in
-// <AuthRoute path="some/path" component={someComponent} />
-// component needs to be Capitalized to be used in <>
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
     <Route path={path} exact={exact} render={(props) => (
         !loggedIn ? (
