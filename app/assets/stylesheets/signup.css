@@ -1,12 +1,4 @@
-@font-face {
-  font-family: 'Billabong';
-  src: url('billabong.eot'); /* IE9 Compat Modes */
-  src: url('billabong.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('billabong.woff2') format('woff2'), /* Super Modern Browsers */
-       url('billabong.woff') format('woff'), /* Pretty Modern Browsers */
-       url('billabong.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('billabong.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
+
 
 /* .or {
   display: flex;
@@ -75,6 +67,11 @@ border-width: 1px;
     height: 618px;
     position: relative;
     z-index: 3;
+}
+
+#phone-photo {
+  position: absolute;
+  
 }
 
 .form-header {
@@ -178,7 +175,6 @@ border-width: 1px;
     padding-right: 5px;
     font-weight: 720;
     font-size: 14px;
-    height: 34px;
     width: 250px;
     cursor: pointer;
 }
@@ -289,6 +285,8 @@ footer {
 .nav-div {
     color: #999;
 }
+
+
 
 
 
