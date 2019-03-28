@@ -52,7 +52,7 @@ class LoginForm extends React.Component {
                     <div className="signup-form">
                     <form>
                            {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
-                        <img className="instagram-logo" src="" />
+                        <header className="instagram-logo">Posergram</header>
                 
                         <label>
                             <input
@@ -71,9 +71,9 @@ class LoginForm extends React.Component {
                     <div className="form-box">
                         <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
                     </div>
-                    <div className="form-box">
+                    {/* <div className="form-box">
                         <button onClick={this.handleDemoUser}>Log in with Poser Login</button>
-                    </div>
+                    </div> */}
                 
                         <div className="errors">{this.renderErrors()}</div>
                     </form>

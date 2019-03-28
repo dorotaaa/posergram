@@ -104,6 +104,11 @@ class SignUpForm extends React.Component {
                     </div>
                 </div>
             </div>
+                <footer class="footer">
+                    <nav>
+                        <div class="nav-div"> © 2019 POSERGRAM </div>
+                    </nav>
+                </footer>
             </>
         )
     }
