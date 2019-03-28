@@ -52,7 +52,7 @@ class LoginForm extends React.Component {
                     <form>
                            {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
                         <img className="instagram-logo" src="" />
-                            <h2 className="form-header">Sign up to see photos and videos from your friends.</h2>
+                
                         <label>
                             <input
                                 type="text"

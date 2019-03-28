@@ -47,6 +47,7 @@ class SignUpForm extends React.Component {
 
                     <form>
                         <img className="instagram-logo" src="" />
+                        <h2 className="form-header">Sign up to see photos and videos from your friends.</h2>
                     <label>
                         <input
                             type="text"
@@ -78,6 +79,9 @@ class SignUpForm extends React.Component {
                         <div className="form-box">
                             <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
                         </div>
+                        <h4 className="form-footer">
+                            By signing up, you agree to Dorota's Terms , Data Policy and Cookies Policy .
+                        </h4>
                         <div className="errors">{this.renderErrors()}</div>
                 </form>
                     <div className='foot-login-box'>

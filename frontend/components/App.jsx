@@ -8,7 +8,7 @@ import LoginContainer from './session/login_container';
 const App = () => (
         <div>
             <div className="app-div">
-            <h4><LogoutContainer /></h4>
+            <LogoutContainer />
             <Switch>
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/login" component={LoginContainer} />
