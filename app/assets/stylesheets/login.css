@@ -1,10 +1,57 @@
+@font-face {
+  font-family: 'Billabong';
+  src: url('billabong.eot'); /* IE9 Compat Modes */
+  src: url('billabong.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('billabong.woff2') format('woff2'), /* Super Modern Browsers */
+       url('billabong.woff') format('woff'), /* Pretty Modern Browsers */
+       url('billabong.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('billabong.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
+/* .or {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: #999;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 100px;
+  margin-bottom: 2%;
+  margin-top: 5%%;
+} */
+
+.or {
+    display: flex;
+    width: 4;
+    justify-content: space-between;
+    color: #999;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 200px;
+    margin-top: 5%%;
+    padding-top: 10px;
+    padding-right: 47px;
+    padding-bottom: 15px;
+    padding-left: 47px;
+}
+
+.or div {
+  width: 40%;
+}
+
+.hr-line {
+  color: #999;
+  font-weight: 10%;
+}
 
 .outer-form-div {
   height: 100%;
   display: flex;
   justify-content: center;
   background-color: #fafafa;
+}
+
+.fb-form-box {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .dummy-iphone {
@@ -21,10 +68,10 @@
 }
 
 .form-header {
-    margin-bottom: 18px;
+    margin-bottom: 6px;
     margin-top: 0px;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 20px;
     margin-left: 30px;
     margin-right: 30px;
@@ -33,24 +80,37 @@
 
 .form-footer {
     margin-bottom: 18px;
-    margin-top: 0px;
-    font-size: 16px;
-    font-weight: 600;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 400;
     line-height: 20px;
     margin-left: 30px;
     margin-right: 30px;
     color: #999;
+    padding-top: 5px;
+    text-align: -webkit-center;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.instagram-logo .brand-name-img {
+
+/* .instagram-logo .brand-name-img {
   background-position: 0 0;
   height: 51px;
   width: 175px;
-}
+} */
 
 ::placeholder { 
   color: #999;
   opacity: 1; 
+}
+
+.instagram-logo {
+    font-family: Billabong;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    font-size: 70px;
+    margin-top: 25px;
 }
 
 /* .instagram-logo {
@@ -59,6 +119,12 @@
     margin-top: 22px;
     margin-bottom: 8px;
     margin-left: 2px;
+} */
+
+/* .core-sprite {
+  background-image: image-url("core-sprite-2x.png");
+  background-size: 405px 379px;
+  background-repeat: no-repeat;
 } */
 
 .signin-form, .dummy-iphone{
@@ -73,7 +139,8 @@
     align-items: stretch;
     border: 1px solid #e6e6e6;
     border-radius: 1px;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     text-align: center;
 }
 
@@ -96,17 +163,19 @@
 }
 
 .signup-form button{
-    font-family: -apple-system,system-ui,"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system,system-ui,"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: rgb(28, 137, 238);
     border-radius: 4px;
-    color: rgb(234, 231, 225);
+    /* color: rgb(234, 231, 225); */
+    color: #fafafa;
     border: none;
-    padding: 3px;
+    padding-bottom: 5px;
     width: 100%;
     height: 30px;
-    padding-top: 5px;
-    padding-left: 9px;
-    font-weight: bold;
+    padding-top: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 720;
     font-size: 14px;
     height: 30px;
     width: 250px;
@@ -154,7 +223,7 @@ body, button, input, textarea{
 }
 
 .form-box {
-    font-size: 12px;
+    font-size: 1px;
     margin-right: 20px;
     margin-left: 20px;
     padding-bottom: 5px;
@@ -162,7 +231,7 @@ body, button, input, textarea{
 }
 
 .foot-login-box {
-    font-size: 12px;
+    font-size: 15px;
     padding-bottom: 25px;
     padding-top: 25px;
     margin-top: 10px;
@@ -178,7 +247,8 @@ body, button, input, textarea{
     flex-direction: column;
     display: flex;
     align-items: stretch;
-    border-radius: 1px;
+    border-radius: 0px;
+    border: 0px;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     text-align: center;
 }
@@ -189,4 +259,12 @@ body, button, input, textarea{
     display: inline-block;
     padding-bottom: 20px;
     width: 348px;
+}
+
+.errors li {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  color: red;
+  text-decoration: none;
+  list-style-type: none;
 }

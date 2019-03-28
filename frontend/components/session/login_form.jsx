@@ -8,7 +8,8 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
-    }
+        this.renderErrors = this.renderErrors.bind(this);
+     }
 
 
     handleUpdate(field) {
@@ -32,15 +33,15 @@ class LoginForm extends React.Component {
     }
 
     renderErrors() {
-        // return (
-        //     <ul>
-        //         {this.props.errors.map((error, i) => (
-        //             <li key={`error-${i}`}>
-        //                 {error}
-        //             </li>
-        //         ))}
-        //     </ul>
-        // );
+        return (
+            <div>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </div>
+        );
     }
 
     render() {
@@ -71,7 +72,7 @@ class LoginForm extends React.Component {
                         <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
                     </div>
                     <div className="form-box">
-                        <button onClick={this.handleDemoUser}>Poser Login</button>
+                        <button onClick={this.handleDemoUser}>Log in with Poser Login</button>
                     </div>
                 
                         <div className="errors">{this.renderErrors()}</div>
