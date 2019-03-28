@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render "api/users/show"
         else
-            render json: ["Invalid username/password"], status: 401
+            render json: ["The username/password you entered doesn't belong to an account. Please check your username/password and try again"], status: 401
         end
     end
 

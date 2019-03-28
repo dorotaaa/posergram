@@ -4,11 +4,12 @@ import { Link, withRouter } from 'react-router-dom';
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', password: '' };
+        this.state = { username: '', password: ''};
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        // this.forgotPassword = this.forgotPassword.bind(this);
      }
 
 
@@ -44,6 +45,10 @@ class LoginForm extends React.Component {
         );
     }
 
+    // forgotPassword() {
+    //     this.setState({[pw_error]: "Sucks."})
+    // }
+
     render() {
         return (
             <>
@@ -52,14 +57,14 @@ class LoginForm extends React.Component {
                     <div className="logup-form">
                     <form>
                            {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
-                        <header className="instagram-logo">Posergram</header>
+                        <header className="logup-instagram-logo">Posergram</header>
                 
                         <label>
                             <input
                                 type="text"
                                 value={this.state.username}
                                 onChange={this.handleUpdate('username')}
-                                placeholder="Username" />
+                                placeholder="Phone number, username, or email" />
                         </label>
                         <label>
                             <input
@@ -71,15 +76,27 @@ class LoginForm extends React.Component {
                     <div className="logup-form-box">
                         <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
                     </div>
-                    {/* <div className="form-box">
-                        <button onClick={this.handleDemoUser}>Log in with Poser Login</button>
-                    </div> */}
+
+                    <div className="logup-or"><div> <hr className="hr-line" /></div>
+                    <strong>OR</strong><div><hr className="hr-line" /></div></div>
+
+                    <div className='poser-link'>
+                        <Link to={`/login`} onClick={this.handleDemoUser}>Log in with Poser</Link>
+                    </div>
                 
-                        <div className="errors">{this.renderErrors()}</div>
+                    <div className="login-errors">{this.renderErrors()}</div>
+
+                    
+                        
+                    {/* <Link to={`/login`} onClick={this.forgotPassword}>Forgot password?</Link> */}
+                   
+
                     </form>
+
                 <div className='foot-logup-box'>
-                    Don't have an account? <Link to={`/signup`} id='login-button'>Sign up</Link>
+                    Don't have an account? <Link to={`/signup`} id='signup-button'>Sign up</Link>
                 </div>
+
                 </div>
             </div>
             </>

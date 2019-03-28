@@ -27,9 +27,9 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 200px;
     margin-top: 5%%;
-    padding-top: 10px;
+    padding-top: 12px;
     padding-right: 47px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     padding-left: 47px;
 }
 
@@ -80,12 +80,17 @@ border-width: 1px;
 .form-header {
     margin-bottom: 6px;
     margin-top: 0px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 20px;
     margin-left: 30px;
     margin-right: 30px;
     color: #999;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
+    letter-spacing: 0.01em;
 }
 
 .form-footer {
@@ -173,7 +178,7 @@ border-width: 1px;
     padding-right: 5px;
     font-weight: 720;
     font-size: 14px;
-    height: 30px;
+    height: 34px;
     width: 250px;
     cursor: pointer;
 }
@@ -220,8 +225,6 @@ div{
 body, button, input, textarea{
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-
-
 
 .app-div {
   height: 100%;
