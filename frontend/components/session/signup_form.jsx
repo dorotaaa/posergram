@@ -61,7 +61,7 @@ class SignUpForm extends React.Component {
                             <div className="fb-form-box">
                                 <button onClick={this.handleDemoUser}>Log in with Poser Login</button>
                             </div>
-                            <div class="or"><div> <hr class="hr-line"/></div><strong>OR</strong><div><hr class="hr-line"/></div></div> 
+                            <div className="or"><div> <hr className="hr-line"/></div><strong>OR</strong><div><hr className="hr-line"/></div></div> 
                     <label>
                         <label>
                             <input
@@ -104,9 +104,9 @@ class SignUpForm extends React.Component {
                     </div>
                 </div>
             </div>
-                <footer class="footer">
+                <footer className="footer">
                     <nav>
-                        <div class="nav-div"> © 2019 POSERGRAM </div>
+                        <div className="nav-div"> © 2019 POSERGRAM </div>
                     </nav>
                 </footer>
             </>

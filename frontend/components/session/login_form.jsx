@@ -47,9 +47,9 @@ class LoginForm extends React.Component {
     render() {
         return (
             <>
-                <div className="outer-form-div">
+                <div className="login-outer-form-div">
 
-                    <div className="signup-form">
+                    <div className="logup-form">
                     <form>
                            {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
                         <header className="instagram-logo">Posergram</header>
@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
                                 onChange={this.handleUpdate('password')}
                                 placeholder="Password" />
                         </label>
-                    <div className="form-box">
+                    <div className="logup-form-box">
                         <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
                     </div>
                     {/* <div className="form-box">
@@ -77,7 +77,7 @@ class LoginForm extends React.Component {
                 
                         <div className="errors">{this.renderErrors()}</div>
                     </form>
-                <div className='foot-login-box'>
+                <div className='foot-logup-box'>
                     Don't have an account? <Link to={`/signup`} id='login-button'>Sign up</Link>
                 </div>
                 </div>
