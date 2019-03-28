@@ -7,13 +7,14 @@ import LoginContainer from './session/login_container';
 
 const App = () => (
         <div>
-            <h1>HELPPPP ;'''(</h1>
+            <div className="app-div">
             <h4><LogoutContainer /></h4>
             <Switch>
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/login" component={LoginContainer} />
             </Switch>
         </div>
+    </div>
 );
 
 export default App;

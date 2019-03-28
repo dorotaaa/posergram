@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
+
     handleUpdate(field) {
         return e => this.setState(
             { [field]: e.target.value }
@@ -45,12 +46,15 @@ class LoginForm extends React.Component {
     render() {
         return (
             <>
-                <div>
-                    <h1>ME</h1>
-                    <form onSubmit={this.handleSubmit} value={this.props.formType}>
+                <div className="outer-form-div">
+
+                    <div className="signup-form">
+                    <form>
+                           {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
+                        <img className="instagram-logo" src="" />
+                            <h2 className="form-header">Sign up to see photos and videos from your friends.</h2>
                         <label>
                             <input
-                                className="signup-form"
                                 type="text"
                                 value={this.state.username}
                                 onChange={this.handleUpdate('username')}
@@ -58,26 +62,31 @@ class LoginForm extends React.Component {
                         </label>
                         <label>
                             <input
-                                className="signup-form"
                                 type="password"
                                 value={this.state.password}
                                 onChange={this.handleUpdate('password')}
                                 placeholder="Password" />
                         </label>
-                        <label>
-                            <input className="demo-login"
-                                type="submit"
-                                value="Demo Login"
-                                onClick={this.handleDemoUser} />
-                        </label>
-
+                    <div className="form-box">
                         <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
-                        <ul>{this.renderErrors()}</ul>
+                    </div>
+                    <div className="form-box">
+                        <button onClick={this.handleDemoUser}>Poser Login</button>
+                    </div>
+                
+                        <div className="errors">{this.renderErrors()}</div>
                     </form>
+                <div className='foot-login-box'>
+                    Don't have an account? <Link to={`/signup`} id='login-button'>Sign up</Link>
                 </div>
+                </div>
+            </div>
             </>
         )
     }
 };
+
+
+
 
 export default withRouter(LoginForm);

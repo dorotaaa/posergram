@@ -4,7 +4,7 @@ import LogoutForm from './logout_form';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
     return {
-        currentUser: users[session.id]
+        currentUser: users[session.currentUser]
     };
 };
 

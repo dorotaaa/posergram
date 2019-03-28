@@ -4,7 +4,7 @@ import {Link, withRouter} from 'react-router-dom';
 class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', password: '' };
+        this.state = { username: '', password: '', fullname: '', email: '' };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -36,34 +36,54 @@ class SignUpForm extends React.Component {
     render() {
         return (
             <>
-            <div>
-                <h1>SAVE</h1>
-                    <form onSubmit={this.handleSubmit} value={this.props.formType}>
+            <div className="outer-form-div">
+                    <div className="dummy-iphone">
+                        <img id="phone" src="/assets/dummy-phone-2x-cfda84ea67ee6c59614f1b1b2e4eb073c57460b234cbe06784a27d4df3ce7b98.png" />
+                    </div>
+
+                <div className="signup-form">
+                    
+                {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
+
+                    <form>
+                        <img className="instagram-logo" src="" />
                     <label>
                         <input
-                            className="signup-form"
                             type="text"
                             value={this.state.username}
                             onChange={this.handleUpdate('username')}
                             placeholder="Username" />
                     </label>
                     <label>
-                        <input 
-                            className="signup-form"
+                        <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleUpdate('password')}
                             placeholder="Password" />
                     </label>
-    
-                        <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
-                        <ul>{this.renderErrors()}</ul>
+                    <label>
+                        <input
+                            type="text"
+                            value={this.state.fullname}
+                            onChange={this.handleUpdate('fullname')}
+                            placeholder="Full Name" />
+                    </label>
+                    <label>
+                            <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleUpdate('email')}
+                            placeholder="Email"/>
+                    </label>
+                        <div className="form-box">
+                            <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
+                        </div>
+                        <div className="errors">{this.renderErrors()}</div>
                 </form>
-                    <div className="Login-button">
-                        <p>Have an account?
-                <Link to="/login"> Login</Link>
-                        </p>
+                    <div className='foot-login-box'>
+                       Have an account? <Link to={`/login`} id='login-button'>Login</Link>
                     </div>
+                </div>
             </div>
             </>
         )

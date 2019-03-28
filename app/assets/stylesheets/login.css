@@ -1,0 +1,137 @@
+/* 
+  .dummy-iphone {
+    background-image: image-url("dummy-phone-2x.png");
+    background-repeat: no-repeat;
+    background-position: right 0;
+    background-size: 454px 618px;
+    position: relative;
+    height: 618px;
+    margin-left: -35px;
+    margin-right: -15px;
+  } */
+
+.outer-form-div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.dummy-iphone {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#phone {
+    width: 430px;
+    height: 618px;
+    position: relative;
+    z-index: 3;
+}
+
+
+.signup-form input{
+    background-color: rgb(230, 227, 220);
+    border-top-color: rgb(213, 209, 201);
+    border-right-color: rgb(213, 209, 201);
+    border-bottom-color: rgb(213, 209, 201);
+    border-left-color: rgb(213, 209, 201);
+    height: 37px;
+    width: 250px;
+    margin-bottom: 8px;
+    background-color: #fafafa;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    padding-left: 9px;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.signup-form button{
+    font-family: -apple-system,system-ui,"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: rgb(28, 137, 238);
+    border-radius: 4px;
+    color: rgb(234, 231, 225);
+    border: none;
+    padding: 3px;
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+    padding-left: 9px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 30px;
+    width: 250px;
+    cursor: pointer;
+}
+/* html, body{
+  height: 100%;
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+} */
+
+div{
+  margin: 0;
+  padding: 0;
+}
+
+body, button, input, textarea{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.app-div {
+  height: 100%;
+  background: #fafafa;
+}
+
+.form-box {
+    font-size: 12px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+.foot-login-box {
+    font-size: 12px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    margin-top: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    background-color: white;
+    width: 348px;
+}
+
+.signup-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    border-radius: 1px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    text-align: center;
+}
+
+.login-form form{
+    border: 1px solid #e6e6e6; 
+    background-color: white;
+    display: inline-block;
+    padding-bottom: 20px;
+    width: 348px;
+}
+
+.session-form a {
+    color: rgb(28, 137, 238);
+    text-decoration: none;
+}
