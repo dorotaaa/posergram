@@ -69,10 +69,17 @@ border-width: 1px;
     z-index: 3;
 }
 
-#phone-photo {
-  position: absolute;
-  
-}
+/* #phone-photo {
+    width: 251px;
+    height: 518px;
+    border-radius: 6px;
+    position: relative;
+    top: -7px;
+    left: -220px;
+    z-index: 5;
+    margin-left: -70px;
+    background-image: image_url("phone-photo.jpg");
+} */
 
 .form-header {
     margin-bottom: 6px;
@@ -162,7 +169,7 @@ border-width: 1px;
 
 .signup-form button{
     font-family: -apple-system,system-ui,"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: rgb(28, 137, 238);
+    background-color: #3897f0;
     border-radius: 4px;
     /* color: rgb(234, 231, 225); */
     color: #fafafa;
@@ -188,7 +195,7 @@ border-width: 1px;
 }
 
 .signup-form a {
-    color: rgb(28, 137, 238);
+    color: #3897f0;
     text-decoration: none;
 }
 html, body{
