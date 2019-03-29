@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render "api/users/show"
         else
-            render json: ["Wrong. Try again."], status: 401
+            render json: ["Nope. Try again."], status: 401
         end
     end
 
