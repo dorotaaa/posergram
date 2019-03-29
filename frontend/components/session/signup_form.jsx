@@ -49,7 +49,7 @@ class SignUpForm extends React.Component {
             <>
             <div className="outer-form-div">
                     <div className="dummy-iphone">
-                        <img id="phone" src="/assets/dummy-phone-2x-cfda84ea67ee6c59614f1b1b2e4eb073c57460b234cbe06784a27d4df3ce7b98.png" />
+                        <img id="phone" src={window.phoneDummy}/>
                         {/* <img id="phone-photo" src={window.phonePhoto}/> */}
                     </div>
 

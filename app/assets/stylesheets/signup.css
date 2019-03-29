@@ -1,16 +1,4 @@
 
-
-/* .or {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  color: #999;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-weight: 100px;
-  margin-bottom: 2%;
-  margin-top: 5%%;
-} */
-
 .or {
     display: flex;
     width: 4;
@@ -18,7 +6,7 @@
     color: #999999;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 200px;
-    margin-top: 5%%;
+    margin-top: 5%;
     padding-top: 12px;
     padding-right: 47px;
     padding-bottom: 20px;
@@ -35,11 +23,6 @@ margin-left: auto;
 margin-right: auto;
 border-width: none;
 border-color: rgb(243, 241, 241);
-/* display: block;
-margin-top: 0.5em;
-margin-bottom: 0.5em;
-margin-left: auto;
-margin-right: auto; */
 border-style: solid;
 border-width: 1px;
 }

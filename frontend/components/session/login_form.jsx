@@ -81,15 +81,15 @@ class LoginForm extends React.Component {
                     <strong>OR</strong><div><hr className="hr-line" /></div></div>
 
                     <div className='poser-link'>
-                        <Link to={`/login`} onClick={this.handleDemoUser}>Log in with Poser</Link>
+                        <Link to={`/login`} onClick={this.handleDemoUser}>Log in as Poser</Link>
                     </div>
                 
                     <div className="login-errors">{this.renderErrors()}</div>
 
                     
-                        
-                    {/* <Link to={`/login`} onClick={this.forgotPassword}>Forgot password?</Link> */}
-                   
+                      <div class="forgot-pw"> 
+                    <Link to={`/login`}>Forgot password?</Link>
+                        </div> 
 
                     </form>
 
