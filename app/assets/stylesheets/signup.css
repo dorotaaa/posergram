@@ -3,28 +3,37 @@
     display: flex;
     width: 4;
     justify-content: space-between;
-    color: #999999;
+    color: #999;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-weight: 200px;
-    margin-top: 5%;
-    padding-top: 12px;
+    /* font-weight: 200px; */
+    /* padding-top: 12px;
     padding-right: 47px;
     padding-bottom: 20px;
-    padding-left: 47px;
+    padding-left: 47px; */
+    font-size: 13px;
+    margin: 10px 40px 18px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15px;
+    /* margin: 0 18px; */
+    text-transform: uppercase;
 }
 
 .or div {
   width: 40%;
+  flex-direction: row;
 }
 
 hr {
-width: 100%;
-margin-left: auto;
-margin-right: auto;
-border-width: none;
-border-color: rgb(243, 241, 241);
-border-style: solid;
-border-width: 1px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: none;
+  border-color: #efefef;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .outer-form-div {
@@ -35,22 +44,49 @@ border-width: 1px;
 }
 
 .fb-form-box {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
+  margin-top: 8px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 8px;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
 }
 
 .dummy-iphone {
-  position: relative;
+  /* position: relative;
   top: 0;
-  left: 0;
+  left: 0; */
+  align-self: center;
+  background-position: 0 0;
+  background-size: 454px 618px;
+  flex-basis: 454px;
+  height: 618px;
+  margin-left: -35px;
+  margin-right: -15px;
 }
 
 #phone {
-    width: 430px;
+  /* align-self: center;
+  background-position: 0 0;
+  background-size: 454px 618px;
+  flex-basis: 454px;
+  height: 618px;
+  margin-left: -35px;
+  margin-right: -15px; */
+}
+
+
+/* #phone { */
+    /* width: 430px;
     height: 618px;
     position: relative;
-    z-index: 3;
-}
+    z-index: 3; */
+/* } */
 
 /* #phone-photo {
     width: 251px;
@@ -65,49 +101,39 @@ border-width: 1px;
 } */
 
 .form-header {
-    margin-bottom: 6px;
-    margin-top: 0px;
-    font-size: 18px;
-    font-weight: 700;
+    color: #999;
+    font-weight: 600;
     line-height: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    color: #999999;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-right: 3px;
-    padding-left: 3px;
-    letter-spacing: 0.01em;
+    font-size: 17px;
+    margin: 0 40px 10px;
+    text-align: center;
 }
 
 .form-footer {
-    margin-bottom: 18px;
-    margin-top: 5px;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    color: #999999;
-    padding-top: 5px;
-    /* text-align: -webkit-center; */
-    padding-left: 15px;
-    padding-right: 15px;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px 40px;
+    text-align: center;
+    color: #999;
+    margin-bottom: 30px;
+    margin-top: 15px;
 }
-
 
 ::placeholder { 
   color: #999;
-  opacity: 1; 
+  opacity: 1;
+  font-size: 12px;
 }
 
 .instagram-logo {
     font-family: Billabong;
-    padding-top: 0px;
-    padding-bottom: 15px;
-    font-size: 70px;
-    margin-top: 25px;
+    /* padding-top: 0px;
+    padding-bottom: 10px;
+    margin-top: 25px; */
+    margin: 22px auto 12px;
+    font-size: 50px;
 }
+
 
 .signin-form, .dummy-iphone{
     margin-top: 70px;
@@ -118,6 +144,7 @@ border-width: 1px;
     justify-content: center;
     flex-direction: column;
     display: flex;
+    align-content: stretch;
     align-items: stretch;
     border: 1px solid #e6e6e6;
     border-radius: 1px;
@@ -127,53 +154,59 @@ border-width: 1px;
 
 
 .signup-form input{
-    background-color: rgb(230, 227, 220);
-    border-top-color: rgb(213, 209, 201);
-    border-right-color: rgb(213, 209, 201);
-    border-bottom-color: rgb(213, 209, 201);
-    border-left-color: rgb(213, 209, 201);
-    height: 37px;
-    width: 250px;
+    background-color: #efefef;
+    border-top-color: #efefef;
+    border-right-color: #efefef;
+    border-bottom-color: #efefef;
+    border-left-color: #efefef;
+    border: 1px solid #efefef;
+    height: 35px;
+    width: 270px;
     margin-bottom: 8px;
     background-color: #fafafa;
-    border: 1px solid #e6e6e6;
     border-radius: 2px;
     padding-left: 9px;
     box-sizing: border-box;
     font-size: 13px;
 }
 
+
 .signup-form button{
-    font-family: -apple-system,system-ui,"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    outline: 0;
     background-color: #3897f0;
+    border: 1px solid #3897f0;
     border-radius: 4px;
-    /* color: rgb(234, 231, 225); */
-    color: #fafafa;
-    border: none;
-    padding-bottom: 5px;
-    width: 100%;
-    height: 30px;
-    padding-top: 4px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: 720;
-    font-size: 14px;
-    width: 250px;
+    color: #fff;
+    position: relative;
+    box-sizing: border-box;
     cursor: pointer;
+    display: block;
+    font-weight: 600;
+    padding: 5px 9px;
+    text-align: center;
+    text-transform: inherit;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
 }
 
-.signup-form form{
+/* .signup-form form{
     border: 1px solid #e6e6e6; 
     background-color: white;
     display: inline-block;
     padding-bottom: 20px;
     width: 348px;
-}
+} */
 
 .signup-form a {
     color: #3897f0;
     text-decoration: none;
 }
+
 html, body{
   height: 100%;
   background: #fafafa;
@@ -186,14 +219,41 @@ html, body{
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  display: block;
 }
 
 body {
     text-align: center;
+    overflow-y: scroll;
+    min-height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    align-items: stretch;
+    border: 0 solid #000;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
-form {
+
+/* form {
     display: inline-block;
+} */
+
+form {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
 }
 
 div{
@@ -203,43 +263,53 @@ div{
 
 body, button, input, textarea{
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  /* line-height: 18px; */
 }
 
 .app-div {
   height: 100%;
   background: #fafafa;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 30px auto 0;
+  max-width: 935px;
+  padding-bottom: 44px;
+  width: 100%;
 }
 
 .form-box {
-    font-size: 1px;
-    margin-right: 20px;
-    margin-left: 20px;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    border-radius: 2px;
+    margin-top: 8px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 8px;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
 }
+
 
 .foot-login-box {
-    font-size: 15px;
+    font-size: 14px;
     padding-bottom: 25px;
     padding-top: 25px;
-    margin-top: 10px;
     border: 1px solid #e6e6e6;
     border-radius: 2px;
-    background-color: white;
+    background-color: #fff;
     width: 348px;
+    color: #262626;
 }
 
-.signup-form{
-    display: flex;
+.signup-form {
+    color: #262626;
+    flex-grow: 1;
     justify-content: center;
-    flex-direction: column;
-    display: flex;
-    align-items: stretch;
-    border-radius: 0px;
+    margin-top: 12px;
+    max-width: 350px;
+    width: 100%;
     border: 0px;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    text-align: center;
 }
 
 .login-form form{
@@ -250,12 +320,15 @@ body, button, input, textarea{
     width: 348px;
 }
 
-.errors li {
+.errors {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  color: red;
   text-decoration: none;
   list-style-type: none;
+  color: #ed4956;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px 40px;
+  text-align: center;
 }
 
 footer {
@@ -269,7 +342,9 @@ footer {
     color: #999999;
 }
 
-
+#root {
+  z-index: 0;
+}
 
 
 

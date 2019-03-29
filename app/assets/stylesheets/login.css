@@ -3,7 +3,7 @@
     display: flex;
     width: 4;
     justify-content: space-between;
-    color: #999999;
+    color: #999;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 200px;
     margin-top: 5%;
@@ -11,7 +11,7 @@
     padding-right: 47px;
     padding-bottom: 24px;
     padding-left: 47px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .logup-or div {
@@ -249,16 +249,15 @@ body, button, input, textarea{
     width: 348px;
 }
 
-.login-errors li {
+.login-errors {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  color: red;
   text-decoration: none;
   list-style-type: none;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
+  color: #ed4956;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px 40px;
+  text-align: center;
 }
 
 footer {
