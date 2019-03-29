@@ -9,8 +9,13 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-        // this.forgotPassword = this.forgotPassword.bind(this);
+        // this.onChange = this.onChange.bind(this);
+        // this.add = this.add.bind(this);
      }
+
+    componentDidMount(){
+        this.props.clearErrors();
+    }
 
 
     handleUpdate(field) {
@@ -35,9 +40,9 @@ class LoginForm extends React.Component {
 
     renderErrors() {
         return (
-            <div className="error-list">
+            <div>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`} className="submitErrors">
+                    <li key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
@@ -45,8 +50,13 @@ class LoginForm extends React.Component {
         );
     }
 
-    // forgotPassword() {
-    //     this.setState({[pw_error]: "Sucks."})
+    // add(){
+    //     this.props.onButtonClick(this.state.value);
+    //     this.setState({username: ''})
+    // }
+
+    // onChange(e) {
+    //     this.setState({username: e.target.value})
     // }
 
     render() {
@@ -74,7 +84,7 @@ class LoginForm extends React.Component {
                                 placeholder="Password" />
                         </label>
                     <div className="logup-form-box">
-                        <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
+                    <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
                     </div>
 
                     <div className="logup-or"><div> <hr className="hr-line" /></div>

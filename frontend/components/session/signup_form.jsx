@@ -11,6 +11,10 @@ class SignUpForm extends React.Component {
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     handleUpdate(field) {
         return e => this.setState(
             {[field]: e.target.value}
