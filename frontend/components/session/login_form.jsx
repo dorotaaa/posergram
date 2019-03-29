@@ -26,15 +26,15 @@ class LoginForm extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
-        this.props.login({
-            username: 'daddyzaddyyy',
-            password: 'racksonracks'
+        this.props.login({user:
+            {username: 'daddyzaddyyy',
+            password: 'racksonracks'}
         }).then(() => this.props.history.push('/show'));
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state)
+        this.props.login({user: this.state})
             .then(() => this.props.history.push('/show'));
     }
 
