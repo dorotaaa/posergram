@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.store = store;
+    window.fetchUsers = fetchUsers;
     
     
     ReactDOM.render(<Root store={store} />, root)
