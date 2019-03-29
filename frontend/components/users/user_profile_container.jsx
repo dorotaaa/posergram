@@ -5,10 +5,10 @@ import { withRouter } from 'react-router-dom';
 
 
 
-const mapStateToProps = (state, ownProps) => {(
-
-)};
-
+const mapStateToProps = (state, ownProps) => ({
+    user: state.entities.users[state.session.id];
+})
+    
 const mapDispatchToProps = (dispatch) => {
     return ({
         logout: () => dispatch(logout()),
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
     });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserShow);
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
