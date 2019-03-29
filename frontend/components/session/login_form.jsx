@@ -67,7 +67,9 @@ class LoginForm extends React.Component {
                     <div className="logup-form">
                     <form>
                            {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
-                        <header className="logup-instagram-logo">Posergram</header>
+                        <h1 className="logup-instagram-logo">
+                            <img id="pg-Logo" src={window.pgLogo} />
+                        </h1>
                 
                         <label>
                             <input
@@ -98,7 +100,7 @@ class LoginForm extends React.Component {
 
                     
                       <div className="forgot-pw"> 
-                    <Link to={`/login`}>Forgot password?</Link>
+                    <Link to={`/login`} onClick={this.handleSubmit}>Forgot password?</Link>
                         </div> 
 
                     </form>

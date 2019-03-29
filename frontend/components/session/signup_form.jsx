@@ -61,7 +61,11 @@ class SignUpForm extends React.Component {
                     
 
                     <form onSubmit={this.handleSubmit} value={this.props.formType}>
-                        <header className="instagram-logo">Posergram</header>
+
+                        <h1 className="instagram-logo">
+                            <img id="pgLogo" src={window.pgLogo}/>
+                        </h1>
+
                         <h2 className="form-header">Sign up to see photos and videos from your friends.</h2>
                             <div className="fb-form-box">
                                 <button onClick={this.handleDemoUser}>Log in with Poser Login</button>

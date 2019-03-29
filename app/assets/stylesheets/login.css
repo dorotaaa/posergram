@@ -62,12 +62,31 @@ hr {
     line-height: 20px;
     margin-left: 30px;
     margin-right: 30px;
-    color: #999999;
+    color: #999;
     /* padding-top: 3px;
     padding-bottom: 3px;
     padding-right: 3px;
     padding-left: 3px;
     letter-spacing: 0.01em; */
+}
+
+.logup-instagram-logo {
+    /* font-family: Billabong;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    font-size: 70px;
+    margin-top: 25px;
+    padding-bottom: 35px; */
+    margin: 22px auto 12px;
+}
+
+#pg-Logo {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  height: 84px;
+  margin-bottom: 30px;
 }
 
 .form-footer {
@@ -90,14 +109,6 @@ hr {
   opacity: 1; 
 }
 
-.logup-instagram-logo {
-    font-family: Billabong;
-    padding-top: 0px;
-    padding-bottom: 15px;
-    font-size: 70px;
-    margin-top: 25px;
-    padding-bottom: 35px;
-}
 
 .signin-form, .dummy-iphone{
     margin-top: 70px;
