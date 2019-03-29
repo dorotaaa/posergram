@@ -68,37 +68,22 @@ hr {
   height: 618px;
   margin-left: -35px;
   margin-right: -15px;
+  position: relative;
+  display: inline;
 }
 
-#phone {
-  /* align-self: center;
-  background-position: 0 0;
-  background-size: 454px 618px;
-  flex-basis: 454px;
-  height: 618px;
-  margin-left: -35px;
-  margin-right: -15px; */
-}
-
-
-/* #phone { */
-    /* width: 430px;
-    height: 618px;
-    position: relative;
-    z-index: 3; */
-/* } */
-
-/* #phone-photo {
-    width: 251px;
-    height: 518px;
-    border-radius: 6px;
-    position: relative;
-    top: -7px;
-    left: -220px;
-    z-index: 5;
-    margin-left: -70px;
-    background-image: image_url("phone-photo.jpg");
-} */
+#phone-photo {
+  width: 227px;
+  height: 430px;
+  position: absolute;
+  z-index: 3;
+  bottom: 86px;
+  right: 68px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+ }
 
 .form-header {
     color: #999;

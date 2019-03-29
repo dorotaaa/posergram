@@ -50,7 +50,7 @@ class SignUpForm extends React.Component {
             <div className="outer-form-div">
                     <div className="dummy-iphone">
                         <img id="phone" src={window.phoneDummy}/>
-                        {/* <img id="phone-photo" src={window.phonePhoto}/> */}
+                        <img id="phone-photo" src={window.phonePhoto}/>
                     </div>
 
                 <div className="signup-form">
