@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', password: ''};
+        this.state = { username: '', password: '' };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
@@ -27,8 +27,8 @@ class LoginForm extends React.Component {
     handleDemoUser(e) {
         e.preventDefault();
         this.props.login({user:
-            {username: 'daddyzaddyyy',
-            password: 'racksonracks'}
+            {username: 'putin',
+            password: 'vladimir'}
         }).then(() => this.props.history.push('/show'));
     }
 

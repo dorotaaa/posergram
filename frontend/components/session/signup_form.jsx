@@ -30,8 +30,8 @@ class SignUpForm extends React.Component {
     handleDemoUser(e) {
         e.preventDefault();
         this.props.login({user:
-            {username: 'daddyzaddyyy',
-            password: 'racksonracks'}
+            {username: 'putin',
+            password: 'vladimir'}
         }).then(() => this.props.history.push('/show'));
     }
 
