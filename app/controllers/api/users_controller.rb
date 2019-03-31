@@ -12,17 +12,18 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-        if @user && @user.update_attributes(user_params)
+        if @user && @user.update(user_params)
             render :show
         elsif !@user
-            render json: ['Could not locate user'], status: 400
+            render json: ['You are not this user'], status: 400
         else
-            render json: @user.errors.full_messages, status: 401
+            render json: @user.errors.full_messages, status: 422
         end
     end
     
     def index
         @users = User.all
+        render :index
     end
 
     def show

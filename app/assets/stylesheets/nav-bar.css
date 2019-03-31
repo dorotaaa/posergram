@@ -1,0 +1,103 @@
+/* .main-nav {
+    background-color: #fafafa;
+    padding: 0;
+    order: 0;
+    align-items: stretch;
+    border: 0 solid #000;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 0;
+    position: relative;
+} */
+
+.subnav-div {
+    flex-basis: 75px;
+    order: 2;
+}
+
+.nav-bar {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0, .0975);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transition: height .2s ease-in-out;
+    height: 75px;
+    align-items: center;
+
+}
+
+.mini-nav {
+    display: flex;
+    flex-direction: row;
+    height: 77px;
+    justify-content: center;
+    max-width: 1010px;
+    padding: 26px 20px;
+    transition: height .2s ease-in-out;
+    width: 100%;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.left-nav .nav-bar-logo{
+    width: 377px;
+    height: 36px;  
+}
+
+/* #nav-cam img{
+    height: 44px;
+    width: 59px;
+    justify-content: left;
+}
+
+#nav-logo a {
+    margin: 0;
+} */
+
+.nav-bar-logo img{
+    height: 100%;
+    padding-left: 4px;
+    display: inline-block;
+    /* padding-top: 15px; */
+    justify-content: left;
+    overflow: hidden;
+}
+
+
+
+.search-bar {
+    height: 28px;
+    flex: 0 1 auto;
+    width: 215px;
+    align-items: stretch;
+}
+
+.right-nav {
+    padding-left: 24px;
+    overflow: hidden;
+}
+
+.explore-logo {
+    height: 24;
+    width: 24;
+    float: left;
+}
+
+.heart-not {
+    height: 24;
+    width: 24;
+    float: left;
+}
+
+.profile-logo {
+    height: 24;
+    width: 24;
+    float: left;
+}

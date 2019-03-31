@@ -1,0 +1,144 @@
+/* .main-profile-div {
+    box-sizing: content-box;
+    padding: 60px 20px 0;
+    width: calc(100% - 40px);
+    flex-grow: 1;
+    margin: 0 auto 30px;
+    max-width: 935px;
+}
+
+.profile-header {
+    margin-bottom: 44px;
+    flex-direction: row;
+}
+
+.prof-pic-div {
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+.prof-pic-sq {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    width: 150px;
+}
+
+.prof-pic {
+    background-color: #fafafa;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.photo-butt {
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.photo-dum {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.info-section {
+    flex-basis: 30px;
+    color: #262626
+    flex-shrink: 1;
+    flex-grow: 2;
+    min-width: 0;
+}
+
+.name-div {
+    margin-bottom: 20px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.username {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.edit-link {
+    flex-shrink: 0;
+    margin-left: 20px;
+    display: block;
+}
+
+.edit-butt {
+    background-color: transparent;
+    border: 1px solid #dbdbdb;
+    color: #262626;
+    width: 100%;
+    position: relative;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    padding: 5px 9px;
+    text-align: center;
+    text-transform: inherit;
+    text-overflow: ellipsis;
+    outline: 0;
+    background: 0 0;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.fob {
+    flex-direction: row;
+    flex-shrink: 0;
+    margin-left: 5px;
+}
+
+.set-fob {
+    min-height: 40px;
+    min-width: 40px;
+    align-items: center;
+    background: 0 0;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+.count-bar {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.post-count {
+    margin-left: 0;
+    font-size: 16px;
+    margin-right: 40px;
+}
+
+.followers {
+    font-size: 16px;
+    margin-right: 40px;
+}
+
+.following {
+    font-size: 16px;
+    margin-right: 0;
+} */

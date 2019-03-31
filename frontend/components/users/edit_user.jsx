@@ -1,3 +1,4 @@
+import { withRouter } from 'react-router-dom';
 import React from 'react';
 
 class EditUser extends React.Component {
@@ -5,20 +6,27 @@ class EditUser extends React.Component {
         super(props);
 
         this.state = {
-            name: this.props.fullname,
-            username: this.props.username,
-            bio: this.props.bio,
-            email: this.props.email,
-            photo: null,
+            fullname: this.props.user.fullname,
+            username: this.props.user.username,
+            bio: this.props.user.bio,
+            email: this.props.user.email,
         }
-
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.update(this.state)
-            .then(() => this.props.history.push('/'));
+        const formData = new FormData();
+        formData.append('user[fullname]', this.state.fullname);
+        formData.append('user[username]', this.state.username);
+        formData.append('user[bio]', this.state.bio);
+        formData.append('user[email]', this.state.email);
+
+        this.props.updateUser(formData)
+            .then(() => this.props.history.push("/show"))
     }
+        
 
     handleUpdate(field) {
         return e => this.setState({
@@ -26,30 +34,30 @@ class EditUser extends React.Component {
         })
     }
 
-    componentDidMount() {
-    }
 
     render() {
-        <div>
+        return (
+        <div className="edit-profile">
+            <div className="edit-profile-container">
             <div>
                 <h1>{this.state.username}</h1>
             </div>
 
             <form onSubmit={this.handleSubmit}>
-                <label id="name">Name
-                    <input type="text" onChange={this.handleUpdate}/>
+                <label id="fullname">Full Name
+                    <input type="text" onChange={this.handleUpdate("fullname")}/>
                 </label>
 
                 <label id="username">Username
-                    <input type="text" onChange={this.handleUpdate}/>
+                    <input type="text" onChange={this.handleUpdate("username")}/>
                 </label>
 
                 <label id="bio">Bio
-                    <input type="text" onChange={this.handleUpdate} />
+                    <input type="text" onChange={this.handleUpdate("bio")} />
                 </label>
 
                 <label id="email">Email
-                    <input type="text" onChange={this.handleUpdate} />
+                    <input type="text" onChange={this.handleUpdate("email")} />
                 </label>
                 
                 <div>
@@ -57,9 +65,11 @@ class EditUser extends React.Component {
                 </div>
                 
             </form>
+            </div>
         </div>
-    }
 
+    )}
 }
 
 export default withRouter(EditUser);
+

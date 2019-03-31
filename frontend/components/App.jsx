@@ -1,20 +1,23 @@
 import React from 'react';
-import { AuthRoute } from '../util/route_util';
-import { Switch, Route} from 'react-router-dom';
-import LogoutContainer from './nav/logout_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Switch, Route, Redirect} from 'react-router-dom';
+import NavBarContainer from './nav/nav_bar_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
+import UserProfileContainer from './users/user_profile_container';
+import EditUserContainer from './users/edit_user_container';
 
 const App = () => (
         <div>
             <div className="app-div">
-            <LogoutContainer/>
-            <Route exact path="/" component={SignupContainer}/>
+            <ProtectedRoute path="/" component={NavBarContainer} />
             <Switch>
-
-                <AuthRoute exact path="/signup" component={SignupContainer} />
+                <AuthRoute exact path="/" component={SignupContainer} />
                 <AuthRoute exact path="/login" component={LoginContainer} />
+                <ProtectedRoute exact path="/profile" component={UserProfileContainer}/>
+                <ProtectedRoute exact path="/edit" component={EditUserContainer} />
             </Switch>
+            
         </div>
     </div>
 );
