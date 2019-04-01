@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import UploadPostContainer from '../users/upload_post_container';
 
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleShow.bind(this);
     }
 
-   
+    handleShow(){
+        
+    }
 
     render(){
 
@@ -40,11 +45,13 @@ class NavBar extends React.Component {
                                     </a>
                                 {/* </div> */}
 
-                                {/* <div className="heart-not"> */}
-                                    <button className="heart">
-                                        <img src={window.heart} />
-                                    </button>
-                                {/* </div> */}
+                        <button onClick={this.handleShow}>
+                        <div className="heart-not">
+                                <UploadPostContainer/> 
+                            <img className="heart" src={window.heart} />
+                        </div>
+                        </button>
+                            
 
                                 {/* <div className="profile-logo"> */}
                                     <Link to="/profile">

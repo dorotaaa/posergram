@@ -5,19 +5,15 @@ class PostForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-
-        }
+        this.state = this.props.state;
+            
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateUser(
-            {
-                
-            })
+        this.props.createPost(this.state)
             .then(() => this.props.history.push("/profile"))
     }
 
@@ -28,6 +24,9 @@ class PostForm extends React.Component {
         })
     }
 
+    handleFile(e) {
+        this.setState({ photoFile: e.currentTarget.files[0] });
+    }
 
     render() {
 

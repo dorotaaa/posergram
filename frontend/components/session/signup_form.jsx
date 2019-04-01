@@ -69,7 +69,8 @@ class SignUpForm extends React.Component {
 
                         <h2 className="form-header">Sign up to see photos and videos from your friends.</h2>
                             <div className="fb-form-box">
-                                <button onClick={this.handleDemoUser}>Log in with Poser Login</button>
+                                <button onClick={this.handleDemoUser}>Log in as Poser</button>
+                                {/* <button><a href="fakebook.hhttps://fakebook-cam.herokuapp.com/"><i id="fb" className="fab fa-facebook fa-lg"></i></a>Log in with Fakebook</button> */}
                             </div>
                             <div className="or"><div> <hr className="hr-line"/></div><strong>OR</strong><div><hr className="hr-line"/></div></div> 
                     

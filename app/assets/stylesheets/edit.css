@@ -89,8 +89,12 @@
     float: right;
 }
 
+.edit-form .edit-button {
+    border: none;
+}
 
-.edit-form button {
+
+.edit-button button {
     outline: 0;
     background-color: #3897f0;
     border: 1px solid #3897f0;
