@@ -10,14 +10,16 @@ import EditUserContainer from './users/edit_user_container';
 const App = () => (
         <div>
             <div className="app-div">
-            <ProtectedRoute path="/" component={NavBarContainer} />
+
             <Switch>
-                <AuthRoute exact path="/" component={SignupContainer} />
+                <AuthRoute exact path="/signup" component={SignupContainer} /> 
                 <AuthRoute exact path="/login" component={LoginContainer} />
-                <ProtectedRoute exact path="/profile" component={UserProfileContainer}/>
-                <ProtectedRoute exact path="/edit" component={EditUserContainer} />
+                <Route path="/" component={NavBarContainer} />
             </Switch>
-            
+
+            <ProtectedRoute exact path="/profile" component={UserProfileContainer} />
+            <ProtectedRoute path="/edit" component={EditUserContainer} />
+           
         </div>
     </div>
 );

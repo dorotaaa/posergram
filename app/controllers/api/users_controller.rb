@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
     end
 
     def update
+         @user = User.find(params[:id])
         if @user && @user.update(user_params)
             render :show
         elsif !@user
@@ -23,7 +24,6 @@ class Api::UsersController < ApplicationController
     
     def index
         @users = User.all
-        render :index
     end
 
     def show

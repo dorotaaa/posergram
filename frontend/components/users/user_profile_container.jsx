@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter }from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
+import { logout } from '../../actions/session_actions';
 import UserProfile from './user_profile';
+
 
 const mapStateToProps = (state) => {
     return ({
@@ -12,6 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return ({
         fetchUser: id => dispatch(fetchUser(id)),
+        logout: () => dispatch(logout())
     })
 }
 

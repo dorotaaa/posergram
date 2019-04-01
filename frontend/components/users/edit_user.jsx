@@ -6,10 +6,11 @@ class EditUser extends React.Component {
         super(props);
 
         this.state = {
-            fullname: this.props.user.fullname,
-            username: this.props.user.username,
-            bio: this.props.user.bio,
-            email: this.props.user.email,
+            id: this.props.user.id || "",
+            fullname: this.props.user.fullname || "",
+            username: this.props.user.username || "",
+            bio: this.props.user.bio || "",
+            email: this.props.user.email || "",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -17,14 +18,11 @@ class EditUser extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('user[fullname]', this.state.fullname);
-        formData.append('user[username]', this.state.username);
-        formData.append('user[bio]', this.state.bio);
-        formData.append('user[email]', this.state.email);
-
-        this.props.updateUser(formData)
-            .then(() => this.props.history.push("/show"))
+        this.props.updateUser(
+            { user: this.state,
+                id: this.state.id
+            })
+            .then(() => this.props.history.push("/profile"))
     }
         
 
@@ -37,36 +35,47 @@ class EditUser extends React.Component {
 
     render() {
         return (
-        <div className="edit-profile">
-            <div className="edit-profile-container">
-            <div>
+        <div className="main-edit-div">
+        <ul className="edit-profile">
+            <li>
+                Edit Profile
+            </li>
+        </ul>
+            <article className="edit-profile-container">
+            <div className="edit-username">
                 <h1>{this.state.username}</h1>
             </div>
 
-            <form onSubmit={this.handleSubmit}>
-                <label id="fullname">Full Name
-                    <input type="text" onChange={this.handleUpdate("fullname")}/>
-                </label>
+            <form className="edit-form" onSubmit={this.handleSubmit}>
+            
+                <div className="edit-input">
+                <label>Fullname</label>
+                    <input type="text" value={this.state.fullname} onChange={this.handleUpdate("fullname")}/>
+                </div>
 
-                <label id="username">Username
-                    <input type="text" onChange={this.handleUpdate("username")}/>
-                </label>
+                <div className="edit-input">
+                <label>Username</label>
+                    <input type="text" value={this.state.username} onChange={this.handleUpdate("username")} />
+                </div>
 
-                <label id="bio">Bio
-                    <input type="text" onChange={this.handleUpdate("bio")} />
-                </label>
+                <div className="edit-input">
+                    <label>Bio</label>
+                    <input type="text" value={this.state.bio} onChange={this.handleUpdate("bio")} />
+                </div>
 
-                <label id="email">Email
-                    <input type="text" onChange={this.handleUpdate("email")} />
-                </label>
-                
-                <div>
+            
+                <div className="edit-input">
+                    <label>Email</label>
+                    <input type="text" value={this.state.email} onChange={this.handleUpdate("email")} />
+                </div>
+
+                <div className="edit-button">
                     <button onClick={this.handleSubmit}>Submit</button>
                 </div>
                 
             </form>
-            </div>
-        </div>
+            </article>
+    </div>
 
     )}
 }

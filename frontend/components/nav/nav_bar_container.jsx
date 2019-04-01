@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import NavBar from './nav_bar';
-import { logout } from '../../actions/session_actions';
+
 
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        logout: () => dispatch(logout())
+        
     })
 };
 
