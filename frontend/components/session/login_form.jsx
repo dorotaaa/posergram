@@ -31,7 +31,6 @@ class LoginForm extends React.Component {
             password: 'vladimir'}
         })
         .then(() => {
-            debugger
             this.props.history.push('/profile')
         });
     }
