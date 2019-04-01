@@ -12,6 +12,7 @@ const App = () => (
             <div className="app-div">
 
             <Switch>
+                <Redirect exact from="/" to="/signup"/>
                 <AuthRoute exact path="/signup" component={SignupContainer} /> 
                 <AuthRoute exact path="/login" component={LoginContainer} />
                 <Route path="/" component={NavBarContainer} />
