@@ -1,9 +1,13 @@
 .upload-div {
-    height: 240px;
-    width: 498px;
-    justify-content: center;
+    height: 500px;
+    width: 1000px;
+    /* justify-content: center;
     padding: 0 40px;
     text-align: center;
     display: flex;
     align-items: center;
+    visibility: hidden;
+    position: absolute; */
 }
+
+

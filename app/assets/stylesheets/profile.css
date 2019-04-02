@@ -202,3 +202,20 @@
 .fob-button img {
     width: 30px;
 }
+
+.post-divider {
+  width: 80%;
+  height: 1px;
+  background: #efefef;
+  margin-right: 3%;
+  max-width: 850px;
+}
+
+.profile-posts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 24px;
+}

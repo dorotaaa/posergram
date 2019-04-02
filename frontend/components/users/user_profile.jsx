@@ -4,18 +4,20 @@ import { withRouter, Link } from 'react-router-dom';
 class UserProfile extends React.Component{
     constructor(props){
         super(props);
-
-    this.handleLogout = this.handleLogout.bind(this);
+        debugger
+        this.handleLogout = this.handleLogout.bind(this);
+        this.renderPosts = this.renderPosts.bind(this);
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.user !== this.props.user) {
+        if (prevProps.user.id !== this.props.user.id) {
             this.props.fetchUser(this.props.user.id)
         }
     }
 
     componentDidMount(){
-        this.props.fetchUser(this.props.user.id)
+        this.props.fetchUser(this.props.user.id);
+        this.props.fetchPosts(this.props.user.id);
     }
 
     handleLogout() {
@@ -23,15 +25,34 @@ class UserProfile extends React.Component{
         // .then(() => this.props.history.push('/signup'))
     }
 
-    render(){
+    
+
+
+    renderPosts(){
+        debugger
+        this.props.posts.map(post => {
+            debugger
+                return (
+                    <li key={`post-${post.id}`} className="post-container">
+                        <img
+                            className="photo"
+                            key={`post-${post.id}`}
+                            src={post.image_url}/>
+                    </li>
+                )
+            })
+        }    
+
+    render() {
+
         let user;
         if (!this.props.user) {
-            user = {username: "", fullname: "", bio: ""};
+            user = { username: "", fullname: "", bio: "" };
         } else {
             user = this.props.user;
         }
 
-        return(
+        return (
         
         <div className='main-profile-div'>
 
@@ -68,14 +89,14 @@ class UserProfile extends React.Component{
                         </div>
                         <span className='user-bio'>{user.bio}</span>
                     </div>
-
                 </section>
-
                 </div>
             </header> 
-                <div className='posts-block'></div>
-                <div className='posts-container'></div>
-                <div className='all-posts'></div>
+                <div className="post-divider"></div>
+                <ul className="profile-posts">
+                    {this.renderPosts()}
+                </ul>
+            
         </div> 
     )}
 }

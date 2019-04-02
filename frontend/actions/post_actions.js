@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/post_api_util';
+import * as APIUtil from '../util/posts_api_util';
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
@@ -19,8 +19,8 @@ const removePost = (postId) => ({
     postId
 });
 
-export const fetchPosts = () => dispatch => (
-    APIUtil.fetchPosts().then(posts =>
+export const fetchPosts = (userId) => dispatch => (
+    APIUtil.fetchPosts(userId).then(posts =>
         dispatch(receivePosts(posts)))
 );
 
@@ -34,11 +34,6 @@ export const createPost = post => dispatch => (
         .then(post => {
             dispatch(receivePost(post))
         })
-);
-
-export const updatePost = post => dispatch => (
-    APIUtil.updatePost(post).then(post =>
-        dispatch(receivePost(post)))
 );
 
 export const deletePost = id => dispatch => (
