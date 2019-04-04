@@ -12,15 +12,9 @@ class PostForm extends React.Component {
         debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
-        this.handleExit = this.handleExit.bind(this);
         this.handleFile = this.handleFile.bind(this);
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.createPost(this.state)
-    //         .then(() => this.props.history.push("/profile"))
-    // }
 
     handleSubmit(e) {
         debugger
@@ -29,16 +23,12 @@ class PostForm extends React.Component {
         formData.append("post[user_id]", this.state.user_id);
         formData.append("post[caption]", this.state.caption);
         if (this.state.imageFile) {
-            formData.append('post[image_url]', this.state.imageFile)
+            formData.append('post[photo]', this.state.imageFile)
         }
         this.props.createPost(formData)
             .then(() => {
-                this.props.history.push("/profile")
+                this.props.history.push("/")
             });
-    }
-
-    handleExit() {
-        $(".upload-div").css("visibility", "hidden");
     }
 
     handleUpdate(field) {

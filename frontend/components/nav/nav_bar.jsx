@@ -1,22 +1,49 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import UploadPostContainer from '../users/upload_post_container';
+import upload_post_container from '../users/upload_post_container';
 
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleShow.bind(this);
+        this.state = {
+            showUploadForm: false,
+        }
+        
+       this.showUploadForm = this.showUploadForm.bind(this);
+       this.closeUploadForm = this.closeUploadForm.bind(this);
     }
 
-    handleShow(e){
+    // handleShow(e){
         
-        $(".upload-div").css("visibility", "visible");
+    //     $(".upload-div").css("visibility", "visible");
         
+    // }
+
+    showUploadForm(){
+        debugger
+        // e.preventDefault();
+        
+        this.setState({showUploadForm: true})
     }
+    
+    closeUploadForm(){
+        this.setState({ showUploadForm: false}, () => {
+            document.removeEventListener("click", this.closeUploadForm)
+        })
+    }
+
 
     render(){
+
+            if (this.state.showUploadForm){
+                this.uploadForm = <UploadPostContainer closeUploadForm={this.closeUploadForm}/>
+            } else {
+                this.uploadForm = null;
+            }
+    
 
     return (
         <nav className="main-nav">
@@ -28,7 +55,7 @@ class NavBar extends React.Component {
                     </Link>
 
                     <Link id="nav-logo" to="/">
-                        <img src={window.logo} />
+                    <img className="nav-logo" src={window.logo} />
                     </Link>
                 </div>
           
@@ -41,16 +68,16 @@ class NavBar extends React.Component {
                  <div className="right-nav">
                     
                        <div className="explore-logo">
-                                    <a href="https://www.google.com/">
+                                    <a href="https://www.google.com/" alt="Discover">
                         <img className="explore" src={window.discover} />
                                     </a>
                         </div>
 
-                        <div className="heart-not">
-                        <button className="heart" onClick={() => this.handleShow()}>     
-                            <img className="hpic" src={window.heart} />
+                        <div className="dropdown">
+                        <button className="heart" onClick={() => this.showUploadForm()}>     
+                            <img className="hpic" src={window.heart}  />
                         </button>
-                            <UploadPostContainer />
+                            {this.uploadForm}
                         </div>
                             
 

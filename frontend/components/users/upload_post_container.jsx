@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state) => {
     return ({
             caption: "",
-            image_url: "",
+            photo: "",
             user_id: state.session.currentUser,
     });
 };

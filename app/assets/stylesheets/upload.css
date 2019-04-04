@@ -1,6 +1,6 @@
 .upload-div {
-    height: 500px;
-    width: 1000px;
+    height: 50px;
+    width: 100px;
     /* justify-content: center;
     padding: 0 40px;
     text-align: center;
@@ -10,4 +10,5 @@
     position: absolute; */
 }
 
+.show {display:block;}
 

@@ -6,7 +6,6 @@ class UserProfile extends React.Component{
         super(props);
         debugger
         this.handleLogout = this.handleLogout.bind(this);
-        this.renderPosts = this.renderPosts.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -25,23 +24,6 @@ class UserProfile extends React.Component{
         // .then(() => this.props.history.push('/signup'))
     }
 
-    
-
-
-    renderPosts(){
-        debugger
-        this.props.posts.map(post => {
-            debugger
-                return (
-                    <li key={`post-${post.id}`} className="post-container">
-                        <img
-                            className="photo"
-                            key={`post-${post.id}`}
-                            src={post.image_url}/>
-                    </li>
-                )
-            })
-        }    
 
     render() {
 
@@ -51,6 +33,20 @@ class UserProfile extends React.Component{
         } else {
             user = this.props.user;
         }
+
+
+        this.posts = this.props.posts.map(post => {
+            // debugger
+            return (
+               
+                <li key={`post-${post.id}`} className="post-li">
+                    <img
+                        className="photo"
+                        src={post.photo}/>
+                </li>
+            
+            )
+        })
 
         return (
         
@@ -73,7 +69,7 @@ class UserProfile extends React.Component{
                         <Link to="/edit">
                             Edit Profile</Link></button>
                         </div>
-                <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Settings"/></button></div>
+                <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout"/></button></div>
                 </div>
 
 
@@ -92,11 +88,14 @@ class UserProfile extends React.Component{
                 </section>
                 </div>
             </header> 
-                <div className="post-divider"></div>
-                <ul className="profile-posts">
-                    {this.renderPosts()}
-                </ul>
-            
+
+            <div className="post-divider"></div>
+                <div className="posts">
+                <ol className="profile-posts">
+                    {this.posts}
+                </ol>
+            </div>
+
         </div> 
     )}
 }

@@ -7,6 +7,8 @@
     max-width: 935px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    height: 100%;
 }
 
 .another-one {
@@ -204,18 +206,54 @@
 }
 
 .post-divider {
-  width: 80%;
+  /* width: 80%;
   height: 1px;
-  background: #efefef;
+
   margin-right: 3%;
-  max-width: 850px;
+  max-width: 850px; */
+  
+  border-top: 1px solid #efefef;
 }
 
 .profile-posts {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
-  max-width: 900px;
+  /* width: 90%;
+  max-width: 900px; */
   margin: 0 auto;
   padding-top: 24px;
+  padding-right: 0px;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.posts ol {
+    padding: 0px;
+    display: flex;
+    width: 1000px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+    padding-top: 24px;
+}
+
+.post-li {
+    height: 293px;
+    width: 293px;
+    overflow: hidden;
+    padding-top: 24px;
+    padding-right: 24px;
+}
+
+.profile-posts img {
+    /* max-height: 100%; */
+    width: 100%;
+    height: auto;
+}
+
+.post-container {
+    flex-grow: 1;
 }

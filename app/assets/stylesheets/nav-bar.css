@@ -38,7 +38,7 @@
 .nav-bar-logo{
     width: 200px;
     height: 24px;
-    display: flex;
+    /* display: flex; */
     justify-content: space-evenly;
     /* flex: 1 9999 0%;
     min-width: 40px; */
@@ -61,6 +61,10 @@
     height: 100%;
 }
 
+#nav-logo {
+    width: 103;
+}
+
 .search-bar {
     height: 24px;
     /* flex: 0 1 auto; */
@@ -72,8 +76,6 @@
     font-size: 14px;
     font-weight: 300;
     left: 0;
-    padding: 7px;
-    /* position: absolute; */
     text-align: center;
     top: 0;
     z-index: 2;
@@ -122,8 +124,24 @@
 .heart img{
     height: 24px;
     width: 24px;
-    margin-right: 24px;
 }
 /* .per a {
     height: 0px;
 } */
+
+
+.heart {
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.heart:hover, .heart:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
