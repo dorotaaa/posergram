@@ -25,6 +25,7 @@ class UserProfile extends React.Component{
     }
 
 
+
     render() {
 
         let user;
@@ -34,9 +35,9 @@ class UserProfile extends React.Component{
             user = this.props.user;
         }
 
-
+        
         this.posts = this.props.posts.map(post => {
-            // debugger
+            debugger
             return (
                
                 <li key={`post-${post.id}`} className="post-li">
@@ -44,9 +45,12 @@ class UserProfile extends React.Component{
                         className="photo"
                         src={post.photo}/>
                 </li>
-            
+        
             )
+            
         })
+
+        let reversePosts = this.posts.reverse();
 
         return (
         
@@ -54,11 +58,13 @@ class UserProfile extends React.Component{
 
             <header className='profile-header'>
                     
-                    <div className="another-one">
+                <div className="another-one">
                     <div className='prof-pic-div'>
+                        <div className='photo-upload-button'></div>
                         <img className='prof-pic photo-dum' src={window.profPhoto}/>
-                    </div>
-                    </div>
+                        </div>
+                </div>
+
             <div className='info-container'>
                 <section className='info-section'>
             
@@ -91,9 +97,9 @@ class UserProfile extends React.Component{
 
             <div className="post-divider"></div>
                 <div className="posts">
-                <ol className="profile-posts">
-                    {this.posts}
-                </ol>
+                <ul className="profile-posts">
+                    {reversePosts}
+                </ul>
             </div>
 
         </div> 

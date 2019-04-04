@@ -55,21 +55,33 @@ class PostForm extends React.Component {
         debugger
         return (
             <div className="upload-div">
+                <div className="flag-div"></div>
             
-                <button onClick={() => this.handleExit}>exit</button>
-                <div className="upload-form">
-                    <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <input 
-                                type="text" 
-                                className="photo-caption" 
-                                placeholder="Add a caption" 
-                                onChange={this.handleUpdate("caption")}/>
-                        </div>
+                <div className="upload-form-div">
+                    <form className="upload-form" onSubmit={this.handleSubmit}>
                         <div className='upload-button'>
-                            <button className="upload-button">Upload oppppopo</button>
-                            <input type="file" onChange={this.handleFile}/>
+                           
+                            <div className="upload-button">
+                                <img className="upload-heart" src={window.upload} />
+                                <label className="upload-file-button" htmlFor="file">
+                                    <img className="upload-logo" src={window.upLogo} />
+                                    <input className="inputfile" type="file" onChange={this.handleFile} />
+                                </label>
+                            </div>
+
+                            {/* <div className="upload-file-button"></div> */}
                         </div>
+                        <div>
+                            <div className="caption-input">
+                                <input
+                                    type="text"
+                                    className="photo-caption"
+                                    placeholder="Write a caption..."
+                                    onChange={this.handleUpdate("caption")} />
+                            </div>
+                            <button className="submitButton" onClick={this.handleSubmit}>Submit</button>
+                        </div>
+                       
                     </form>
                 </div>
             </div>

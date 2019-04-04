@@ -8,7 +8,7 @@ class SignUpForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-        this.handleDemoUser = this.handleDemoUser.bind(this);
+        // this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
     componentDidMount() {
@@ -27,14 +27,14 @@ class SignUpForm extends React.Component {
             .then(() => this.props.history.push('/profile'));
     }
 
-    handleDemoUser(e) {
-        e.preventDefault();
-        this.props.login({user:
-            {username: 'putin',
-            password: 'vladimir'}
-        })
-        .then(() => this.props.history.push('/profile'));
-    }
+    // handleDemoUser(e) {
+    //     e.preventDefault();
+    //     this.props.login({user:
+    //         {username: 'putin',
+    //         password: 'vladimir'}
+    //     })
+    //     .then(() => this.props.history.push('/profile'));
+    // }
 
     renderErrors() {
         return (
@@ -61,16 +61,23 @@ class SignUpForm extends React.Component {
                 <div className="signup-form">
                     
 
-                    <form onSubmit={this.handleSubmit} value={this.props.formType}>
-
+                    {/* <form onSubmit={this.handleSubmit} value={this.props.formType}> */}
+                    <form>
                         <h1 className="instagram-logo">
                             <img id="pgLogo" src={window.pgLogo}/>
                         </h1>
 
                         <h2 className="form-header">Sign up to see photos and videos from your friends.</h2>
                             <div className="fb-form-box">
-                                <button onClick={this.handleDemoUser}>Log in as Poser</button>
-                                {/* <button><a href="fakebook.hhttps://fakebook-cam.herokuapp.com/"><i id="fb" className="fab fa-facebook fa-lg"></i></a>Log in with Fakebook</button> */}
+                                {/* <button onClick={this.handleDemoUser}>Log in as Poser</button> */}
+
+                                {/* <Route path='/fakebook' component={() => { window.location = "https://fakebook-cam.herokuapp.com/"; return null; }} /> */}
+                                <a href="https://fakebook-cam.herokuapp.com/">
+                                <button> <i id="fb" className="fab fa-facebook fa-lg"></i>
+                                    Log in with Fakebook
+                                    </button>
+                                </a>
+                                    
                             </div>
                             <div className="or"><div> <hr className="hr-line"/></div><strong>OR</strong><div><hr className="hr-line"/></div></div> 
                     

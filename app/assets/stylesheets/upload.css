@@ -1,14 +1,110 @@
 .upload-div {
-    height: 50px;
-    width: 100px;
-    /* justify-content: center;
-    padding: 0 40px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-    position: absolute; */
+    margin-left: -423px;
+    position: absolute;
+    min-height: 100px;
+    padding: 0;
+    background: #fff;
+    border: solid 1px #e6e6e6;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.0975);
+    box-shadow: 0 0 5px rgba(0,0,0,.0975);
+    display: block;
+    white-space: normal;
+    width: 500px;
+    z-index: 11;
+}
+
+.flag-div {
+    position: absolute;
+    rotate: 45deg;
 }
 
 .show {display:block;}
+
+.upload-form-div{
+    padding: 0 40px;
+    display: flex;
+    min-height: 240px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.upload-form {
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.upload-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    /* position: relative; */
+}
+
+.upload-file-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    position: absolute;
+    bottom: 159px;
+}
+
+.upload-heart {
+    height: 60px;
+    width: 60px;
+    position: relative;
+    padding-top: 14px;
+}
+
+.upload-logo {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.inputfile {
+    width: 78px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+}
+
+.submitButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    height: 17px;
+    width: inherit;
+    color: #262626;
+    justify-content: center;
+    
+}
+
+.caption-input {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.caption-input input {
+   text-align: start;
+   font-size: 11px;
+}
+.photo-caption {
+    height: 75px;
+    width: 200px;
+    border-radius: 3px 3px 3px 3px;
+    background-color: #fff;
+    border: solid 1px #e6e6e6;
+}
 

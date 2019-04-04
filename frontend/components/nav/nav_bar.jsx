@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import UploadPostContainer from '../users/upload_post_container';
-import upload_post_container from '../users/upload_post_container';
 
 
 class NavBar extends React.Component {
@@ -23,7 +22,7 @@ class NavBar extends React.Component {
     // }
 
     showUploadForm(){
-        debugger
+        // debugger
         // e.preventDefault();
         
         this.setState({showUploadForm: true})
@@ -31,8 +30,7 @@ class NavBar extends React.Component {
     
     closeUploadForm(){
         this.setState({ showUploadForm: false}, () => {
-            document.removeEventListener("click", this.closeUploadForm)
-        })
+            document.removeEventListener("click", this.closeUploadForm)});
     }
 
 

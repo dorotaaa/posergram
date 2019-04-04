@@ -224,11 +224,10 @@ html, body{
 }
 
 body {
+    overflow: hidden;
     text-align: center;
     overflow-y: scroll;
     min-height: 100%;
-    overflow: hidden;
-
     display: flex;
     flex-direction: column;
     flex-grow: 1;
