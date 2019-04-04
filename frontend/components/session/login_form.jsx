@@ -31,14 +31,14 @@ class LoginForm extends React.Component {
             password: 'vladimir'}
         })
         .then(() => {
-            this.props.history.push('/profile')
+            this.props.history.push("/users/:userId")
         });
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.login({user: this.state})
-            .then(() => this.props.history.push('/profile'));
+            .then(() => this.props.history.push("/users/:userId"));
     }
 
     renderErrors() {

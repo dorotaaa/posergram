@@ -4,15 +4,17 @@ import {withRouter} from 'react-router-dom';
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        // debugger
         this.state = {
             caption: this.props.caption,
             user_id: this.props.user_id
         }
-        debugger
+        // debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleFile = this.handleFile.bind(this);
+
+        this.focusRef = React.createRef();
     }
 
 
@@ -30,6 +32,22 @@ class PostForm extends React.Component {
                 this.props.history.push("/")
             });
     }
+
+    // componentDidMount(){
+    //     document.addEventListener("click",
+    //         this.props.closeUploadForm
+    //     )
+    // }
+
+    componentDidMount(){
+        debugger
+        this.focusRef.current.focus()
+    }
+
+    // componentWillUnmount(){
+    //     document.removeEventListener("click", this.props.closeUploadForm)
+    // }
+
 
     handleUpdate(field) {
         return e => this.setState({
@@ -51,10 +69,14 @@ class PostForm extends React.Component {
         }
     }
 
+    // stopProp(e){
+    //     debugger
+    //      e.stopPropagation()
+    // }
+
     render() {
-        debugger
         return (
-            <div className="upload-div">
+            <div ref={this.focusRef} onBlur={this.props.closeUploadForm} className="upload-div">
                 <div className="flag-div"></div>
             
                 <div className="upload-form-div">

@@ -41,9 +41,11 @@ class UserProfile extends React.Component{
             return (
                
                 <li key={`post-${post.id}`} className="post-li">
+                    <Link to={`/users/${user.id}/posts/${post.id}`}>
                     <img
                         className="photo"
                         src={post.photo}/>
+                    </Link>
                 </li>
         
             )

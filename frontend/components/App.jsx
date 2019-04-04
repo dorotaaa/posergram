@@ -6,6 +6,7 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import UserProfileContainer from './users/user_profile_container';
 import EditUserContainer from './users/edit_user_container';
+import PostShowContainer from './posts/post_show_container';
 
 
 const App = () => (
@@ -19,10 +20,10 @@ const App = () => (
                 <Route path="/" component={NavBarContainer} />
             </Switch>
 
-            <ProtectedRoute exact path="/profile" component={UserProfileContainer} />
+            <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer} />
             <ProtectedRoute path="/edit" component={EditUserContainer} />
-           
-        </div>
+            <ProtectedRoute exact path="/users/:userId/posts/:postId" component={PostShowContainer} />
+       </div>
     </div>
 );
 

@@ -22,7 +22,7 @@ class EditUser extends React.Component {
             { user: this.state,
                 id: this.state.id
             })
-            .then(() => this.props.history.push("/profile"))
+            .then(() => this.props.history.push("/users/:userId"))
     }
         
 

@@ -22,20 +22,20 @@ class NavBar extends React.Component {
     // }
 
     showUploadForm(){
-        // debugger
+        debugger
         // e.preventDefault();
         
         this.setState({showUploadForm: true})
     }
     
-    closeUploadForm(){
-        this.setState({ showUploadForm: false}, () => {
-            document.removeEventListener("click", this.closeUploadForm)});
+    closeUploadForm(e){
+        debugger
+        this.setState({ showUploadForm: false });
     }
 
 
     render(){
-
+        debugger
             if (this.state.showUploadForm){
                 this.uploadForm = <UploadPostContainer closeUploadForm={this.closeUploadForm}/>
             } else {
@@ -72,18 +72,18 @@ class NavBar extends React.Component {
                         </div>
 
                         <div className="dropdown">
-                        <button className="heart" onClick={() => this.showUploadForm()}>     
-                            <img className="hpic" src={window.heart}  />
-                        </button>
+                            <button className="heart" onClick={() => this.showUploadForm()}>     
+                                <img className="hpic" src={window.heart}  />
+                            </button>
                             {this.uploadForm}
                         </div>
-                            
+                        
 
-                         <div className="per">
-                            <Link to="/profile">
-                        <img className="person" src={window.person} />
-                            </Link>
-                        </div>
+                        <div className="per">
+                        <Link to="/users/:userId">
+                    <img className="person" src={window.person} />
+                        </Link>
+                    </div>
                 </div>
             </nav>
     )}
