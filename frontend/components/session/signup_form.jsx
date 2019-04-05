@@ -73,9 +73,9 @@ class SignUpForm extends React.Component {
 
                                 {/* <Route path='/fakebook' component={() => { window.location = "https://fakebook-cam.herokuapp.com/"; return null; }} /> */}
                                 <a href="https://fakebook-cam.herokuapp.com/">
-                                <button> <i id="fb" className="fab fa-facebook fa-lg"></i>
+                                <div className="fb-button"> <i id="fb" className="fab fa-facebook fa-lg"></i>
                                     Log in with Fakebook
-                                    </button>
+                                    </div>
                                 </a>
                                     
                             </div>

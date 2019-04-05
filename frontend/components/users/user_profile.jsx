@@ -4,7 +4,7 @@ import { withRouter, Link } from 'react-router-dom';
 class UserProfile extends React.Component{
     constructor(props){
         super(props);
-        debugger
+        // debugger
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -37,7 +37,7 @@ class UserProfile extends React.Component{
 
         
         this.posts = this.props.posts.map(post => {
-            debugger
+            // debugger
             return (
                
                 <li key={`post-${post.id}`} className="post-li">

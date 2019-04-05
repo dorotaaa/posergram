@@ -8,7 +8,7 @@ import UserProfile from './user_profile';
 
 const mapStateToProps = (state) => {
     const user = state.entities.users[state.session.currentUser];
-    debugger
+    // debugger
     let posts = user.post_ids.map(post_id => state.entities.posts[post_id]);
     if (posts.includes(undefined)) {
         posts = [];

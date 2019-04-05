@@ -41,6 +41,7 @@ hr {
   display: flex;
   justify-content: center;
   background-color: #fafafa;
+  padding-top: 30px;
 }
 
 .fb-form-box {
@@ -147,10 +148,10 @@ hr {
 
 .signup-form input{
     background-color: #efefef;
-    border-top-color: #efefef;
-    border-right-color: #efefef;
+    /* border-color: #efefef;
+    /* border-right-color: #efefef;
     border-bottom-color: #efefef;
-    border-left-color: #efefef;
+    border-left-color: #efefef; */
     border: 1px solid #efefef;
     height: 35px;
     width: 270px;
@@ -163,7 +164,30 @@ hr {
 }
 
 
-.signup-form button{
+.fb-button {
+    outline: 0;
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    border-radius: 4px;
+    color: #fff;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    padding: 5px 9px;
+    text-align: center;
+    text-transform: inherit;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.signup-form button {
     outline: 0;
     background-color: #3897f0;
     border: 1px solid #3897f0;

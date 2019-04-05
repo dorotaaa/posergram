@@ -19,14 +19,14 @@ class PostForm extends React.Component {
 
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         const formData = new FormData();
         formData.append("post[user_id]", this.state.user_id);
         formData.append("post[caption]", this.state.caption);
         if (this.state.imageFile) {
-            formData.append('post[photo]', this.state.imageFile)
-        }
+            formData.append('post[photo]', this.state.imageFile) 
+        } 
         this.props.createPost(formData)
             .then(() => {
                 this.props.history.push("/")
@@ -40,7 +40,7 @@ class PostForm extends React.Component {
     // }
 
     componentDidMount(){
-        debugger
+        // debugger
         this.focusRef.current.focus()
     }
 
@@ -56,7 +56,7 @@ class PostForm extends React.Component {
     }
 
     handleFile(e) {
-        debugger
+        // debugger
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () =>
@@ -73,12 +73,12 @@ class PostForm extends React.Component {
     //     debugger
     //      e.stopPropagation()
     // }
+    // onBlur = { this.props.closeUploadForm }
 
     render() {
         return (
-            <div ref={this.focusRef} onBlur={this.props.closeUploadForm} className="upload-div">
-                <div className="flag-div"></div>
-            
+            <div tabIndex="0" ref={this.focusRef} className="upload-div">
+                <button className="close-button" onClick={this.props.closeUploadForm}>x</button>
                 <div className="upload-form-div">
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <div className='upload-button'>

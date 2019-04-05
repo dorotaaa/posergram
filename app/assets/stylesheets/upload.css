@@ -29,6 +29,11 @@
     flex-direction: column;
 }
 
+.close-button {
+    background: transparent;
+    border: none;
+}
+
 .upload-form {
     border: none;
     display: flex;

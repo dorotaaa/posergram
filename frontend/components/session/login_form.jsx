@@ -26,8 +26,9 @@ class LoginForm extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
+    
         this.props.login({user:
-            {username: 'putin',
+            {username: 'kevin',
             password: 'vladimir'}
         })
         .then(() => {
@@ -96,7 +97,7 @@ class LoginForm extends React.Component {
                     <strong>OR</strong><div><hr className="hr-line" /></div></div>
 
                     <div className='poser-link'>
-                        <Link to={`/login`} onClick={this.handleDemoUser}>Log in as Poser</Link>
+                        <Link to={`/login`} onClick={this.handleDemoUser}>Log in as demo</Link>
                     </div>
                 
                     <div className="login-errors">{this.renderErrors()}</div>

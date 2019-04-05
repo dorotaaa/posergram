@@ -15,27 +15,20 @@ class NavBar extends React.Component {
        this.closeUploadForm = this.closeUploadForm.bind(this);
     }
 
-    // handleShow(e){
-        
-    //     $(".upload-div").css("visibility", "visible");
-        
-    // }
-
     showUploadForm(){
-        debugger
-        // e.preventDefault();
+        // debugger
         
         this.setState({showUploadForm: true})
     }
     
     closeUploadForm(e){
-        debugger
+        // debugger
         this.setState({ showUploadForm: false });
     }
 
 
     render(){
-        debugger
+        // debugger
             if (this.state.showUploadForm){
                 this.uploadForm = <UploadPostContainer closeUploadForm={this.closeUploadForm}/>
             } else {
@@ -44,9 +37,10 @@ class NavBar extends React.Component {
     
 
     return (
+    
         <nav className="main-nav">
 
-            
+            <div className="nav-wrapper">
                 <div className="nav-bar-logo">
                     <Link id="nav-cam" to="/">
                         <img src={window.camBar} />
@@ -85,7 +79,8 @@ class NavBar extends React.Component {
                         </Link>
                     </div>
                 </div>
-            </nav>
+            </div>
+        </nav>
     )}
 }
 
