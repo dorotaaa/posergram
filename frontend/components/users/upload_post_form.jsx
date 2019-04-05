@@ -4,12 +4,12 @@ import {withRouter} from 'react-router-dom';
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
+        
         this.state = {
             caption: this.props.caption,
             user_id: this.props.user_id
         }
-        // debugger
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -19,7 +19,7 @@ class PostForm extends React.Component {
 
 
     handleSubmit(e) {
-        // debugger
+        
         e.preventDefault();
         const formData = new FormData();
         formData.append("post[user_id]", this.state.user_id);
@@ -40,7 +40,7 @@ class PostForm extends React.Component {
     // }
 
     componentDidMount(){
-        // debugger
+        
         this.focusRef.current.focus()
     }
 
@@ -56,7 +56,7 @@ class PostForm extends React.Component {
     }
 
     handleFile(e) {
-        // debugger
+        
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () =>
@@ -69,11 +69,6 @@ class PostForm extends React.Component {
         }
     }
 
-    // stopProp(e){
-    //     debugger
-    //      e.stopPropagation()
-    // }
-    // onBlur = { this.props.closeUploadForm }
 
     render() {
         return (

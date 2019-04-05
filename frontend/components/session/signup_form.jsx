@@ -119,7 +119,7 @@ class SignUpForm extends React.Component {
                         </div>
                         <div className="errors">{this.renderErrors()}</div>
                         <h4 className="form-footer">
-                            By signing up you agree to Dorota's <strong>Terms , Data Policy</strong> and <strong>Cookies Policy</strong> .
+                            By signing up you agree to Dorota's <strong>Hiring Terms , Data Policy</strong> and <strong>Cookies Policy</strong> .
                         </h4>
                 </form>
                     <div className='foot-login-box'>

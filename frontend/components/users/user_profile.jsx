@@ -4,7 +4,6 @@ import { withRouter, Link } from 'react-router-dom';
 class UserProfile extends React.Component{
     constructor(props){
         super(props);
-        // debugger
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -37,7 +36,7 @@ class UserProfile extends React.Component{
 
         
         this.posts = this.props.posts.map(post => {
-            // debugger
+    
             return (
                
                 <li key={`post-${post.id}`} className="post-li">
@@ -82,7 +81,7 @@ class UserProfile extends React.Component{
 
 
                 <ul className='stats'>
-                    <li className='stat'><span className='number'></span> posts</li>
+                    <li className='stat'><span className='number'></span>{reversePosts.length} posts</li>
                     <li className='stat'><span className='number'></span> followers</li>
                     <li className='stat'><span className='number'></span> following</li>
                 </ul>
