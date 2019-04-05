@@ -14,9 +14,10 @@
     box-sizing: border-box;
     padding-top: 26px;
     padding-bottom: 26px;
-    padding-left: 20px;
-    padding-right: 40px;
+    padding-left: 140px;
+    padding-right: 140px;
     justify-content: center;
+    margin: 0 auto;
 }
 
 

@@ -227,6 +227,7 @@
   /* overflow-y: auto; */
   overflow: scroll;
   height: 100%;
+
 }
 
 .posts ul {
@@ -252,6 +253,10 @@
     flex-direction: row;
     align-items: center;
     margin-top: 24px;
+}
+
+.post-li a {
+    height: 100%;
 }
 
 .profile-posts img {

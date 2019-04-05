@@ -82,8 +82,8 @@ class UserProfile extends React.Component{
 
                 <ul className='stats'>
                     <li className='stat'><span className='number'></span>{reversePosts.length} posts</li>
-                    <li className='stat'><span className='number'></span> followers</li>
-                    <li className='stat'><span className='number'></span> following</li>
+                    <li className='stat'><span className='number'></span>0 followers</li>
+                    <li className='stat'><span className='number'></span>0 following</li>
                 </ul>
 
                     <div className='name-n-bio'>

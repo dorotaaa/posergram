@@ -97,7 +97,7 @@ class LoginForm extends React.Component {
                     <strong>OR</strong><div><hr className="hr-line" /></div></div>
 
                     <div className='poser-link'>
-                        <Link to={`/login`} onClick={this.handleDemoUser}>Log in as demo</Link>
+                        <Link to={`/login`} onClick={this.handleDemoUser}>Log in as Kevin</Link>
                     </div>
                 
                     <div className="login-errors">{this.renderErrors()}</div>
