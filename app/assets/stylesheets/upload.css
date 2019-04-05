@@ -48,7 +48,6 @@
     flex-direction: column;
     cursor: pointer;
     align-items: center;
-    /* position: relative; */
 }
 
 .upload-file-button {
