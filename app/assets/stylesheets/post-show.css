@@ -7,7 +7,7 @@
 } 
 
 .post-show-photo-container {
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
     display: flex;
     justify-content: center;
     max-height: 100%;
@@ -69,16 +69,34 @@
     font-weight: 400;
 }
 
+.close-button-wrp {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 13px 2px 7px;
+}
+
+.close-button {
+    cursor: pointer;
+    color: #fff;
+    background: transparent;
+    content: '\00D7';
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+    border: none;
+}
+
 .close-button a{
     text-decoration: none;
     color: #fff;
-
 }
 
-.big-wrapper{
+.show-wrapper{
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
 }
-

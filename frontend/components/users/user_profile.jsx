@@ -20,9 +20,14 @@ class UserProfile extends React.Component{
 
     handleLogout() {
         this.props.logout()
-        // .then(() => this.props.history.push('/signup'))
     }
 
+
+    openModal(e) {
+        e.preventDefault();
+
+        document.getElementById('post-modal').style.display = 'block';
+    }
 
 
     render() {
@@ -38,15 +43,17 @@ class UserProfile extends React.Component{
         this.posts = this.props.posts.map(post => {
     
             return (
-               
-                <li key={`post-${post.id}`} className="post-li">
-                    <Link to={`/users/${user.id}/posts/${post.id}`}>
+        
+                <div>
+                <Link id="post-modal" to={`/users/${user.id}/posts/${post.id}`}>
+                <li key={`post-${post.id}`} className="post-li">    
                     <img
                         className="photo"
                         src={post.photo}/>
-                    </Link>
                 </li>
+                </Link>
         
+            </div>
             )
             
         })

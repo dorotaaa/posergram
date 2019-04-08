@@ -33,20 +33,13 @@ class PostForm extends React.Component {
             });
     }
 
-    // componentDidMount(){
-    //     document.addEventListener("click",
-    //         this.props.closeUploadForm
-    //     )
-    // }
 
     componentDidMount(){
         
         this.focusRef.current.focus()
     }
 
-    // componentWillUnmount(){
-    //     document.removeEventListener("click", this.props.closeUploadForm)
-    // }
+
 
 
     handleUpdate(field) {
@@ -86,7 +79,6 @@ class PostForm extends React.Component {
                                 </label>
                             </div>
 
-                            {/* <div className="upload-file-button"></div> */}
                         </div>
                         <div>
                             <div className="caption-input">

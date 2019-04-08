@@ -17,7 +17,7 @@ class PostShow extends React.Component {
 
         return(
             
-        <div className="big-wrapper">
+        <div id="post-modal" className="show-wrapper">
 
             <div className='close-button-wrp'>
             <button onClick={this.props.history.goBack} 
