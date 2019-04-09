@@ -16,17 +16,22 @@ class UserProfile extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.user.id !== this.props.user.id) {
+        debugger
+        if ((prevProps.user.id !== this.props.user.id) || (prevProps.posts.length !== this.props.posts.length)){
             this.props.fetchUser(this.props.user.id)
+            .then(() => {
+                this.props.fetchPosts(this.props.user.id)});
         }
     }
 
     componentDidMount(){
+        // debugger
         this.props.fetchUser(this.props.user.id);
         this.props.fetchPosts(this.props.user.id);
     }
 
     handleLogout() {
+        // debugger
         this.props.logout().then(() => this.props.history.push("/signup"))
     }
 
@@ -34,6 +39,7 @@ class UserProfile extends React.Component{
     openModal(e) {
         // console.log(e.currentTarget);
         // console.log(e.currentTarget.dataset.id);
+        // debugger
         this.setState({
             showId: e.currentTarget.dataset.id,
             showModal: !this.state.showModal});        
@@ -41,6 +47,7 @@ class UserProfile extends React.Component{
     }
 
     closeModal(e) {
+        // debugger
         this.setState({
             showModal: !this.state.showModal
         }); 
@@ -62,7 +69,7 @@ class UserProfile extends React.Component{
 
 
 
-        this.posts = this.props.posts.map((post, idx) => {
+        const posts = this.props.posts.map((post, idx) => {
     
             // <Link id="post-modal" to={`/users/${user.id}/posts/${post.id}`}>
             // </Link>
@@ -79,7 +86,7 @@ class UserProfile extends React.Component{
             
         })
 
-        let reversePosts = this.posts.reverse();
+        const reversePosts = posts.reverse();
 
         return (
         

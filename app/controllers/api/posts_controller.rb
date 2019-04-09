@@ -24,8 +24,8 @@ class Api::PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
         if @post
-            @post.delete! 
-        render :show
+            @post.destroy! 
+        # render :show
         end
     end
 

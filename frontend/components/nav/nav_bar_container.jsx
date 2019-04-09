@@ -6,7 +6,7 @@ import NavBar from './nav_bar';
 
 
 const mapStateToProps = (state) => {
-    debugger
+    // debugger
     return ({
         currentUser: state.session.currentUser
     })

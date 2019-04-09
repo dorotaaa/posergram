@@ -26,7 +26,7 @@ class NavBar extends React.Component {
 
 
     render(){
-        debugger
+        // debugger
             if (this.state.showUploadForm){
                 this.uploadForm = <UploadPostContainer closeUploadForm={this.closeUploadForm}/>
             } else {
