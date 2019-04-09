@@ -26,20 +26,19 @@ class LoginForm extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
-    
         this.props.login({user:
             {username: 'kevin',
             password: 'vladimir'}
         })
         .then(() => {
-            this.props.history.push("/users/:userId")
+            this.props.history.push("/feed")
         });
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.login({user: this.state})
-            .then(() => this.props.history.push("/users/:userId"));
+            .then(() => this.props.history.push("/feed"));
     }
 
     renderErrors() {

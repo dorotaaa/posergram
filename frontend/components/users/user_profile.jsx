@@ -1,10 +1,18 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import PostShowContainer from '../posts/post_show_container';
 
 class UserProfile extends React.Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            showModal: false,
+            showId: 0,
+        };
         this.handleLogout = this.handleLogout.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -19,17 +27,24 @@ class UserProfile extends React.Component{
     }
 
     handleLogout() {
-        this.props.logout()
+        this.props.logout().then(() => this.props.history.push("/signup"))
     }
 
 
     openModal(e) {
-        e.preventDefault();
-
-        document.getElementById('post-modal').style.display = 'block';
+        // console.log(e.currentTarget);
+        // console.log(e.currentTarget.dataset.id);
+        this.setState({
+            showId: e.currentTarget.dataset.id,
+            showModal: !this.state.showModal});        
+        // document.getElementById('post-modal').style.display = 'block';
     }
 
-
+    closeModal(e) {
+        this.setState({
+            showModal: !this.state.showModal
+        }); 
+    }
     render() {
 
         let user;
@@ -39,21 +54,27 @@ class UserProfile extends React.Component{
             user = this.props.user;
         }
 
-        
-        this.posts = this.props.posts.map(post => {
+       
+
+        const modal = this.state.showModal ? (
+            <PostShowContainer closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId}/>
+        ) : null;
+
+
+
+        this.posts = this.props.posts.map((post, idx) => {
     
+            // <Link id="post-modal" to={`/users/${user.id}/posts/${post.id}`}>
+            // </Link>
             return (
-        
-                <div>
-                <Link id="post-modal" to={`/users/${user.id}/posts/${post.id}`}>
-                <li key={`post-${post.id}`} className="post-li">    
+                <li onClick={this.openModal} data-id={post.id} key={idx} className="post-li"> 
+                
                     <img
                         className="photo"
                         src={post.photo}/>
+                        <div className="img-div"></div>
                 </li>
-                </Link>
-        
-            </div>
+                
             )
             
         })
@@ -62,6 +83,9 @@ class UserProfile extends React.Component{
 
         return (
         
+        
+            <div className="show-modal-div">
+                {modal}
         <div className='main-profile-div'>
 
             <header className='profile-header'>
@@ -105,12 +129,13 @@ class UserProfile extends React.Component{
 
             <div className="post-divider"></div>
                 <div className="posts">
-                <ul className="profile-posts">
+                <div className="profile-posts">
                     {reversePosts}
-                </ul>
+                </div>
             </div>
 
         </div> 
+            </div>
     )}
 }
 

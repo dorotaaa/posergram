@@ -12,6 +12,7 @@
     white-space: normal;
     width: 500px;
     z-index: 11;
+    outline: none;
 }
 
 .flag-div {
@@ -29,9 +30,11 @@
     flex-direction: column;
 }
 
-.close-button {
+.upload-close-button {
     background: transparent;
     border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .upload-form {

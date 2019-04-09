@@ -6,8 +6,9 @@ import { fetchPosts } from '../../actions/post_actions';
 import UserProfile from './user_profile';
 
 
-const mapStateToProps = (state) => {
-    const user = state.entities.users[state.session.currentUser];
+const mapStateToProps = (state, ownProps) => {
+    debugger
+    const user = state.entities.users[ownProps.match.params.userId];
     let posts = user.post_ids.map(post_id => state.entities.posts[post_id]);
     if (posts.includes(undefined)) {
         posts = [];

@@ -66,7 +66,7 @@ class PostForm extends React.Component {
     render() {
         return (
             <div tabIndex="0" ref={this.focusRef} className="upload-div">
-                <button className="close-button" onClick={this.props.closeUploadForm}>x</button>
+                <button className="upload-close-button" onClick={this.props.closeUploadForm}>x</button>
                 <div className="upload-form-div">
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <div className='upload-button'>

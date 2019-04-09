@@ -14,13 +14,14 @@ class PostShow extends React.Component {
 
     
     render(){
-
+        // debugger
         return(
             
-        <div id="post-modal" className="show-wrapper">
+            
+            <div className="show-wrapper">
 
             <div className='close-button-wrp'>
-            <button onClick={this.props.history.goBack} 
+            <button onClick={this.props.closeModal} 
                     className='close-button'>×</button>
             </div>
 
@@ -34,11 +35,14 @@ class PostShow extends React.Component {
 
                     <div className="header-div">
                     <header className="post-header">
-                        <div>{this.props.username}</div>
+                        <div className="show-name">{this.props.username}</div>
+                        <div className="dots"><img src={window.dots} /></div>
                     </header>
                     <div className="cap-header">
-                        <h2 className="caption-u-div">{this.props.username}</h2>
-        
+                        <h2 className="caption-u-div">{this.props.username}
+            
+                        </h2>
+                    
                         <div className="caption-div">{this.props.post.caption}</div>
                     </div>
                     </div>
@@ -47,7 +51,7 @@ class PostShow extends React.Component {
 
             </div>
         </div>
-
+        
     )}
 }
 
