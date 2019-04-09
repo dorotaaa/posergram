@@ -19,15 +19,12 @@ class UserProfile extends React.Component{
         debugger
         if ((prevProps.user.id !== this.props.user.id) || (prevProps.posts.length !== this.props.posts.length)){
             this.props.fetchUser(this.props.user.id)
-            .then(() => {
-                this.props.fetchPosts(this.props.user.id)});
         }
     }
 
     componentDidMount(){
         // debugger
         this.props.fetchUser(this.props.user.id);
-        this.props.fetchPosts(this.props.user.id);
     }
 
     handleLogout() {
@@ -53,7 +50,7 @@ class UserProfile extends React.Component{
         }); 
     }
     render() {
-
+        debugger
         let user;
         if (!this.props.user) {
             user = { username: "", fullname: "", bio: "" };
