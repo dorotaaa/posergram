@@ -16,41 +16,34 @@ class UserProfile extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        debugger
         if ((prevProps.user.id !== this.props.user.id) || (prevProps.posts.length !== this.props.posts.length)){
             this.props.fetchUser(this.props.user.id)
         }
     }
 
     componentDidMount(){
-        // debugger
+        
         this.props.fetchUser(this.props.user.id);
     }
 
     handleLogout() {
-        // debugger
+        
         this.props.logout().then(() => this.props.history.push("/signup"))
     }
 
 
     openModal(e) {
-        // console.log(e.currentTarget);
-        // console.log(e.currentTarget.dataset.id);
-        // debugger
         this.setState({
             showId: e.currentTarget.dataset.id,
             showModal: !this.state.showModal});        
-        // document.getElementById('post-modal').style.display = 'block';
     }
 
     closeModal(e) {
-        // debugger
         this.setState({
             showModal: !this.state.showModal
         }); 
     }
     render() {
-        debugger
         let user;
         if (!this.props.user) {
             user = { username: "", fullname: "", bio: "" };

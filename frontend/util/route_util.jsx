@@ -4,7 +4,7 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 
 const Auth = ({ component: Component, path, loggedIn, exact, currentUser}) => (
     <Route path={path} exact={exact} render={(props) => 
-     { debugger
+     {
         return (
         !loggedIn ? (
             <Component {...props} />

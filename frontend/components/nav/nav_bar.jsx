@@ -26,7 +26,6 @@ class NavBar extends React.Component {
 
 
     render(){
-        // debugger
             if (this.state.showUploadForm){
                 this.uploadForm = <UploadPostContainer closeUploadForm={this.closeUploadForm}/>
             } else {
@@ -73,7 +72,7 @@ class NavBar extends React.Component {
 
                         <div className="per">
                         <Link to={`/users/${this.props.currentUser}`}>
-                    <img className="person" src={window.person} />
+                            <img className="person" src={window.person} />
                         </Link>
                     </div>
                 </div>

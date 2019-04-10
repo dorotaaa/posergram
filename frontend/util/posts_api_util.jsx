@@ -1,5 +1,4 @@
 export const fetchPosts = (user_id) => {
-debugger
 return $.ajax({
         url: `api/users/${user_id}/posts`,
         method: 'GET'

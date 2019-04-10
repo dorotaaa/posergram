@@ -38,12 +38,14 @@ class PostShow extends React.Component {
         let deleteModal ;
             if (this.state.renderDeleteNCancel) {
                 deleteModal =
+                <div className="dcm-1">
                ( <div className="delete-modal">
                     <div className="butts">
-                    <button onClick={this.handleDelete} className="delete-butt">Delete Post</button>
-                    <button onClick={this.toggleRenderState} className="cancel-butt">Cancel</button>
+                        <div className="delete-butt"><button onClick={this.handleDelete} className="delete-butt">Delete Post</button></div>
+                        <div className="cancel-butt"><button onClick={this.toggleRenderState} className="cancel-butt">Cancel</button></div>
                     </div>
                 </div>)
+                </div>
             } else {
                 deleteModal = null;
             }
@@ -58,7 +60,6 @@ class PostShow extends React.Component {
 
     
     render(){
-        // debugger
 
         return(
 
@@ -99,12 +100,11 @@ class PostShow extends React.Component {
                     </div>
                     </div>
                 </div>
+            </div>
 
                 <div className="dcm">
                     {this.renderDeleteNCancel()}
                 </div>
-
-            </div>
         </div>
         
     )}
