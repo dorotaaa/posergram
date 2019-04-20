@@ -1,4 +1,4 @@
-.main-nav {
+/* .main-nav {
     background-color: #fff;
     border-bottom: 1px solid rgba(0,0,0, .0975);
     top: 0;
@@ -120,4 +120,509 @@
 .dropdown {
   position: relative;
   display: inline-block;
+} */
+
+/* ====================================== */
+
+.navbar-container {
+  z-index: 20;
+  position: relative;
+  
+  background-color: white;
+  border-bottom: var(--lightGray) solid 1px;
+  height: 77px;
+
+  margin-bottom: 58px;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+
+.navbar-container-resize {
+  z-index: 20;
+  position: relative;
+  
+  background-color: white;
+  /* border-bottom: var(--lightGray) solid 1px; */
+  height: 52px;
+
+  margin-bottom: 58px;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77px;
+  background-color: white;
+  border-bottom: var(--lightGray) solid 1px;
+
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+
+.navbar-resize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  background-color: white;
+  border-bottom: var(--lightGray) solid 1px;
+
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+
+/* ================== POLYGRAM LOGO START ================== */
+.navbar-polygram-logo:active {
+  opacity: 0.5;
+}
+
+.navbar-polygram-logo a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  font-family: 'Grand Hotel', cursive;
+  font-size: 27px;
+}
+
+.navbar-polygram-logo .navbar-divider {
+  background-color: black;
+  height: 28px;
+  width: 1px;
+  margin: 0 16px;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+
+.navbar-divider-resize {
+  background-color: black;
+  height: 0px;
+  width: 1px;
+  margin: 0 16px;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+
+.navbar-polygram-logo .fa-instagram {
+  font-size: 26px;
+}
+
+.navbar-polygram-logo .navbar-logo {
+  font-size: 29px;
+  width: 88.7px;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+
+.navbar-logo-resize {
+  font-size: 0px;
+  width: 88.7px;
+
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+}
+/* ================== POLYGRAM LOGO END ================== */
+
+/* ================== NAVBAR SEARCH BAR START ================== */
+.navbar-search-bar {
+  margin: 0 240px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  position: relative;
+}
+
+.navbar-search-bar > img {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  background-color: var(--lighterGray);
+  
+  border: #dbdbdb solid 1px;
+  border-right: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.navbar-search-bar input {
+  height: 28px;
+  width: 215px;
+  border: #dbdbdb solid 1px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 0 10px;
+  font-size: 14px;
+  background-color: var(--lighterGray);
+}
+
+.search-dropdown-square {
+  position: absolute;
+  z-index: 9999999999;
+  background-color: white;
+  border-left: solid 1px #e6e6e6;
+  border-top: solid 1px #e6e6e6;
+  /* box-shadow: 0 0 5px 1px rgba(0,0,0,.0975); */
+  height: 14px;
+  width: 14px;
+  margin: auto;
+  top: calc(27px + 11px);
+  left: 47%;
+  transform: rotate(45deg);
+}
+
+.search-dropdown-square-hover {
+  position: absolute;
+  z-index: 9999999999;
+  background-color: white;
+  border-left: solid 1px #e6e6e6;
+  border-top: solid 1px #e6e6e6;
+  /* box-shadow: 0 0 5px 1px rgba(0,0,0,.0975); */
+  height: 14px;
+  width: 14px;
+  margin: auto;
+  top: 30px;
+  left: 47%;
+  transform: rotate(45deg);
+}
+
+.search-dropdown-square-hide {
+  display: none;
+}
+
+.search-dropdown {
+  position: absolute;
+  /* width: 215px; */
+  width: 260px;
+  max-height: 362px;
+  /* height: 40px; */
+  /* top: 27px; */
+  top: calc(27px + 18px);
+  right: -11px;
+  background-color: white;
+  
+  border: var(--lightGray) solid 1px;
+  border-top: none;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 0 5px rgba(0,0,0,.0975);
+}
+
+.search-dropdown-hover {
+  position: absolute;
+  width: 260px;
+  max-height: 362px;
+  top: calc(27px + 10px);
+  right: -11px;
+  background-color: white;
+  
+  border: var(--lightGray) solid 1px;
+  border-top: none;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 0 5px rgba(0,0,0,.0975);
+}
+
+.hide-search-dropdown {
+  display: none;
+}
+
+.fa-search {
+  color: var(--grayText);
+  padding-right: 10px;
+  height: 28px;
+}
+
+.navbar-search-bar input::placeholder {
+  text-align: center;
+  color: var(--grayText);
+}
+
+.navbar-search-bar input:focus::placeholder {
+  text-align: left;
+}
+
+.navbar-search-bar input:focus {
+  background-color: white;
+}
+/* ================== NAVBAR SEARCH BAR END ================== */
+
+/* ================== NAVBAR ICONS START ================== */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+}
+
+.navbar-icons a {
+  color: black;
+}
+
+.fa-plus-square {
+  cursor: pointer;
+}
+
+.navbar-icons > div {
+  height: 26px;
+  margin-left: 26px;
+
+  /* border: red solid 1px; */
+}
+
+.navbar-icons > div:first-child {
+  margin: 0;
+}
+
+.navbar-heart {
+  cursor: pointer;
+}
+
+.navbar-user a {
+  color: black;
+}
+
+
+/* ================== NAVBAR ICONS END ================== */
+
+/* ================== ACTIVITY ON POSTS ================== */
+.navbar-heart-pop-up {
+  display: none;
+}
+
+.navbar-heart-show {
+  display: block;
+}
+
+.activity-on-posts {
+  background-color: white;
+  /* border: var(--lightGray) solid 1px; */
+  border-radius: 3px;
+  text-align: center;
+  position: absolute;
+  padding: 30px;
+  z-index: 1000;
+  top: 7%;
+  right: 24.8%;
+  box-shadow: 0 0 5px 1px rgb(230, 230, 230);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 12.4px solid transparent;
+  border-right: 12.4px solid transparent;
+  border-bottom: 12.4px solid var(--lightGray);
+  position: absolute;
+  z-index: 1000;
+  top: 5.7%;
+  right: 27.6%;
+}
+/* ================== ACTIVITY ON POSTS ================== */
+
+.post-form-file-button {
+  display: none;
+}
+
+.post-form-file-input-form > label {
+  border: white solid 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+  color: var(--lightBlue);
+  padding: 5px 20px;
+  transition-duration: 0.3s;
+}
+
+.post-form-file-input-form > label:hover {
+  border: var(--lightBlue) solid 1px;
+  background-color: var(--lightBlue);
+  color: white;
+}
+
+.navbar-icons-plus {
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+}
+
+.navbar-icons-compass {
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+}
+
+.navbar-icons-heart {
+  width: 26px;
+  height: auto;
+  cursor: pointer;
+}
+
+.navbar-icons-user {
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+}
+
+.navbar-compass, .navbar-heart {
+  position: relative;
+}
+
+.navbar-compass-container {
+
+
+  border: red solid 1px;
+}
+
+.compass-links-container {
+  padding-top: 10px;
+}
+
+.compass-heart-spacer {
+  height: 10px;
+  opacity: 0;
+}
+
+.navbar-compass > div, .navbar-heart > div {
+  position: absolute;
+  background-color: white;
+  z-index: 9999999;
+  top: 25px;
+
+  transition-duration: 0.3s;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-compass div, .navbar-heart div {
+  display: none;
+}
+
+.navbar-compass:hover div, .navbar-heart:hover div {
+  display: block;
+  animation: navbar-sites 0.2s linear;
+}
+
+.navbar-compass div a {
+  border-radius: 4px;
+}
+
+.navbar-compass div a, .navbar-heart div a {
+  transition-duration: 0.3s;
+  border: var(--lightGray) solid 1px;
+}
+
+.navbar-heart > div a:nth-child(2) {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.navbar-heart > div a:nth-child(4) {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.navbar-heart > div a:nth-child(3),
+.navbar-heart > div a:nth-child(4) {
+  border-top: none;
+}
+
+.navbar-heart > div a:nth-child(3) {
+
+}
+
+.navbar-compass > div > a:hover, .navbar-heart > div > a:hover {
+  color: var(--lightBlue);
+}
+
+.hide-explore, .hide-sites {
+  display: none;
+}
+
+.show-explore, .show-sites {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 15px 20px;
+  background-color: white;
+  display: block;
+}
+
+@keyframes navbar-sites {
+  0% {
+    transform: translateY(15px) scale(1.2);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.search-users-component {
+  border-top: var(--lightGray) solid 1px;
+}
+
+.search-users-component > div img {
+  width: 30px;
+  height: 30px;
+  margin-right: 13px;
+  border-radius: 50%;
+}
+
+.search-users-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  transition-duration: 0.2s;
+}
+
+.search-users-container-hide {
+  display: none;
+}
+
+.search-users-container:hover {
+  background-color: var(--lighterGray);
+}
+
+.search-users-name {
+  color: #999;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.search-users-username a {
+  text-decoration: none;
+  color: black;
+  transition-duration: 0.3s;
+}
+
+.search-users-username a:hover {
+  color: var(--lightBlue);
 }

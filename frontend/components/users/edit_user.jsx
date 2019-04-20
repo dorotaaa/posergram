@@ -11,9 +11,13 @@ class EditUser extends React.Component {
             username: this.props.user.username || "",
             bio: this.props.user.bio || "",
             email: this.props.user.email || "",
+            photoUrl: this.props.user.photo,
+            photoFile: null,
+            disabledOrNot: true,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     handleSubmit(e) {
@@ -28,8 +32,24 @@ class EditUser extends React.Component {
 
     handleUpdate(field) {
         return e => this.setState({
-            [field]: e.target.value
+            [field]: e.target.value,
+            disabledOrNot: false
         })
+    }
+
+    handleFile(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+
+        fileReader.onloadend = () => {
+            this.setState({
+                disabledOrNot: false,
+                photoFile: file,
+                photoUrl: fileReader.result
+            });
+        };
+
+        if (file) fileReader.readAsDataURL(file);
     }
 
 
