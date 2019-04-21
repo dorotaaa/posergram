@@ -8,24 +8,19 @@ class NavBar extends React.Component {
         super(props);
         this.state = {
             modalOpen: false,
-            displayExplore: "hide-explore",
-            displaySite: "hide-sites",
+            displayUpload: "hide-upload",
+            showUploadForm: false,
             search: "",
             searchVisibility: "search-users-container",
         };
 
         this.handleModalClick = this.handleModalClick.bind(this);
         this.onModalClose = this.onModalClose.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleCompassClick = this.handleCompassClick.bind(this);
-        this.handleHeartClick = this.handleHeartClick.bind(this);
-        this.showExplore = this.showExplore.bind(this);
-        this.hideExplore = this.hideExplore.bind(this);
-        this.showSites = this.showSites.bind(this);
-        this.hideSites = this.hideSites.bind(this);
+        this.showUpload = this.showUpload.bind(this);
+        this.hideUpload = this.hideUpload.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.clearSearch = this.clearSearch.bind(this);
-        this.showUploadForm = this.showUploadForm.bind(this);
+        // this.showUploadForm = this.showUploadForm.bind(this);
     }
 
     componentDidMount() {
@@ -46,28 +41,12 @@ class NavBar extends React.Component {
         this.setState({ modalOpen: false });
     }
 
-    handleCompassClick(event) {
-        alert("This is under development!");
+    showUpload() {
+        this.setState({ displayUpload: "show-upload" });
     }
 
-    handleHeartClick(event) {
-        alert("This is under development!");
-    }
-
-    showExplore() {
-        this.setState({ displayExplore: "show-explore" });
-    }
-
-    hideExplore() {
-        this.setState({ displayExplore: "hide-explore" });
-    }
-
-    showSites() {
-        this.setState({ displaySite: "show-sites" });
-    }
-
-    hideSites() {
-        this.setState({ displaySite: "hide-sites" });
+    hideUpload() {
+        this.setState({ displayUpload: "hide-upload" });
     }
 
     handleSearchChange(event) {
@@ -78,15 +57,15 @@ class NavBar extends React.Component {
         this.setState({ search: "" });
     }
 
-    showUploadForm() {
-        this.setState({ showUploadForm: true })
-    }
+    // showUploadForm() {
+    //     this.setState({ showUploadForm: true })
+    // }
 
 
 
     render() {
 
-        if (this.state.showUploadForm) {
+        if (this.state.modalOpen) {
             this.uploadForm = <UploadPostContainer/>
         } else {
             this.uploadForm = null;
@@ -123,21 +102,17 @@ class NavBar extends React.Component {
             }
         });
 
-        let navbarHeart = "navbar-heart";
-
-        let activityOnPosts = "activity-on-posts";
-
         let navbar;
         if (this.props.currentUser) {
             navbar = (
                 <div id="navbar-cont" className="navbar-container">
                     <div id="navbar" className="navbar">
 
-                        <div className="navbar-polygram-logo">
+                        <div className="navbar-posergram-logo">
                             <a href="#">
                                 <i className="fab fa-instagram"></i>
                                 <div id="nav-div" className="navbar-divider"></div>
-                                <span id="nav-logo" className="navbar-logo">Posergram</span>
+                                <span id="nav-logo" className="navbar-logo">{<img src={window.logo}/>}</span>
                             </a>
                         </div>
 
@@ -149,33 +124,21 @@ class NavBar extends React.Component {
                             </div>
                         </div>
 
-                        <div className="navbar-icons">
-
-        
-                            <div onClick={this.handleModalClick} onMouseEnter={this.showUpload} onMouseLeave={this.hideUpload} >
-                            <img className="navbar-icons-plus" src={window.upload} alt="plus"/> 
-                                {/* <img className="navbar-icons-compass" src={window.discover} alt="compass" />
-                                <button className="heart" onClick={() => this.showUploadForm()}>
-                                </button> */}
-                                {this.uploadForm}
-                            </div>
-
-                            <div className="navbar-compass" onMouseEnter={this.showExplore} onMouseLeave={this.hideExplore} >
-                                <img className="navbar-icons-compass" src={window.discover} alt="compass" />
-                                <div>
-                                    <div className="compass-heart-spacer"></div>
-                                    <a className={this.state.displayExplore} href="http://www.google.com/" target="_blank">Discover</a>
-                                </div>
-                            </div>
-
-                            <div className={navbarHeart} onMouseEnter={this.showSites} onMouseLeave={this.hideSites} >
-                                <img className="navbar-icons-heart" src={window.heart} alt="heart" />
-                                <div>
-                                    <div className="compass-heart-spacer"></div>
-                                </div>
-                            </div>
-                            <div className="navbar-user"><Link to={`/users/${this.props.currentUser}`}>{<img className="navbar-icons-user" src={window.person} alt="user" />}</Link></div>
+                    <div className="navbar-icons">
+                        <div className="navbar-compass">
+                            <a href="http://www.google.com/">{<img className="navbar-icons-user" src={window.discover} alt="user" />}</a>
                         </div>
+
+                        <div className="navbar-heart" onMouseEnter={this.showUpload} onMouseLeave={this.hideUpload} >
+                            <img className="navbar-icons-heart" src={window.heart} alt="heart" />
+                        <div><div className="heart-spacer"></div>
+                                <button onClick={this.handleModalClick} target="_blank">Upload Post</button>
+                        </div>
+                        </div>
+                        <div className="navbar-user">
+                            <Link to={`/users/${this.props.currentUser}`}>{<img className="navbar-icons-user" src={window.person} alt="user" />}</Link>
+                        </div>
+                    </div>
 
                     </div>
                 </div>
@@ -192,14 +155,6 @@ class NavBar extends React.Component {
                 left: 0,
                 backgroundColor: "rgba(0, 0, 0, 0.5)",
                 zIndex: 999999,
-            },
-            content: {
-                margin: "auto",
-                padding: 0,
-                margin: 0,
-                border: 0,
-                borderRadius: "8px",
-                animation: "postFormModal 0.7s linear",
             }
         }
 
@@ -207,16 +162,7 @@ class NavBar extends React.Component {
             <div>
                 {navbar}
 
-                <div className="navbar-heart-pop-up" >
-                    <div className="triangle"></div>
-                    <div className={activityOnPosts}>
-                        <div>Heart</div>
-                        <div>Activity On Your Posts</div>
-                        <div>When someone likes or comments on one of your posts, you'll see it here.</div>
-                    </div>
-                </div>
-
-                <Modal isOpen={this.state.modalOpen} onRequestClose={this.onModalClose} style={modalStyle}>
+                <Modal className="openModal" isOpen={this.state.modalOpen} onRequestClose={this.onModalClose} style={modalStyle}>
                     {this.uploadForm}
                 </Modal>
             </div>

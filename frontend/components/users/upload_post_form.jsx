@@ -66,18 +66,17 @@ class PostForm extends React.Component {
     render() {
         return (
             <div tabIndex="0" ref={this.focusRef} className="upload-div">
-                <button className="upload-close-button" onClick={this.props.closeUploadForm}>x</button>
                 <div className="upload-form-div">
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <div className='upload-button'>
                            
-                            <div className="upload-button">
-                                <img className="upload-heart" src={window.upload} />
-                                <label className="upload-file-button" htmlFor="file">
-                                    <img className="upload-logo" src={window.upLogo} />
+                           
+                                
+                                <label className="upload-button" htmlFor="file">
+                                    <img className="upload-heart" src={window.upload} />
                                     <input className="inputfile" type="file" onChange={this.handleFile} />
                                 </label>
-                            </div>
+                           
 
                         </div>
                         <div>
