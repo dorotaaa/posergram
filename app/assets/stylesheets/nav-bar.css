@@ -554,9 +554,6 @@
   border-top: none;
 }
 
-.navbar-heart > div a:nth-child(3) {
-
-}
 
 .navbar-compass > div > a:hover, .navbar-heart > div > a:hover {
   color: var(--lightBlue);
