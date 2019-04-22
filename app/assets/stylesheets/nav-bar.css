@@ -335,6 +335,7 @@
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .navbar-compass div, .navbar-heart div {
@@ -350,6 +351,7 @@
 .navbar-heart div button {
   transition-duration: 0.3s;
   border: var(--lightGray) solid 1px;
+  float: left;
 }
 
 .navbar-heart > div button {
