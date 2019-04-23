@@ -1,7 +1,7 @@
 export const fetchPosts = (user_id) => {
 return $.ajax({
-        url: `api/users/${user_id}/posts`,
-        method: 'GET'
+        method: 'GET',
+        url: `api/users/${user_id}/posts`
     })
 };
 
@@ -15,8 +15,8 @@ export const fetchPost = (id) => (
 export const createPost = (post) => {
     return (
         $.ajax({
-            url: `api/users/${post.user_id}/posts`,
             method: 'POST',
+            url: `api/users/${post.user_id}/posts`,
             data: post,
             contentType: false,
             processData: false
@@ -27,7 +27,7 @@ export const createPost = (post) => {
 
 export const deletePost = (id) => (
     $.ajax({
-        url: `api/posts/${id}`,
-        method: 'DELETE'
+        method: 'DELETE',
+        url: `api/posts/${id}`
     })
 );
