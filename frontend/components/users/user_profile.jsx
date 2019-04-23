@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PostShowContainer from '../posts/post_show_container';
+import { timingSafeEqual } from 'crypto';
 
 class UserProfile extends React.Component{
     constructor(props){
@@ -22,8 +23,8 @@ class UserProfile extends React.Component{
     }
 
     componentDidMount(){
-        
         this.props.fetchUser(this.props.user.id);
+        this.props.fetchPosts(this.props.userId);
     }
 
     handleLogout() {
@@ -58,12 +59,13 @@ class UserProfile extends React.Component{
         ) : null;
 
 
-
+            debugger
         const posts = this.props.posts.map((post, idx) => {
     
             // <Link id="post-modal" to={`/users/${user.id}/posts/${post.id}`}>
             // </Link>
             return (
+                
                 <li onClick={this.openModal} data-id={post.id} key={idx} className="post-li"> 
                 
                     <img

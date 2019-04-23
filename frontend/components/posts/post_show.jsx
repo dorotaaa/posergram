@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import CommentContainer from '../comments/comment_container';
 
 
 class PostShow extends React.Component {
@@ -28,10 +29,6 @@ class PostShow extends React.Component {
     handleDelete() {
         this.props.deletePost(this.props.postId).then(
             () => this.props.closeModal());
-            // .then(() => {
-            //     this.fetchPosts(this.props.userId);
-                // this.props.history.push(`/users/${this .props.userId}`);
-            // });
     }
 
     renderDeleteNCancel(){
@@ -58,6 +55,32 @@ class PostShow extends React.Component {
         })
     }
 
+    comments(post) {
+        debugger
+        if (post.comments) {
+            return (
+                post.comments.map(comment => {
+                    debugger
+                    return (
+                        <div className='feed-comment-list'>
+                            <ul key={comment.id}>
+                                <li key={comment.id}>
+                                    <Link to={`/users/${comment.user_id}`}><span className='post-username2'>{comment.username} </span></Link>
+                                    <span className='post-caption-feed'>{comment.body}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    )
+
+                })
+            )
+        } else {
+            return (
+                <div></div>
+            )
+        }
+
+    }
     
     render(){
 
@@ -102,9 +125,22 @@ class PostShow extends React.Component {
                 </div>
             </div>
 
+                <div className='post-comments-container2'>
+                    <div className='post-comments-list2'>{this.comments(this.props.post)}
+                    </div>
+                    <div className='likes-comments-time'>
+                        <div className='post-show-time'>{this.props.post.created_at}</div>
+                        <CommentContainer postId={this.props.post.id} />
+                    </div>
+                </div>
+
+                
                 <div className="dcm">
                     {this.renderDeleteNCancel()}
                 </div>
+            
+
+
         </div>
         
     )}

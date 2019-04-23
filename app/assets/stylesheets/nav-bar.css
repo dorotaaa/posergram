@@ -109,7 +109,7 @@
 }
 
 
-/* ================== NAVBAR SEARCH BAR START ================== */
+
 .navbar-search-bar {
   margin: 0 240px;
   display: flex;
@@ -232,7 +232,7 @@
   background-color: white;
 }
 
-/* ================== NAVBAR ICONS ================== */
+
 .navbar-icons {
   display: flex;
   align-items: center;
@@ -250,8 +250,6 @@
 .navbar-icons > div {
   height: 26px;
   margin-left: 26px;
-
-  /* border: red solid 1px; */
 }
 
 .navbar-icons > div:first-child {

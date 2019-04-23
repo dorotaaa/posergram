@@ -5,6 +5,7 @@ import { fetchPost, deletePost } from '../../actions/post_actions';
 
 
 
+
 const mapStateToProps = (state, ownProps) => {
     let postId = ownProps.photoId;
     let user = ownProps.user.id;
@@ -20,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return ({
         fetchPost: (id) => dispatch(fetchPost(id)),
-        deletePost: (id) => dispatch(deletePost(id))
+        deletePost: (id) => dispatch(deletePost(id)),
     });
 };
 
