@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :posts, except: [:index, :create]
+    resources :comments, only: [:index, :create, :destroy]
+    resources :likes, only: [:create, :destroy]
+    resources :follows, only: [:create, :destroy]
   end
 end

@@ -35,11 +35,8 @@ class PostForm extends React.Component {
 
 
     componentDidMount(){
-        
         this.focusRef.current.focus()
     }
-
-
 
 
     handleUpdate(field) {

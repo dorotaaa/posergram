@@ -2,7 +2,7 @@ export const fetchComments = () => {
     debugger
     return $.ajax({
         method: "GET",
-        url: `api/comments`
+        url: `api/comments/`
     });
 };
 
@@ -11,7 +11,7 @@ export const createComment = (comment) => {
     return $.ajax({
         method: "POST",
         url: `api/comments`,
-        data: { comment }
+        data: {comment}
     });
 };
 

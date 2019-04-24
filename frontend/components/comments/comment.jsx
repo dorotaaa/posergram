@@ -4,7 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 class Comment extends React.Component {
     constructor(props) {
         super(props);
-        this.state = Object.assign({}, this.props.comment);
+        debugger
+        this.state = {
+            body: this.props.body,
+            user_id: this.props.userId,
+            post_id: this.props.postId,
+        }
+            
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -19,8 +25,7 @@ class Comment extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state)
-            .then(() => this.setState({ body: '' }));
+        this.props.createComment(this.state)
     }
 
 

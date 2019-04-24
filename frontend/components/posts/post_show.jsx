@@ -14,15 +14,17 @@ class PostShow extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
         this.renderDeleteNCancel = this.renderDeleteNCancel.bind(this);
         this.toggleRenderState = this.toggleRenderState.bind(this);
+        this.commentsList = this.commentsList.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPost(this.props.postId);
+        this.props.fetchComments(this.props.postId);
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.posts !== this.props.posts) {
-            this.props.fetchPosts(this.props.userId)
+        if ((prevProps.posts !== this.props.posts) || (prevProps.comments.length !== this.props.comments.length)){
+            this.props.fetchComments(this.props.postId)
         }
     }
 
@@ -55,11 +57,11 @@ class PostShow extends React.Component {
         })
     }
 
-    comments(post) {
+    commentsList() {
         debugger
-        if (post.comments) {
-            return (
-                post.comments.map(comment => {
+        if (this.props.comments !== []) {
+    
+             this.props.comments.map((comment, idx) => {
                     debugger
                     return (
                         <div className='feed-comment-list'>
@@ -73,10 +75,10 @@ class PostShow extends React.Component {
                     )
 
                 })
-            )
+        
         } else {
             return (
-                <div></div>
+                <div>hello</div>
             )
         }
 
@@ -121,20 +123,23 @@ class PostShow extends React.Component {
                         </h2>
                         <div className="caption-div">{this.props.post.caption}</div>
                     </div>
-                    </div>
-                </div>
-            </div>
 
-                <div className='post-comments-container2'>
-                    <div className='post-comments-list2'>{this.comments(this.props.post)}
+                       <div className='post-comments-container2'>
+                    <div className='post-comments-list2'>{this.commentsList()}
                     </div>
                     <div className='likes-comments-time'>
                         <div className='post-show-time'>{this.props.post.created_at}</div>
                         <CommentContainer postId={this.props.post.id} />
                     </div>
                 </div>
-
+                    </div>
                 
+                </div>
+            </div>
+
+             
+
+
                 <div className="dcm">
                     {this.renderDeleteNCancel()}
                 </div>

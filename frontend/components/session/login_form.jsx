@@ -49,15 +49,6 @@ class LoginForm extends React.Component {
         );
     }
 
-    // add(){
-    //     this.props.onButtonClick(this.state.value);
-    //     this.setState({username: ''})
-    // }
-
-    // onChange(e) {
-    //     this.setState({username: e.target.value})
-    // }
-
     render() {
         return (
             <>
@@ -65,7 +56,6 @@ class LoginForm extends React.Component {
 
                     <div className="logup-form">
                     <form>
-                           {/* onSubmit={this.handleSubmit} value={this.props.formType} */}
                         <h1 className="logup-instagram-logo">
                             <img id="pg-Logo" src={window.pgLogo} />
                         </h1>
