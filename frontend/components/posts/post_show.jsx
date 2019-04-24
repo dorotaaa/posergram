@@ -61,19 +61,20 @@ class PostShow extends React.Component {
     
     render(){
         debugger
-        if (this.props.comments !== []) {
+        let com;
+        if (this.props.comments.length >= 1) {
 
-       const com = this.props.comments.map((comment, idx) => {
+            com = this.props.comments.map((comment, idx) => {
                 debugger
                 return (
-                    <div className='feed-comment-list'>
-                        <ul key={comment.id}>
+
+
                             <li key={comment.id}>
                                 <Link to={`/users/${comment.user_id}`}><span className='post-username2'>{comment.username} </span></Link>
                                 <span className='post-caption-feed'>{comment.body}</span>
                             </li>
-                        </ul>
-                    </div>
+
+
                 )
 
             })
@@ -124,7 +125,12 @@ class PostShow extends React.Component {
                     </div>
 
                        <div className='post-comments-container2'>
-                    <div className='post-comments-list2'>{this.com}
+                    <div className='post-comments-list2'>
+                        <div className='feed-comment-list'>
+                            <ul >
+                                {com}
+                            </ul>
+                        </div>
                     </div>
                     <div className='likes-comments-time'>
                         <div className='post-show-time'>{this.props.post.created_at}</div>
