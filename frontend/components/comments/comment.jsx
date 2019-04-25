@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 class Comment extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             body: this.props.body,
             user_id: this.props.userId,
@@ -30,7 +29,6 @@ class Comment extends React.Component {
 
 
     render() {
-        debugger
         return (
             <div className='comment-creator-container'>
                 <div className='create-comment-wrapper'>

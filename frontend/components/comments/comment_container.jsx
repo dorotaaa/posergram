@@ -5,7 +5,6 @@ import React from 'react';
 import Comment from './comment';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let postId = ownProps["postId"]
     let userId = state.entities.users
     return ({

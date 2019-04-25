@@ -5,7 +5,7 @@ import { fetchUser } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
-    debugger
+    
     return ({
             caption: "",
             photo: "",
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    debugger
+    
     return ({
         fetchUser: id => dispatch(fetchUser(id)),
         createPost: (post) => dispatch(createPost(post)),

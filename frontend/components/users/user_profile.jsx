@@ -23,7 +23,7 @@ class UserProfile extends React.Component{
     }
 
     componentDidMount(){
-        debugger
+        
         this.props.fetchUser(this.props.user.id);
         this.props.fetchPosts(this.props.user.id);
     }
@@ -62,9 +62,9 @@ class UserProfile extends React.Component{
         
          
         
-            debugger
+            
         const posts = this.props.posts.map((post, idx) => {
-            debugger
+            
 
             return (
                 

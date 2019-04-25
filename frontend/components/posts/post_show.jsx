@@ -18,7 +18,7 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+    
         this.props.fetchPost(this.props.postId);
     }
 
@@ -60,12 +60,12 @@ class PostShow extends React.Component {
 
     
     render(){
-        debugger
+        
         let com;
         if (this.props.comments.length >= 1) { 
 
             com = this.props.comments.map((comment, idx) => {
-                debugger
+                
                 return (
                         <li key={comment.id}>
                             <Link to={`/users/${comment.user_id}`}><span className='post-username2'>{comment.username} </span></Link>
@@ -79,7 +79,7 @@ class PostShow extends React.Component {
             
         
 
-        debugger
+        
         return(
 
 
