@@ -21,7 +21,7 @@ end
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    @comment = @comment.photo
+    @comment = @comment.post
     render :show
   end
 

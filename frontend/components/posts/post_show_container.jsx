@@ -23,10 +23,11 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+    debugger
     return ({
         fetchPost: (id) => dispatch(fetchPost(id)),
         deletePost: (id) => dispatch(deletePost(id)),
-        fetchComments: (postId) => dispatch(fetchComments(postId))
+        fetchComments: (id) => dispatch(fetchComments(id))
     });
 };
 

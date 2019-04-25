@@ -20,8 +20,8 @@ const removePost = (postId) => ({
 });
 
 export const fetchPosts = (userId) => dispatch => (
-    APIUtil.fetchPosts(userId).then(payload =>
-        dispatch(receivePosts(payload)))
+    APIUtil.fetchPosts(userId).then(posts =>
+        dispatch(receivePosts(posts)))
 );
 
 export const fetchPost = id => dispatch => (

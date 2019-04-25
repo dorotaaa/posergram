@@ -6,6 +6,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render "api/users/show"
         else
+            debugger
             render json: ["Can't help you. Try again, maybe?"], status: 401
         end
     end

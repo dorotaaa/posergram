@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
     before_action :ensure_login
 
     def index
-        @posts = Post.all    
+        @posts = Post.where(user_id: params[:user_id])
         render :index
     end
 

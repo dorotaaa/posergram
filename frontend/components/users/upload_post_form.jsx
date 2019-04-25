@@ -19,7 +19,7 @@ class PostForm extends React.Component {
 
 
     handleSubmit(e) {
-        
+        debugger
         e.preventDefault();
         const formData = new FormData();
         formData.append("post[user_id]", this.state.user_id);
