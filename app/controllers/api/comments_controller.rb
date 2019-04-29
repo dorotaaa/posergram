@@ -1,8 +1,10 @@
 class Api::CommentsController < ApplicationController
+    before_action :ensure_login
+
   def index
     @comments = Comment.all
   end
-
+  
   def show
     @comment = Comment.find(params[:id])
     render :show

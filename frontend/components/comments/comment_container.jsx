@@ -5,12 +5,13 @@ import React from 'react';
 import Comment from './comment';
 
 const mapStateToProps = (state, ownProps) => {
-    let postId = ownProps["postId"]
-    let userId = state.entities.users
+    debugger
+    let postId = state.entities.posts[ownProps.postId];
+    let currentUser = state.session.currentUser;
     return ({
         body: "",
         postId: postId,
-        userId: userId,
+        userId: currentUser,
     });
 }
 

@@ -18,13 +18,13 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-    
         this.props.fetchPost(this.props.postId);
+        this.props.fetchComments();
     }
 
     componentDidUpdate(prevProps) {
         if ((prevProps.posts !== this.props.posts) || (prevProps.comments.length !== this.props.comments.length)){
-            this.props.fetchComments(this.props.postId)
+            this.props.fetchComments()
         }
     }
 
@@ -60,26 +60,8 @@ class PostShow extends React.Component {
 
     
     render(){
-        
-        let com;
-        if (this.props.comments.length >= 1) { 
-
-            com = this.props.comments.map((comment, idx) => {
-                
-                return (
-                        <li key={comment.id}>
-                            <Link to={`/users/${comment.user_id}`}><span className='post-username2'>{comment.username} </span></Link>
-                            <span className='post-caption-feed'>{comment.body}</span>
-                        </li>
-                )
-
-            })
-        } else {
-            
-            
-        
-
-        
+    
+            debugger
         return(
 
 
@@ -122,7 +104,6 @@ class PostShow extends React.Component {
                     <div className='post-comments-list2'>
                         <div className='feed-comment-list'>
                             <ul >
-                                {com}
                             </ul>
                         </div>
                     </div>
@@ -149,6 +130,6 @@ class PostShow extends React.Component {
         
     )}
 }
-}
+
 export default withRouter(PostShow);
 

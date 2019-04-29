@@ -7,10 +7,9 @@ class Comment extends React.Component {
         this.state = {
             body: this.props.body,
             user_id: this.props.userId,
-            post_id: this.props.postId,
+            post_id: this.props.postId
         }
             
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
 
@@ -29,6 +28,7 @@ class Comment extends React.Component {
 
 
     render() {
+        
         return (
             <div className='comment-creator-container'>
                 <div className='create-comment-wrapper'>

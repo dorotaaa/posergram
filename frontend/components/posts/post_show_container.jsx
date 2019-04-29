@@ -8,13 +8,15 @@ import { fetchComments } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     let postId = ownProps.photoId;
+    let post = state.entities.posts[postId];
     let user = ownProps.user.id;
     let username = state.entities.users[user].username;
     let comments = Object.values(state.entities.comments)
     return ({
-        postId: postId,
-        post: state.entities.posts[postId] || {},
+        post: post || {},
+        postId: post.id,
         userId: user,
         username: username,
         comments: comments || [],
@@ -25,7 +27,7 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         fetchPost: (id) => dispatch(fetchPost(id)),
         deletePost: (id) => dispatch(deletePost(id)),
-        fetchComments: (id) => dispatch(fetchComments(id))
+        fetchComments: () => dispatch(fetchComments()),
     });
 };
 

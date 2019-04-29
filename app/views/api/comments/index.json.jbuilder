@@ -1,5 +1,5 @@
 @comments.each do |comment|
-    json.set! comment.id do 
-        json.extract! comment, :id, :body, :user_id, :post_id
-    end
+  json.set! comment.id do
+    json.extract! comment, :id, :body, :post_id, :user_id
+  end
 end
