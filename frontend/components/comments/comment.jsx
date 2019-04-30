@@ -24,7 +24,7 @@ class Comment extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createComment(this.state)
+        this.props.createComment({comment: this.state})
     }
 
 
