@@ -9,8 +9,7 @@ import { fetchComments } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
     debugger
-    let postId = ownProps.photoId;
-    let post = state.entities.posts[postId];
+    let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
     let username = state.entities.users[user].username;
     let comments = Object.values(state.entities.comments)
@@ -27,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         fetchPost: (id) => dispatch(fetchPost(id)),
         deletePost: (id) => dispatch(deletePost(id)),
-        fetchComments: () => dispatch(fetchComments()),
+        fetchComments: (postId) => dispatch(fetchComments(postId)),
     });
 };
 

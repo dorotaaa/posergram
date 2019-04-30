@@ -6,11 +6,11 @@ import Comment from './comment';
 
 const mapStateToProps = (state, ownProps) => {
     debugger
-    let postId = state.entities.posts[ownProps.postId];
+    let post = state.entities.posts[ownProps.postId];
     let currentUser = state.session.currentUser;
     return ({
         body: "",
-        postId: postId,
+        postId: post.id,
         userId: currentUser,
     });
 }

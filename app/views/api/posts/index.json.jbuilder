@@ -4,12 +4,15 @@
         if post.photo.attached? 
                 json.photo url_for(post.photo)
         end
-    end
-
-    json.comments do
-        post.comments.each do |comment|
-            json.set! comment.id do
-                json.extract! comment, :id, :body, :user_id, :post_id
+    json.username post.user.username
+   
+        json.comments do
+            json.array!(post.comments) do |comment|
+            json.id comment.id
+                json.username comment.user.username
+                json.body comment.body
+                json.post_id comment.post_id
+                json.user_id comment.user_id
             end
         end
     end

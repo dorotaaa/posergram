@@ -4,7 +4,7 @@ class Api::CommentsController < ApplicationController
   def index
     @comments = Comment.all
   end
-  
+
   def show
     @comment = Comment.find(params[:id])
     render :show
@@ -22,6 +22,7 @@ end
 
   def destroy
     @comment = Comment.find(params[:id])
+    @comment.user_id = current_user.id
     @comment.destroy
     @comment = @comment.post
     render :show
@@ -29,6 +30,6 @@ end
 
   private
   def comment_params
-    params.require(:comment).permit(:post_id, :user_id, :body)
+    params.require(:comment).permit(:body, :user_id, :post_id)
   end
 end

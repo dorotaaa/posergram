@@ -1,6 +1,6 @@
 import { RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_COMMENTS, REMOVE_COMMENT } from '../actions/comment_actions';
 import { merge}  from 'lodash';
 
 const postsReducer = (state = {}, action) => {

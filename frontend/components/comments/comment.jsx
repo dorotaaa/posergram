@@ -4,12 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 class Comment extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {
             body: this.props.body,
             user_id: this.props.userId,
-            post_id: this.props.postId
+            post_id: this.props.postId,
         }
-            
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
 
