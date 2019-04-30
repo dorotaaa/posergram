@@ -5,7 +5,7 @@
                 json.photo url_for(post.photo)
         end
     json.username post.user.username
-   
+
         json.comments do
             json.array!(post.comments) do |comment|
             json.id comment.id
