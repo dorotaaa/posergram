@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     # debugger
-    @comments = Comment.where(user_id: params[:user_id], post_id: params[:post_id])
+    @comments = Comment.find_by(params[:user_id][:user_id], params[:post_id][:post_id])
   end
 
   def show

@@ -61,15 +61,24 @@ class PostShow extends React.Component {
 
     
     render(){
+        debugger
+        let commsArr = [];
 
-        const comms = this.props.comments.map((comment, idx) => {
+        for (let i = 0; i < this.props.commentIds.length; i++) {
+           for (let j = 0; j < this.props.comments.length; j++) {
+               if (this.props.commentIds[i] === this.props.comments[j].id) {
+                   commsArr.push(this.props.comments[j])
+               }
+           }
+        }
+        debugger
+        const comms = commsArr.map((comment, idx) => {
 
             return (
                 <div key={idx}>
                     <div className="comment">{comment.body} </div>
                 </div>
             )
-
         })
 
         return(

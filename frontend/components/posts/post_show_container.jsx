@@ -13,6 +13,8 @@ const mapStateToProps = (state, ownProps) => {
     let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
     let username = state.entities.users[user].username;
+
+    let commentIds = state.entities.posts[ownProps.photoId].comment_ids
     let comments = Object.values(state.entities.comments)
     // let comments = Object.values(state.entities.comments)
     return ({
@@ -20,6 +22,7 @@ const mapStateToProps = (state, ownProps) => {
         postId: post.id,
         userId: user,
         username: username,
+        commentIds: commentIds,
         comments: comments || [],
     });
 }
