@@ -7,7 +7,7 @@ import UserProfile from './user_profile';
 
 
 const mapStateToProps = (state, ownProps) => {
-    
+    debugger
     const currentUser = state.session.currentUser
     const user = state.entities.users[ownProps.match.params.userId];
     let posts = Object.values(state.entities.posts)
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => {
     return ({
         fetchUser: id => dispatch(fetchUser(id)),
         logout: () => dispatch(logout()),
-        fetchPosts: (userId) => dispatch(fetchPosts(userId))
+        // fetchPosts: (userId) => dispatch(fetchPosts(userId))
     })
 }
 

@@ -6,14 +6,14 @@
         end
     json.username post.user.username
 
-        json.comments do
-            json.array!(post.comments) do |comment|
-            json.id comment.id
-                json.username comment.user.username
-                json.body comment.body
-                json.post_id comment.post_id
-                json.user_id comment.user_id
-            end
-        end
+        # json.comments do
+        #     json.array!(post.comments) do |comment|
+        #     json.id comment.id
+        #         json.username comment.user.username
+        #         json.body comment.body
+        #         json.post_id comment.post_id
+        #         json.user_id comment.user_id
+        #     end
+        # end
     end
 end

@@ -4,6 +4,7 @@ import SignUpForm from './signup_form';
 import withRouter from 'react-router-dom';
 
 const mapStateToProps = state => {
+    debugger
     return {
         errors: state.errors.session,
         formType: 'Sign Up',

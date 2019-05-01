@@ -18,14 +18,14 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPost(this.props.postId);
-        this.props.fetchComments();
+        this.props.fetchUser(this.props.userId);
+        
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.comments.length !== this.props.comments.length){
-            this.props.fetchPost(this.props.postId);
-            this.props.fetchComments();
+            // this.props.fetchPost(this.props.postId);
+            this.props.fetchUser(this.props.userId);
         }
     }
 
@@ -62,11 +62,11 @@ class PostShow extends React.Component {
     
     render(){
 
-        const comms = this.props.comments.map((comment) => {
+        const comms = this.props.comments.map((comment, idx) => {
 
             return (
-                <div>
-                    <div className="comment">{comment.body}</div>
+                <div key={idx}>
+                    <div className="comment">{comment.body} </div>
                 </div>
             )
 
