@@ -23,6 +23,7 @@ const mapDispatchToProps = dispatch => {
         fetchUser: id => dispatch(fetchUser(id)),
         logout: () => dispatch(logout()),
         // fetchPosts: (userId) => dispatch(fetchPosts(userId))
+        
     })
 }
 

@@ -24,6 +24,7 @@ class UserProfile extends React.Component{
 
     componentDidMount(){
         this.props.fetchUser(this.props.user.id);
+        // this.props.fetchUsers();
         // this.props.fetchPosts(this.props.user.id);
     }
 

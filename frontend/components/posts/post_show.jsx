@@ -18,8 +18,7 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.userId);
-        
+        this.props.fetchUsers();
     }
 
     componentDidUpdate(prevProps) {
@@ -75,9 +74,9 @@ class PostShow extends React.Component {
         const comms = commsArr.map((comment, idx) => {
 
             return (
-                <div key={idx}>
+                <li key={idx}>
                     <div className="comment">{comment.body} </div>
-                </div>
+                </li>
             )
         })
 
@@ -128,12 +127,16 @@ class PostShow extends React.Component {
                     </div>
                     <div className='likes-comments-time'>
                         <div className='post-show-time'>{this.props.post.created_at}</div>
-                        <CommentContainer postId={this.props.post.id} />
+                        <CommentContainer postId={this.props.post.id} username={this.props.currentUser}/>
                     </div>
                 </div>
-                {comms}
-                    </div>
 
+                    
+                    <ul className="comment-div">
+                        {comms}
+                    </ul>
+
+                    </div>
                 </div>
             </div>
 

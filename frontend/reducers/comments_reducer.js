@@ -1,7 +1,7 @@
 import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import { merge } from 'lodash';
 import { REMOVE_POST } from '../actions/post_actions';
-import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER, RECEIVE_USERS} from '../actions/user_actions';
 
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);

@@ -16,6 +16,10 @@ class Comment extends React.Component {
 
     }
 
+    // componentDidMount(){
+    //     this.props.fetchUsers()
+    // }
+
     handleUpdate(field) {
         return e => this.setState({
             [field]: e.target.value
@@ -38,9 +42,9 @@ class Comment extends React.Component {
         return (
             <div className='comment-creator-container'>
                 <div className='create-comment-wrapper'>
-                    <form onSubmit={this.handleSubmit}>
+                    <form className="comment-form" onSubmit={this.handleSubmit}>
                         <input type='text' className="create-post-comment" placeholder="Add a comment..." value={this.state.body} onChange={this.handleUpdate("body")} />
-                        <input className='hidden-submit' type="submit" value="Submit" />
+                        <input className='hidden-submit' type="submit" value="Post" />
                     </form>
                 </div>
             </div>
