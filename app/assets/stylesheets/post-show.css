@@ -180,12 +180,16 @@
     padding: 10px 0;
 } */
 
+.comment-form {
+    padding: 10px
+}
+
 .create-comment-wrapper form {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-top: 15px;
+    padding: 10px;
 }
 
 .create-post-comment {

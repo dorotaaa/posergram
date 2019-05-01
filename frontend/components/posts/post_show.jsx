@@ -17,9 +17,9 @@ class PostShow extends React.Component {
     
     }
 
-    componentDidMount() {
-        this.props.fetchUsers();
-    }
+    // componentDidMount() {
+    //     this.props.fetchUsers();
+    // }
 
     componentDidUpdate(prevProps) {
         if (prevProps.comments.length !== this.props.comments.length){
