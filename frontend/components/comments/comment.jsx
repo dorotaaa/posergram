@@ -5,7 +5,7 @@ class Comment extends React.Component {
     constructor(props) {
         super(props);
         
-        this.state = {
+        this.state = { 
             body: this.props.body,
             user_id: this.props.userId,
             post_id: this.props.postId,
@@ -25,6 +25,11 @@ class Comment extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment({comment: this.state})
+        this.setState({
+            body: "",
+            user_id: this.props.userId,
+            post_id: this.props.postId,
+        })
     }
 
 

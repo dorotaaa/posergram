@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
     let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
     let username = state.entities.users[user].username;
-    let comments = Object.values(state.entities.posts[post.id].comments)
+    // let comments = Object.values(state.entities.posts[post.id].comments)
+    let comments = Object.values(state.entities.comments)
     return ({
         post: post || {},
         postId: post.id,

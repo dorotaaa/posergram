@@ -72,9 +72,6 @@ class PostShow extends React.Component {
 
         })
 
-
-
-            
         return(
 
 
