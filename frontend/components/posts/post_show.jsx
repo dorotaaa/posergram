@@ -122,25 +122,22 @@ class PostShow extends React.Component {
                     <div className='post-comments-list2'>
                         <div className='feed-comment-list'>
                             <ul >
+                            {comms}
                             </ul>
                         </div>
                     </div>
+                </div>
+             
+
                     <div className='likes-comments-time'>
-                        <div className='post-show-time'>{this.props.post.created_at}</div>
+                    {/* <div className='post-show-time'>{this.props.post.created_at}</div> */}
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser}/>
                     </div>
-                </div>
-
-                    
-                    <ul className="comment-div">
-                        {comms}
-                    </ul>
 
                     </div>
                 </div>
             </div>
 
-             
 
 
                 <div className="dcm">

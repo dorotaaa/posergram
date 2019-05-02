@@ -2,7 +2,7 @@
   z-index: 20;
   position: relative;
   background-color: white;
-  border-bottom: var(--lightGray) solid 1px;
+  border-bottom: 2px solid #efefef;
   height: 77px;
   transition-duration: 0.3s;
   transition-delay: 0.2s;
