@@ -36,7 +36,7 @@ export const fetchComments = () => (dispatch) => {
 export const createComment = comment => dispatch => {
     return APIUtil.createComment(comment)
         .then((comment) => {
-            return dispatch(receiveComments(comment));
+            return dispatch(receiveComment(comment));
         });
 };
 

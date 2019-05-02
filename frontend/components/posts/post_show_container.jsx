@@ -25,6 +25,7 @@ const mapStateToProps = (state, ownProps) => {
         commentIds: commentIds,
         comments: comments || [],
         currentUser: currentUser,
+        closeModal: ownProps.closeModal,
     });
 }
 

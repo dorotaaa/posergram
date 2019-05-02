@@ -18,9 +18,9 @@ class PostShow extends React.Component {
     }
 
 
-    // componentDidMount() {
-    //     this.props.fetchUser(this.props.userId);
-    // }
+    componentDidMount() {
+        this.props.fetchUser(this.props.userId);
+    }
 
     componentDidUpdate(prevProps) {
         if ((prevProps.comments.length !== this.props.comments.length)){
@@ -75,8 +75,9 @@ class PostShow extends React.Component {
         const comms = commsArr.map((comment, idx) => {
 
             return (
-                <li key={idx}>
-                    <div className="comment">{this.props.username}{comment.body} </div>
+                <li className="comment-li" key={idx}>
+                    <div className="comment-username">{this.props.username}</div>
+                    <div className="comment">{comment.body} </div>
                 </li>
             )
         })

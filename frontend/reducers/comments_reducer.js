@@ -19,6 +19,7 @@ const commentsReducer = (state = {}, action) => {
             return newState; 
         case REMOVE_POST:
             newState = merge({}, state);
+            newState.filter
             delete newState[action.postId];
             return newState; 
         default:
