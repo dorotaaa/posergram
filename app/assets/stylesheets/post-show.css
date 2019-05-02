@@ -127,10 +127,11 @@
 
 
 .delete-modal {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .dcm-1 {
@@ -146,22 +147,34 @@
     width: 100%;
 }
 
-.dcm-1 button {
-    width: 400px;
+.delete-butt button {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    background-color: #fff;
-    border-bottom: black;
-    text-align: center;
-    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    width: 400px;
     height: 48px;
-    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #EFEFEF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.delete-butt {
-    border-bottom: none;
+.cancel-butt button {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    text-decoration: none;
+    color: black;
+    width: 400px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
 
 .dcm {
    height: 100%;
