@@ -12,10 +12,10 @@ const receiveComments = (comments) => {
     };
 };
 
-const receiveComment = (comment) => {
+const receiveComment = (payload) => {
     return {
         type: RECEIVE_COMMENT,
-        comment
+        payload
     };
 };
 
@@ -35,8 +35,8 @@ export const fetchComments = () => (dispatch) => {
 
 export const createComment = comment => dispatch => {
     return APIUtil.createComment(comment)
-        .then((comment) => {
-            return dispatch(receiveComment(comment));
+        .then((payload) => {
+            return dispatch(receiveComment(payload));
         });
 };
 

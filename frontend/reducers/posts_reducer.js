@@ -2,6 +2,7 @@ import { RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_action
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { merge}  from 'lodash';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -10,7 +11,8 @@ const postsReducer = (state = {}, action) => {
         case RECEIVE_POSTS:
             return merge({}, state, action.posts);
         case RECEIVE_POST:
-            return merge({}, state, { [action.post.id]: action.post });
+        case RECEIVE_COMMENT:
+            return merge({}, state, action.payload.posts);
         case REMOVE_POST:
             let newState = merge({}, state);
             delete newState[action.postId];
