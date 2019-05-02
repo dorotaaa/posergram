@@ -17,12 +17,13 @@ class PostShow extends React.Component {
     
     }
 
+
     // componentDidMount() {
-    //     this.props.fetchUsers();
+    //     this.props.fetchUser(this.props.userId);
     // }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.comments.length !== this.props.comments.length){
+        if ((prevProps.comments.length !== this.props.comments.length)){
             // this.props.fetchPost(this.props.postId);
             this.props.fetchUser(this.props.userId);
         }

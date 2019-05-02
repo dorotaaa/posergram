@@ -18,14 +18,14 @@ class UserProfile extends React.Component{
 
     componentDidUpdate(prevProps) {
         if ((prevProps.user.id !== this.props.user.id) || (prevProps.posts.length !== this.props.posts.length)){
-            this.props.fetchUser(this.props.user.id)
+            this.props.fetchPosts(this.props.user.id);
         }
     }
 
     componentDidMount(){
         this.props.fetchUser(this.props.user.id);
         // this.props.fetchUsers();
-        // this.props.fetchPosts(this.props.user.id);
+        this.props.fetchPosts(this.props.user.id);
     }
 
     handleLogout() {

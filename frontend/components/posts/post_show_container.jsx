@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PostShow from './post_show';
 import { fetchUser, fetchUsers} from '../../actions/user_actions'
+import { fetchPost, deletePost } from '../../actions/post_actions';
 
 
 
@@ -13,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     let user = ownProps.user.id;
     let username = state.entities.users[user].username;
     let currentUser = state.entities.users[state.session.currentUser].username;
-    let commentIds = state.entities.posts[ownProps.photoId].comment_ids
+    let commentIds = state.entities.posts[ownProps.photoId].comment_ids;
     let comments = Object.values(state.entities.comments)
     // let comments = Object.values(state.entities.comments)
     return ({
@@ -31,6 +32,7 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         fetchUser: (id) => dispatch(fetchUser(id)),
         fetchUsers: () => dispatch(fetchUsers()),
+        deletePost: (id) => dispatch(deletePost(id)),
     });
 };
 

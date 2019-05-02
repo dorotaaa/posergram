@@ -14,11 +14,13 @@ const commentsReducer = (state = {}, action) => {
         case RECEIVE_USER:
             return merge({}, state, action.payload.comments)
         case REMOVE_COMMENT:
-            const newState = merge({}, state);
+            let newState = merge({}, state);
             delete newState[action.commentId];
             return newState; 
         case REMOVE_POST:
-            return {}; 
+            newState = merge({}, state);
+            delete newState[action.postId];
+            return newState; 
         default:
             return state;
     }
