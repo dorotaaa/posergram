@@ -27,6 +27,7 @@
     min-height: 240px;
     justify-content: center;
     flex-direction: column;
+
 }
 
 .upload-close-button {
@@ -41,6 +42,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
 }
 
 .upload-button {
@@ -92,7 +96,8 @@
     cursor: pointer;
     height: 17px;
     width: inherit;
-    color: #262626;
+    color:  #3897f0;
+    font-weight: 600;
     justify-content: center;
     
 }
@@ -103,10 +108,11 @@
     justify-content: center;
 }
 
-.caption-input input {
-   text-align: start;
-   font-size: 11px;
+input.photo-caption::placeholder {
+   font-size: 14px;
+   bottom: 0px;
 }
+
 .photo-caption {
     height: 75px;
     width: 200px;
