@@ -76,7 +76,7 @@ class PostShow extends React.Component {
 
             return (
                 <li key={idx}>
-                    <div className="comment">{comment.body} </div>
+                    <div className="comment">{this.props.username}{comment.body} </div>
                 </li>
             )
         })
