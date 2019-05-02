@@ -19,14 +19,16 @@ class UserProfile extends React.Component{
 
     componentDidUpdate(prevProps) {
         if ((prevProps.user.id !== this.props.user.id) || (prevProps.posts.length !== this.props.posts.length)){
-            this.props.fetchUser(this.props.user.id);
+            // this.props.fetchUser(this.props.user.id);
+            // this.setState({showModal: false, showId: 0});
+            this.props.fetchPosts(this.props.currentUserId);
         }
     }
 
     componentDidMount(){
         this.props.fetchUser(this.props.user.id);
         // this.props.fetchUsers();
-        // this.props.fetchPosts(this.props.user.id);
+        
     }
 
     handleLogout() {
@@ -57,7 +59,7 @@ class UserProfile extends React.Component{
        debugger
 
         const modal = this.state.showModal ? (
-            <PostShowContainer closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId}/>
+            <PostShowContainer profile={this} closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId}/>
         ) : null;
 
         debugger

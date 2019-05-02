@@ -30,8 +30,11 @@ class PostShow extends React.Component {
     }
 
     handleDelete() {
-        this.props.deletePost(this.props.postId).then(
-            () => this.props.closeModal());
+        this.props.profile.closeModal();
+        this.props.deletePost(this.props.postId);
+        
+                // this.props.history.push()
+            
     }
 
     renderDeleteNCancel(){
