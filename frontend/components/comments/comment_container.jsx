@@ -6,7 +6,7 @@ import { fetchUsers } from '../../actions/user_actions'
 import Comment from './comment';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     let post = state.entities.posts[ownProps.postId];
     let currentUser = state.session.currentUser;
     // let commenter = ownProps.username;

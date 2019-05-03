@@ -5,7 +5,7 @@ import PostShowContainer from '../posts/post_show_container';
 
 class UserProfile extends React.Component{
     constructor(props){
-        debugger
+        
         super(props);
 
         this.state = {
@@ -56,13 +56,12 @@ class UserProfile extends React.Component{
             user = this.props.user;
         }
 
-       debugger
-
+     
         const modal = this.state.showModal ? (
             <PostShowContainer profile={this} closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId}/>
         ) : null;
 
-        debugger
+        
          
         
             

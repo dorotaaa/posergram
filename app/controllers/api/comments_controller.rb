@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
     before_action :ensure_login
 
   def index
-    # debugger
+    
     @comments = Comment.find_by(params[:post_id][:post_id])
   end
 

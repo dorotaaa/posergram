@@ -6,7 +6,7 @@ import { RECEIVE_POST } from '../actions/post_actions';
 
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger
+   
     switch (action.type) {
         case RECEIVE_COMMENTS:
             return merge({}, action.comments);

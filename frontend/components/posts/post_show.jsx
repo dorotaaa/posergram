@@ -64,7 +64,7 @@ class PostShow extends React.Component {
 
     
     render(){
-        debugger
+       
         let commsArr = [];
 
         for (let i = 0; i < this.props.commentIds.length; i++) {
@@ -74,7 +74,7 @@ class PostShow extends React.Component {
                }
            }
         }
-        debugger
+        
         const comms = commsArr.map((comment, idx) => {
 
             return (
