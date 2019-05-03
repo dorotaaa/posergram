@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { updatePost } from '../../actions/post_actions';
-import EditPostCaption from './edit_post_caption';
+import EditPost from './edit_post_caption';
 
 const mapStateToProps = (state, ownProps) => {
     debugger
     return ({
         user: state.entities.users[state.session.currentUser],
-        caption
+        post: state.entities.posts[ownProps.postId],
     })
 };
 
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => {
     })
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditPostCaption);
+export default connect(mapStateToProps, mapDispatchToProps)(EditPost);

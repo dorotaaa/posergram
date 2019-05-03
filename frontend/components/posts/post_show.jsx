@@ -83,7 +83,7 @@ class PostShow extends React.Component {
     render(){
 
         if (this.state.modalOpen) {
-            this.uploadForm = <EditPostCaptionContainer />
+            this.uploadForm = <EditPostCaptionContainer postId={this.props.postId}/>
         } else {
             this.uploadForm = null;
         }

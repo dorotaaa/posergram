@@ -1,13 +1,15 @@
 import { withRouter } from 'react-router-dom';
 import React from 'react';
 
-class EditPostCaption extends React.Component {
+class EditPost extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            id: this.props.user.id || "",
+            id: this.props.post.id,
+            user_id: this.props.user.id,
             caption: this.props.post.caption || "",
+            photo: this.props.post.photo
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,9 +19,7 @@ class EditPostCaption extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updatePost(
-            { post: this.state,
-                id: this.state.id
-            })
+            { post: this.state })
     }
         
 
@@ -40,10 +40,10 @@ class EditPostCaption extends React.Component {
                         value={this.state.caption}
                         onChange={this.handleUpdate("caption")} />
                 </div>
-                <button className="submitButton" onClick={this.handleSubmit}>Submit</button>
+                <button className="submitButton" onClick={this.handleSubmit}>Update</button>
             </div>
 
     )}
 }
 
-export default withRouter(EditPostCaption);
+export default withRouter(EditPost);
