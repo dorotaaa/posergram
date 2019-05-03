@@ -4,8 +4,8 @@ import { createPost } from '../../actions/post_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
-    
+const mapStateToProps = (state, ownProps) => {
+    debugger
     return ({
             caption: "",
             photo: "",

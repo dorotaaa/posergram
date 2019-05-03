@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CommentContainer from '../comments/comment_container';
+import EditPostCaptionContainer from './edit_post_caption_container';
+import Modal from 'react-modal';
 
 
 class PostShow extends React.Component {
@@ -9,12 +11,15 @@ class PostShow extends React.Component {
 
         this.state = {
             renderDeleteNCancel: false,
+            modalOpen: false,
+            showUploadForm: false,
         }
 
         this.handleDelete = this.handleDelete.bind(this);
         this.renderDeleteNCancel = this.renderDeleteNCancel.bind(this);
         this.toggleRenderState = this.toggleRenderState.bind(this);
-    
+        this.handleModalClick = this.handleModalClick.bind(this);
+        this.onModalClose = this.onModalClose.bind(this);
     }
 
 
@@ -36,7 +41,16 @@ class PostShow extends React.Component {
                 // this.props.history.push()
             
     }
-
+  
+    handleModalClick() {
+        this.setState({ modalOpen: true });
+    }
+    
+    onModalClose() {
+        this.setState({ modalOpen: false });
+    }
+    
+    
     renderDeleteNCancel(){
         let deleteModal ;
             if (this.state.renderDeleteNCancel) {
@@ -44,7 +58,8 @@ class PostShow extends React.Component {
                 <div className="dcm-1">
                ( <div className="delete-modal">
                     <div className="butts">
-                        <div className="delete-butt"><button onClick={this.handleDelete}>Delete Post</button></div>
+                        <div className="delete-butt"><button onClick={this.handleModalClick}>Edit Caption</button></div>
+                        <div className="cancel-butt"><button onClick={this.handleDelete}>Delete Post</button></div>
                         <div className="cancel-butt"><button onClick={this.toggleRenderState}>Cancel</button></div>
                     </div>
                 </div>)
@@ -56,14 +71,22 @@ class PostShow extends React.Component {
     }
 
     toggleRenderState(){
-        this.setState({
-            renderDeleteNCancel: (this.state.renderDeleteNCancel ? false : true)
-        })
+        if (this.props.username === this.props.currentUser) {
+            this.setState({
+                renderDeleteNCancel: (this.state.renderDeleteNCancel ? false : true)
+            })
+        } else {
+            this.setState({ renderDeleteNCancel: false })
+        }
     }
 
-
-    
     render(){
+
+        if (this.state.modalOpen) {
+            this.uploadForm = <EditPostCaptionContainer />
+        } else {
+            this.uploadForm = null;
+        }
        
         let commsArr = [];
 
@@ -84,6 +107,18 @@ class PostShow extends React.Component {
                 </li>
             )
         })
+
+        let modalStyle = {
+            overlay: {
+                position: "fixed",
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                zIndex: 999999,
+            }
+        }
 
         return(
 
@@ -144,14 +179,17 @@ class PostShow extends React.Component {
             </div>
 
 
-
                 <div className="dcm">
                     {this.renderDeleteNCancel()}
+                <div>
+            <Modal className="openModal" isOpen={this.state.modalOpen} onRequestClose={this.onModalClose} style={modalStyle}>
+                {this.uploadForm}
+            </Modal>
                 </div>
-            
-
-
+                </div>
         </div>
+
+
         
     )}
 }

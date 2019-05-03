@@ -5,6 +5,7 @@ import { merge}  from 'lodash';
 import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const postsReducer = (state = {}, action) => {
+    debugger
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_POSTS:

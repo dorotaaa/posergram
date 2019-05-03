@@ -1,4 +1,4 @@
-import * as APIUtil from "../util/comments_api_util";
+import * as CommentAPIUtil from "../util/comments_api_util";
 
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
@@ -27,21 +27,21 @@ const removeComment = (commentId) => {
 };
 
 export const fetchComments = () => (dispatch) => {
-    return APIUtil.fetchComments().
+    return CommentAPIUtil.fetchComments().
         then((comments) => {
             return dispatch(receiveComments(comments));
         });
 };
 
 export const createComment = comment => dispatch => {
-    return APIUtil.createComment(comment)
+    return CommentAPIUtil.createComment(comment)
         .then((payload) => {
             return dispatch(receiveComment(payload));
         });
 };
 
 export const deleteComment = id => (dispatch) => {
-    return APIUtil.deleteComment(id)
+    return CommentAPIUtil.deleteComment(id)
         .then((commentId) => {
             return dispatch(removeComment(id));
         });

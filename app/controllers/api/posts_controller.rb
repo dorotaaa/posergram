@@ -19,10 +19,20 @@ class Api::PostsController < ApplicationController
     def show 
         @post = Post.find(params[:id])
         render :show
-    end 
+    end
+
+    def update
+        @post = Post.find(params[:id])
+        if @post && @post.update(post_params)
+            render :show
+        else
+            render json: @post.errors.full_messages, status: 422
+        end
+    end
 
     def destroy
         @post = Post.find(params[:id])
+        @post.user_id = current_user.id
         if @post
             @post.destroy! 
         render :show
