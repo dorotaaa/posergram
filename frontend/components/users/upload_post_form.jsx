@@ -13,7 +13,6 @@ class PostForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleFile = this.handleFile.bind(this);
-
         this.focusRef = React.createRef();
     }
 

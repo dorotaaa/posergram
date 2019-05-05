@@ -18,8 +18,8 @@ class EditPost extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updatePost(
-            { post: this.state })
+        this.props.updatePost({ post: this.state })
+        .then(() => this.props.history.push(`/users/${this.props.user_id}`))
     }
         
 

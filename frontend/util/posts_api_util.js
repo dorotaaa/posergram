@@ -24,12 +24,12 @@ export const createPost = (post) => {
     );
 };
 
-export const updatePost = ({post,id}) => {
+export const updatePost = ({post}) => {
     debugger
     return $.ajax({
         method: "PATCH",
-        url: `api/posts/${id}`,
-        data: { post }
+        url: `/api/posts/${post.id}`,
+        data: {post},
     });
 };
 

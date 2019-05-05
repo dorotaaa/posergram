@@ -147,7 +147,7 @@
     width: 100%;
 }
 
-.delete-butt button {
+.edit-butt button {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     text-decoration: none;
     color: black;
@@ -159,6 +159,23 @@
     border-bottom: 1px solid #EFEFEF;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.delete-butt button {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    text-decoration: none;
+    color: black;
+    width: 400px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-bottom: 1px solid #EFEFEF;
+    /* border-top-left-radius: 10px; */
+    /* border-top-right-radius: 10px; */
     cursor: pointer;
     transition-duration: 0.4s;
 }

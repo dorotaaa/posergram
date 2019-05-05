@@ -58,8 +58,8 @@ class PostShow extends React.Component {
                 <div className="dcm-1">
                ( <div className="delete-modal">
                     <div className="butts">
-                        <div className="delete-butt"><button onClick={this.handleModalClick}>Edit Caption</button></div>
-                        <div className="cancel-butt"><button onClick={this.handleDelete}>Delete Post</button></div>
+                        <div className="edit-butt"><button onClick={this.handleModalClick}>Edit Caption</button></div>
+                        <div className="delete-butt"><button onClick={this.handleDelete}>Delete Post</button></div>
                         <div className="cancel-butt"><button onClick={this.toggleRenderState}>Cancel</button></div>
                     </div>
                 </div>)
