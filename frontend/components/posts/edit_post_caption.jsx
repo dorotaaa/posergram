@@ -7,9 +7,9 @@ class EditPost extends React.Component {
         debugger
         this.state = {
             id: this.props.post.id,
-            user_id: this.props.user.id,
-            caption: this.props.post.caption || "",
-            photo: this.props.post.photo
+            caption: this.props.post.caption,
+            photo: this.props.post.photo,
+            user_id: this.props.post.user_id
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,8 +19,8 @@ class EditPost extends React.Component {
     handleSubmit(e) {
         debugger
         e.preventDefault();
-        this.props.updatePost({ post: this.state })
-        .then(() => this.props.history.push(`/users/${this.props.user_id}`))
+        this.props.updatePost({post: this.state})
+        // .then(() => this.props.history.push(`/users/${this.props.user_id}`))
     }
         
 
@@ -36,14 +36,14 @@ class EditPost extends React.Component {
         debugger
         return (
             <div>
-                <div className="caption-input">
+                <form className="caption-input" onSubmit={this.handleSubmit}>
                     <input
                         type="text"
                         className="photo-caption"
                         value={this.state.caption}
                         onChange={this.handleUpdate("caption")} />
-                </div>
-                <button className="submitButton" onClick={() => this.handleSubmit()}>Update</button>
+                <button className="submitButton" onClick={this.handleSubmit}>Update</button>
+                </form>
             </div>
 
     )}
