@@ -22,10 +22,10 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        debugger
-        @post = Post.find_by(id: params[:id])
-        debugger
-        if @post && @post.update(post_params)
+        # debugger
+        @post = Post.find(params[:id])
+        # debugger
+        if @post.update(post_params)
             render :show
         else
             render json: @post.errors.full_messages, status: 422
@@ -43,6 +43,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:caption, :photo)
+        params.require(:post).permit(:caption, :photo, :id)
     end
 end

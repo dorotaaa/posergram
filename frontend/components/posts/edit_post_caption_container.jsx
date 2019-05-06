@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     return ({
         user: state.entities.users[state.session.currentUser],
         post: state.entities.posts[ownProps.postId],
+        modalClose: ownProps.captionModal
     })
 };
 

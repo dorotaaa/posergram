@@ -8,8 +8,8 @@ class EditPost extends React.Component {
         this.state = {
             id: this.props.post.id,
             caption: this.props.post.caption,
-            photo: this.props.post.photo,
-            user_id: this.props.post.user_id
+            // photo: this.props.post.photo,
+            // user_id: this.props.post.user_id
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,7 @@ class EditPost extends React.Component {
         debugger
         e.preventDefault();
         this.props.updatePost({post: this.state})
-        // .then(() => this.props.history.push(`/users/${this.props.user_id}`))
+        .then(() => this.props.modalClose());
     }
         
 
