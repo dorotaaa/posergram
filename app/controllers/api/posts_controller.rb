@@ -23,7 +23,8 @@ class Api::PostsController < ApplicationController
 
     def update
         debugger
-        @post = Post.find(params[:id])
+        @post = Post.find_by(id: params[:id])
+        debugger
         if @post && @post.update(post_params)
             render :show
         else

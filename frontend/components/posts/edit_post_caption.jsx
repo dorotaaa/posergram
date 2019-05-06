@@ -4,7 +4,7 @@ import React from 'react';
 class EditPost extends React.Component {
     constructor(props) {
         super(props);
-
+        debugger
         this.state = {
             id: this.props.post.id,
             user_id: this.props.user.id,
@@ -17,6 +17,7 @@ class EditPost extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         this.props.updatePost({ post: this.state })
         .then(() => this.props.history.push(`/users/${this.props.user_id}`))
@@ -24,6 +25,7 @@ class EditPost extends React.Component {
         
 
     handleUpdate(field) {
+        debugger
         return e => this.setState({
             [field]: e.target.value,
         })
@@ -31,6 +33,7 @@ class EditPost extends React.Component {
 
 
     render() {
+        debugger
         return (
             <div>
                 <div className="caption-input">
@@ -40,7 +43,7 @@ class EditPost extends React.Component {
                         value={this.state.caption}
                         onChange={this.handleUpdate("caption")} />
                 </div>
-                <button className="submitButton" onClick={this.handleSubmit}>Update</button>
+                <button className="submitButton" onClick={() => this.handleSubmit()}>Update</button>
             </div>
 
     )}
