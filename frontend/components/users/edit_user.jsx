@@ -75,7 +75,7 @@ class EditUser extends React.Component {
 
                 <div className="edit-input">
                 <label>Username</label>
-                    <input type="text" value={this.state.username}/>
+                    <input type="text" value={this.state.username} readOnly/>
                 </div>
 
                 <div className="edit-input">
