@@ -36,7 +36,7 @@ class Api::PostsController < ApplicationController
         @post = Post.find(params[:id])
         @post.user_id = current_user.id
         if @post
-            @post.destroy! 
+            @post.destroy
         render :show
         end
     end

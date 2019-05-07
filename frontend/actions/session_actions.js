@@ -25,12 +25,13 @@ export const signup = user => dispatch => (
     SessionAPIUtil.signup(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), errors => {
+        debugger
            return dispatch(receiveErrors(errors.responseJSON))
     })
 );
 
 export const login = user => dispatch => (
-    SessionSAPIUtil.login(user).then(user => (
+    SessionAPIUtil.login(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), errors => {
        return dispatch(receiveErrors(errors.responseJSON))
