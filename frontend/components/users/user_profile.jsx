@@ -51,7 +51,7 @@ class UserProfile extends React.Component{
     render() {
         let user;
         if (!this.props.user) {
-            user = { username: "", fullname: "", bio: "" };
+            user = { username: "", fullname: "", bio: ""};
         } else {
             user = this.props.user;
         }
