@@ -62,12 +62,6 @@ class UserProfile extends React.Component{
         ) : null;
 
         
-        let profilePic = <Link to="/edit">
-            <img src={this.props.user.photo} />
-        </Link>;
-        if (this.props.user.id !== this.props.currentUserId) {
-            profilePic = <img src={this.props.user.photo} />
-        }
         
             
         const posts = this.props.posts.map((post, idx) => {
@@ -101,8 +95,7 @@ class UserProfile extends React.Component{
                 <div className="another-one">
                     <div className='prof-pic-div'>
                         <div className='photo-upload-button'></div>
-                        <img className='prof-pic photo-dum' src={user.photo} />
-                            {profilePic}
+                        <img className='prof-pic photo-dum' src={this.props.user.photoUrl} />
                     </div>
                 </div>
             
