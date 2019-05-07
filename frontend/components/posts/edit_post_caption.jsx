@@ -36,16 +36,15 @@ class EditPost extends React.Component {
     render() {
         debugger
         return (
-            <div>
-                <form className="caption-input" onSubmit={this.handleSubmit}>
+           
+                <form className="edit-caption-input" onSubmit={this.handleSubmit}>
                     <input
                         type="text"
-                        className="photo-caption"
+                        className="edit-photo-caption"
                         value={this.state.caption}
                         onChange={this.handleUpdate("caption")} />
-                <button className="submitButton" onClick={this.handleSubmit}>Update</button>
+                <button className="caption-update-button" onClick={this.handleSubmit}>Update</button>
                 </form>
-            </div>
 
     )}
 }

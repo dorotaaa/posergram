@@ -292,11 +292,32 @@ form input.create-post-comment::placeholder {
     padding-left: 16px;
 }
 
-/* .likes-comments-time {
+.edit-caption-input {
+    padding-top: 20px;
     display: flex;
-    position: relative;
-} */
+    width: 25%;
+    flex-direction: column;
+    margin: 0 auto;
+    border-radius: 8px;
+}
 
-/* .post-show-time {
-    bottom: 0;
-} */
+.edit-photo-caption {
+    height: 75px;
+    width: 200px;
+    border-radius: 3px 3px 3px 3px;
+    background-color: #fff;
+    border: solid 1px #e6e6e6;
+    margin: 0 auto;
+}
+
+.caption-update-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    height: 17px;
+    width: inherit;
+    color: #3897f0;
+    font-weight: 600;
+    justify-content: center;
+    margin: 0 auto;
+}
