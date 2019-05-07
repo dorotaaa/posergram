@@ -97,14 +97,15 @@ class UserProfile extends React.Component{
         <div className='main-profile-div'>
 
             <header className='profile-header'>
-                    
+
                 <div className="another-one">
                     <div className='prof-pic-div'>
                         <div className='photo-upload-button'></div>
-                        <img src={user.photo}/>
-                                {profilePic}
-                        </div>
+                        <img className='prof-pic photo-dum' src={user.photo} />
+                            {profilePic}
+                    </div>
                 </div>
+            
 
             <div className='info-container'>
                 <section className='info-section'>

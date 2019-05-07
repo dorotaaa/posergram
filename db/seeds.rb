@@ -6,4 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-User.create({username: 'kevin', password: 'vladimir'})
+Post.destroy_all
+poser = User.create({username: 'posergram', password: 'posergram'})
+poser.photo.attach(io: File.open("#{Rails.root}/app/assets/images/default_profile_pic.jpg"), filename: "default_profile_pic.jpg")
+

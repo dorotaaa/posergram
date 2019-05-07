@@ -7,7 +7,6 @@ class Api::UsersController < ApplicationController
             login!(@user)
             render :show
         else
-            # debugger
             render json: @user.errors.full_messages, status: 401
         end 
     end
@@ -25,7 +24,7 @@ class Api::UsersController < ApplicationController
     end
     
     def index
-        @users = User.all
+        @users = User.all.with_attached_photo
     end
 
     def show

@@ -11,7 +11,7 @@ class EditUser extends React.Component {
             username: this.props.user.username || "",
             bio: this.props.user.bio || "",
             email: this.props.user.email || "",
-            photoUrl: this.props.user.photo,
+            photo: this.props.user.photo,
             photoFile: null,
             disabledOrNot: true,
         }
@@ -45,7 +45,7 @@ class EditUser extends React.Component {
             this.setState({
                 disabledOrNot: false,
                 photoFile: file,
-                photoUrl: fileReader.result
+                photo: fileReader.result
             });
         };
 

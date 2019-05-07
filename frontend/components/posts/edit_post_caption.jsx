@@ -20,7 +20,8 @@ class EditPost extends React.Component {
         debugger
         e.preventDefault();
         this.props.updatePost({post: this.state})
-        .then(() => this.props.modalClose());
+        .then(() => this.props.modalClose(),
+                this.props.otherModal());
     }
         
 
