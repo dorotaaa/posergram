@@ -22,9 +22,7 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        # debugger
         @post = Post.find(params[:id])
-        # debugger
         if @post.update(post_params)
             render :show
         else

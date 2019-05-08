@@ -61,7 +61,6 @@
 }
 
 .info-container {
-  
     flex-basis: 30px;
     color: #262626;
     flex-grow: 2;
@@ -159,7 +158,8 @@
 
 .fullname {
     display: inline;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .user-bio {

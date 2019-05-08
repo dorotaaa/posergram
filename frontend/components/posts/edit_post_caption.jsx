@@ -4,7 +4,6 @@ import React from 'react';
 class EditPost extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             id: this.props.post.id,
             caption: this.props.post.caption,
@@ -17,7 +16,6 @@ class EditPost extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         this.props.updatePost({post: this.state})
         .then(() => this.props.modalClose(),
@@ -26,7 +24,6 @@ class EditPost extends React.Component {
         
 
     handleUpdate(field) {
-        debugger
         return e => this.setState({
             [field]: e.target.value,
         })
@@ -34,7 +31,6 @@ class EditPost extends React.Component {
 
 
     render() {
-        debugger
         return (
            
                 <form className="edit-caption-input" onSubmit={this.handleSubmit}>

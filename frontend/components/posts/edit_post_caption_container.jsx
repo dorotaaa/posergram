@@ -4,7 +4,6 @@ import { updatePost } from '../../actions/post_actions';
 import EditPost from './edit_post_caption';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return ({
         user: state.entities.users[state.session.currentUser],
         post: state.entities.posts[ownProps.postId],

@@ -5,7 +5,7 @@ import { fetchUser } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     return ({
             caption: "",
             photo: "",

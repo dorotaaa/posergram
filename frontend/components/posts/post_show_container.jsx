@@ -9,7 +9,6 @@ import { fetchPost, deletePost } from '../../actions/post_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
     let username = state.entities.users[user].username;
