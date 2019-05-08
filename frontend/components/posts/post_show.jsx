@@ -13,6 +13,7 @@ class PostShow extends React.Component {
             renderDeleteNCancel: false,
             modalOpen: false,
             showUploadForm: false,
+            // commentId: 0,
         }
 
         this.handleDelete = this.handleDelete.bind(this);
@@ -41,9 +42,12 @@ class PostShow extends React.Component {
              // this.props.history.push()     
     }
 
-    // handleDeleteComment() {
-    //     debugger
-    //     this.props.deleteComment();
+    // handleDeleteComment(e) {
+    //     e.preventDefault();
+    //     this.setState({
+    //         commentId: e.target.dataset.id,
+    //     })
+    //     this.props.deleteComment(commentId)
     // }
   
     handleModalClick() {

@@ -56,13 +56,21 @@ class UserProfile extends React.Component{
             user = this.props.user;
         }
 
-     
+          
         const modal = this.state.showModal ? (
             <PostShowContainer profile={this} closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId}/>
         ) : null;
 
         
-        
+        const editButton = (this.props.currentUserId === this.props.user.id) ? (
+            <>
+            <div>
+            <button className='edit-button'>
+                <Link to="/edit">Edit Profile</Link></button>
+            </div>
+            <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>) : 
+            <div><button className='follow-button'>Follow</button></div>
+
             
         const posts = this.props.posts.map((post, idx) => {
             
@@ -103,12 +111,13 @@ class UserProfile extends React.Component{
             
                 <div className='name-div'>
                     <h1 className="username">{user.username}</h1>
-                        <div>
+                        {/* <div>
                         <button className='edit-button'>
                         <Link to="/edit">
                             Edit Profile</Link></button>
                         </div>
-                <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout"/></button></div>
+                    <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout"/></button></div> */}
+                    {editButton}
                 </div>
 
 

@@ -255,9 +255,12 @@
     padding: 20px;
 }
 
+
 .comment-form {
     height: 20px;
+    border-top: 1px solid #e6e6e6;
 }
+
 .create-post-comment {
     resize: none;
     min-height: 18px;
