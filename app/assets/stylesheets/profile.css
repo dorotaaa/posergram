@@ -159,8 +159,8 @@
 
 .fullname {
     display: inline;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 550;
+    font-size: 16px;
 }
 
 .user-bio {
@@ -226,23 +226,12 @@
     position: relative;
 }
 
-/* .post-li a {
-    height: 100%;
-} */
 
 .profile-posts img {
     height: 100%;
     width: 100%;
 }
 
-/* .profile-posts img:hover { */
-    
-    /* opacity: 0.8; */
-/* } */
-
-/* .post-container {
-    flex-grow: 1;
-} */
 
 .post-li:hover .img-div{
     display: flex;
