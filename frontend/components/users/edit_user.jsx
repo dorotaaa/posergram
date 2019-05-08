@@ -6,7 +6,7 @@ class EditUser extends React.Component {
         super(props);
 
         this.state = {
-            id: this.props.user.id || "",
+            id: this.props.user.id,
             fullname: this.props.user.fullname || "",
             username: this.props.user.username || "",
             bio: this.props.user.bio || "",
@@ -23,14 +23,15 @@ class EditUser extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("user[fullname]", name);
-        formData.append("user[username]", username);
-        formData.append("user[bio]", bio);
-        formData.append("user[email]", email);
+        formData.append("user[id]", this.state.id);
+        formData.append("user[fullname]", this.state.fullname);
+        formData.append("user[username]", this.state.username);
+        formData.append("user[bio]", this.state.bio);
+        formData.append("user[email]", this.state.email);
         if (this.state.photoFile) {
             formData.append("user[photo]", this.state.photoFile);
         }
-        this.props.updateUser({user: this.state} )
+        this.props.updateUser({formData, id: this.state.id})
             .then(() => this.props.history.push(`/users/${this.props.user.id}`))
     }
         
@@ -77,11 +78,11 @@ class EditUser extends React.Component {
                         </label>
                     </aside>
 
-                    <div>
-                        <h1>
+                    <div className="edit-header">
+                        <div className="username-header">
                             {this.state.username}
-                        </h1>
-
+                    </div>
+    
                         <label className="file-input-label" htmlFor="file-selector">
                             Change Profile Photo
                         </label>
@@ -92,8 +93,7 @@ class EditUser extends React.Component {
 
                 <div className="edit-name">
                     <aside className="edit-name-left">
-                        <label htmlFor="name">
-                            Name
+                        <label htmlFor="name">Name
                         </label>
                     </aside>
 
@@ -104,20 +104,18 @@ class EditUser extends React.Component {
 
                 <div className="edit-username">
                     <aside className="edit-username-left">
-                        <label htmlFor="username">
-                            Username
-              </label>
+                        <label htmlFor="username">Username
+                        </label>
                     </aside>
 
                     <div>
-                        <input type="text" id="username" value={this.state.username} readOnly/>
+                        <input type="text" id="username" value={this.state.username} readOnly disabled={this.state.disabledOrNot}/>
                     </div>
                 </div>
 
                 <div className="edit-bio">
                     <aside className="edit-bio-left">
-                        <label htmlFor="bio">
-                            Bio
+                        <label htmlFor="bio">Bio
                         </label>
                     </aside>
 
@@ -126,16 +124,9 @@ class EditUser extends React.Component {
                     </div>
                 </div>
 
-                <div className="edit-private">
-                    <h2>
-                        Private Information
-                    </h2>
-                </div>
-
                 <div className="edit-email">
                     <aside className="edit-email-left">
-                        <label htmlFor="email">
-                            Email
+                        <label htmlFor="email">Email
                         </label>
                     </aside>
 
@@ -144,7 +135,7 @@ class EditUser extends React.Component {
                     </div>
                 </div>
 
-                <input className="edit-submit" type="submit" value="Submit" disabled={this.state.disabledOrNot} />
+                <input onClick={this.handleSubmit} className="edit-submit" type="submit" value="Submit" disabled={this.state.disabledOrNot} />
             </form>
         </>
     )};

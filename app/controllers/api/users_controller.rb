@@ -13,7 +13,9 @@ class Api::UsersController < ApplicationController
 
 
     def update
-         @user = User.find(params[:id])
+        debugger
+         @user = User.find_by(id: params[:id])
+         debugger
         if @user && @user.update(user_params)
             render :show
         elsif !@user

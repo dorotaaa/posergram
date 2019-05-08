@@ -145,18 +145,26 @@
 
 .edit-name-left {
   margin: 0 32px 0 119px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .edit-username-left {
   margin: 0 32px 0 87px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .edit-bio-left {
   margin: 0 32px 0 137px;
+    font-size: 16px;
+  font-weight: 600;
 }
 
 .edit-email-left {
   margin: 0 32px 0 122px;
+    font-size: 16px;
+  font-weight: 600;
 }
 
 .edit-pic-preview {
@@ -193,10 +201,16 @@
   cursor: pointer;
 }
 
-.edit-pic h1 {
+.edit-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.username-header {
   font-size: 20px;
   line-height: 22px;
   margin-bottom: 2px;
+  text-align: left;
 }
 
 #name, #username, #bio, #email {
@@ -220,21 +234,12 @@
   font-size: 14px;
   line-height: 18px;
   font-weight: 500;
-  margin: 32px 0 32px 193px;
+  /* margin: 32px 0 32px 193px; */
+  margin: 32px auto;
 }
 
 .edit-submit:disabled {
   opacity: 0.3;
   pointer-events: none;
   outline: 0;
-}
-
-.edit-unsaved {
-  display: none;
-}
-
-.edit-saved {
-  color: firebrick;
-  font-weight: 400;
-  margin-left: 14px;
 }
