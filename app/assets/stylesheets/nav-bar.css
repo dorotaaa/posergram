@@ -63,9 +63,9 @@
 }
 
 .navbar-posergram-logo img {
-    height: auto;
-    width: 78px;
-    float: left;
+    padding-top: 32px;
+    margin-left: -5px;
+    width: 100px;
 }
 
 .navbar-posergram-logo .navbar-divider {

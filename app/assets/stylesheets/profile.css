@@ -42,7 +42,8 @@
     flex-basis: 0;
     flex-shrink: 0;
     margin-right: 30px;
-    display: block; 
+    display: block;
+    border: 1px solid #e6e6e6;
 }
 
 .photo-butt {
