@@ -4,7 +4,9 @@ import { Link, withRouter } from 'react-router-dom';
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', password: '' };
+        this.state = { username: '', 
+                        password: '',
+                        disabledOrNot: true };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
@@ -20,7 +22,8 @@ class LoginForm extends React.Component {
 
     handleUpdate(field) {
         return e => this.setState(
-            { [field]: e.target.value }
+            { [field]: e.target.value, 
+               disabledOrNot: false }
         )
     }
 
@@ -65,7 +68,8 @@ class LoginForm extends React.Component {
                                 type="text"
                                 value={this.state.username}
                                 onChange={this.handleUpdate('username')}
-                                placeholder="Phone number, username, or email" />
+                                placeholder="Phone number, username, or email" 
+                                />
                         </label>
                         <label>
                             <input
@@ -75,7 +79,7 @@ class LoginForm extends React.Component {
                                 placeholder="Password" />
                         </label>
                     <div className="logup-form-box">
-                    <button onClick={this.handleSubmit}>{this.props.buttonText}</button>
+                    <button disabled={this.state.disabledOrNot} onClick={this.handleSubmit}>{this.props.buttonText} </button>
                     </div>
 
                     <div className="logup-or"><div> <hr className="hr-line" /></div>
@@ -89,7 +93,7 @@ class LoginForm extends React.Component {
 
                     
                       <div className="forgot-pw"> 
-                    <Link to={`/login`} onClick={this.handleSubmit}>Forgot password?</Link>
+                        <Link to={`/login`} onClick={this.handleSubmit}>Forgot password?</Link>
                         </div> 
 
                     </form>

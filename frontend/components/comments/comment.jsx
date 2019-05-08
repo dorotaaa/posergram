@@ -9,6 +9,7 @@ class Comment extends React.Component {
             body: this.props.body,
             user_id: this.props.userId,
             post_id: this.props.postId,
+            disabledOrNot: true,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +23,8 @@ class Comment extends React.Component {
 
     handleUpdate(field) {
         return e => this.setState({
-            [field]: e.target.value
+            [field]: e.target.value,
+            disabledOrNot: false,
         })
     }
 
@@ -42,9 +44,9 @@ class Comment extends React.Component {
         return (
             <div className='comment-creator-container'>
                 <div className='create-comment-wrapper'>
-                    <form className="comment-form" onSubmit={this.handleSubmit}>
+                    <form className="comment-form" onSubmit={this.handleSubmit}  >
                         <input type='text' className="create-post-comment" placeholder="Add a comment..." value={this.state.body} onChange={this.handleUpdate("body")} />
-                        <input className='hidden-submit' type="submit" value="Post" />
+                        <input className='hidden-submit' type="submit" value="Post" disabled={this.state.disabledOrNot} />
                     </form>
                 </div>
             </div>

@@ -9,9 +9,11 @@ import { fetchPost, deletePost } from '../../actions/post_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
     let username = state.entities.users[user].username;
+    let photoUrl = state.entities.users[user].photoUrl;
     let currentUser = state.entities.users[state.session.currentUser].username;
     let commentIds = state.entities.posts[ownProps.photoId].comment_ids;
     let comments = Object.values(state.entities.comments)
@@ -24,7 +26,8 @@ const mapStateToProps = (state, ownProps) => {
         commentIds: commentIds,
         comments: comments || [],
         currentUser: currentUser,
-        profile: ownProps.profile
+        profile: ownProps.profile,
+        photoUrl: photoUrl,
     });
 }
 
@@ -34,6 +37,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchUsers: () => dispatch(fetchUsers()),
         deletePost: (id) => dispatch(deletePost(id)),
         fetchPost: (id) => dispatch(fetchPost(id)),
+        // deleteComment: (id) => dispatch(deleteComment(id)),
         // fetchComments: () => dispatch(fetchcomments())
     });
 };

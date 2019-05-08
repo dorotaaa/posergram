@@ -75,10 +75,8 @@ class UserProfile extends React.Component{
                         className="photo"
                         src={post.photo}/>
                         <div className="img-div"></div>
-                </li>
-                
-            )
-            
+                </li>  
+            ) 
         })
 
         const reversePosts = posts.reverse();

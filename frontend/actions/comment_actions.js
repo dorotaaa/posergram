@@ -42,7 +42,7 @@ export const createComment = comment => dispatch => {
 
 export const deleteComment = id => (dispatch) => {
     return CommentAPIUtil.deleteComment(id)
-        .then((commentId) => {
+        .then((id) => {
             return dispatch(removeComment(id));
         });
 };

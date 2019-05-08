@@ -20,6 +20,7 @@ class PostShow extends React.Component {
         this.toggleRenderState = this.toggleRenderState.bind(this);
         this.handleModalClick = this.handleModalClick.bind(this);
         this.onModalClose = this.onModalClose.bind(this);
+        // this.handleDeleteComment = this.handleDeleteComment.bind(this)
     }
 
 
@@ -37,10 +38,13 @@ class PostShow extends React.Component {
     handleDelete() {
         this.props.profile.closeModal();
         this.props.deletePost(this.props.postId);
-        
-                // this.props.history.push()
-            
+             // this.props.history.push()     
     }
+
+    // handleDeleteComment() {
+    //     debugger
+    //     this.props.deleteComment();
+    // }
   
     handleModalClick() {
         this.setState({ modalOpen: true });
@@ -98,12 +102,16 @@ class PostShow extends React.Component {
            }
         }
         
+        debugger
         const comms = commsArr.map((comment, idx) => {
 
             return (
                 <li className="comment-li" key={idx}>
+                    <div className="comment-li">
+                    <img className="comment-pic" src={this.props.photoUrl}/>
                     <div className="comment-username">{this.props.username}</div>
                     <div className="comment">{comment.body} </div>
+                    </div>
                 </li>
             )
         })
@@ -141,8 +149,12 @@ class PostShow extends React.Component {
                 <div className="header-div">
 
             <header className="post-header">
-                <div className="show-name">{this.props.username}</div>
-
+                <button onClick={this.props.closeModal}>
+                    <img className="header-pic" src={this.props.photoUrl}/>
+                </button>
+                <button onClick={this.props.closeModal}>
+                    <div className="show-name">{this.props.username}</div>
+                </button>
 
                 <div className="dots">
                     <button id="dot-btn"
@@ -153,6 +165,7 @@ class PostShow extends React.Component {
             </header>
 
                     <div className="cap-header">
+                        <img className="cap-pic" src={this.props.photoUrl} />
                         <h2 className="caption-u-div">{this.props.username}
                         </h2>
                         <div className="caption-div">{this.props.post.caption}</div>
@@ -171,7 +184,7 @@ class PostShow extends React.Component {
 
                     <div className='likes-comments-time'>
                     {/* <div className='post-show-time'>{this.props.post.created_at}</div> */}
-                        <CommentContainer postId={this.props.post.id} username={this.props.currentUser}/>
+                        <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
                     </div>
 
                     </div>

@@ -38,7 +38,9 @@ class EditPost extends React.Component {
                         type="text"
                         className="edit-photo-caption"
                         value={this.state.caption}
-                        onChange={this.handleUpdate("caption")} />
+                        onChange={this.handleUpdate("caption")} 
+                        />
+                        
                 <button className="caption-update-button" onClick={this.handleSubmit}>Update</button>
                 </form>
 
