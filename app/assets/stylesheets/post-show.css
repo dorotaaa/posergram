@@ -390,3 +390,15 @@ form input.create-post-comment::placeholder {
     font-size: 14px;
     color: gray;
 }
+
+.empty-heart button {
+    display: flex;
+    position: relative;
+}
+
+.full-heart button{
+    display: flex;
+    position: absolute;
+    color: red
+    /* height: 30px; */
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CommentContainer from '../comments/comment_container';
+import LikeContainer from '../likes/like_container';
 import EditPostCaptionContainer from './edit_post_caption_container';
 import Modal from 'react-modal';
 
@@ -203,6 +204,8 @@ class PostShow extends React.Component {
 
                     <div className='likes-comments-time'>
                     {/* <div className='post-show-time'>{this.props.post.created_at}</div> */}
+                        <LikeContainer likes={this.props.allLikes} postId={this.props.post.id} />
+                                <div className='post-show-likes'>{this.props.likes} likes</div>
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
                     </div>
 
