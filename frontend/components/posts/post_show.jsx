@@ -106,7 +106,7 @@ class PostShow extends React.Component {
            }
         }
         
-        debugger
+    
         const comms = commsArr.map((comment, idx) => {
 
             return (
