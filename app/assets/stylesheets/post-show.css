@@ -313,6 +313,13 @@ form input.create-post-comment::placeholder {
 .comment-li {
     display: flex;
     padding: 5px 0;
+    justify-content: space-between;
+}
+
+.comment-li a {
+    display: flex;
+    text-decoration: none;
+    color: #262626;
 }
 
 .comment-li li {
@@ -365,4 +372,11 @@ form input.create-post-comment::placeholder {
     font-weight: 600;
     justify-content: center;
     margin: 0 auto;
+}
+
+.delete-comm-x {
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
 }

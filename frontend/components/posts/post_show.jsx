@@ -13,7 +13,7 @@ class PostShow extends React.Component {
             renderDeleteNCancel: false,
             modalOpen: false,
             showUploadForm: false,
-            // commentId: 0,
+            commentId: 0,
         }
 
         this.handleDelete = this.handleDelete.bind(this);
@@ -21,7 +21,7 @@ class PostShow extends React.Component {
         this.toggleRenderState = this.toggleRenderState.bind(this);
         this.handleModalClick = this.handleModalClick.bind(this);
         this.onModalClose = this.onModalClose.bind(this);
-        // this.handleDeleteComment = this.handleDeleteComment.bind(this)
+        this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
 
 
@@ -42,13 +42,11 @@ class PostShow extends React.Component {
              // this.props.history.push()     
     }
 
-    // handleDeleteComment(e) {
-    //     e.preventDefault();
-    //     this.setState({
-    //         commentId: e.target.dataset.id,
-    //     })
-    //     this.props.deleteComment(commentId)
-    // }
+    handleDeleteComment(commentId) {
+        return ((e) => {
+            this.props.deleteComment(commentId)
+        })
+    }
   
     handleModalClick() {
         this.setState({ modalOpen: true });
@@ -96,6 +94,20 @@ class PostShow extends React.Component {
             this.uploadForm = null;
         }
        
+        const deleteComm = (commentId) => {
+            if (this.props.currentUserId === this.props.userId) {
+                return (
+                    <div>
+                        <button className="delete-comm-x" onClick={this.handleDeleteComment(commentId)}>x</button>
+                    </div>
+                )
+            } else {
+                return (<div></div>);
+            }
+        }
+
+
+
         let commsArr = [];
 
         for (let i = 0; i < this.props.commentIds.length; i++) {
@@ -107,14 +119,17 @@ class PostShow extends React.Component {
         }
         
         debugger
-        const comms = commsArr.map((comment, idx) => {
+        const comms = commsArr.map((comment) => {
 
             return (
-                <li className="comment-li" key={idx}>
+                <li className="comment-li" key={comment.id}>
                     <div className="comment-li">
+                    <Link to={`/users/${comment.user_id}`}>
                     <img className="comment-pic" src={this.props.photoUrl}/>
                     <div className="comment-username">{this.props.username}</div>
+                    </Link>
                     <div className="comment">{comment.body} </div>
+                    {deleteComm(comment.id)}
                     </div>
                 </li>
             )
