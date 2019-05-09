@@ -77,7 +77,7 @@ class PostShow extends React.Component {
     }
 
     toggleRenderState(){
-        if (this.props.username === this.props.currentUser) {
+        if (this.props.currentUserId === this.props.userId) {
             this.setState({
                 renderDeleteNCancel: (this.state.renderDeleteNCancel ? false : true)
             })
