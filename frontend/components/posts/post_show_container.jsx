@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
-    let username = state.entities.users[user].username;
+    let username = state.entities.users[state.session.currentUser].username;
     let photoUrl = state.entities.users[user].photoUrl;
     let currentUser = state.entities.users[state.session.currentUser].id;
     let commentIds = state.entities.posts[ownProps.photoId].comment_ids;
@@ -25,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
         post: post || {},
         postId: post.id,
         userId: user,
-        username: currentUser.username,
+        username: username,
         commentIds: commentIds,
         comments: comments || [],
         currentUserId: currentUser,

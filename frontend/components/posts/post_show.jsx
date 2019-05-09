@@ -97,8 +97,8 @@ class PostShow extends React.Component {
         const deleteComm = (commentId) => {
             if (this.props.currentUserId === this.props.userId) {
                 return (
-                    <div>
-                        <button className="delete-comm-x" onClick={this.handleDeleteComment(commentId)}>x</button>
+                    <div className="delete-comm-butt">
+                        <button className="delete-comm-x" onClick={this.handleDeleteComment(commentId)}><i className="far fa-trash-alt"></i></button>
                     </div>
                 )
             } else {
@@ -129,8 +129,8 @@ class PostShow extends React.Component {
                     <div className="comment-username">{this.props.username}</div>
                     </Link>
                     <div className="comment">{comment.body} </div>
-                    {deleteComm(comment.id)}
                     </div>
+                    {deleteComm(comment.id)}
                 </li>
             )
         })
