@@ -19,9 +19,6 @@
     width: auto;
     background-color: #fff;
     border: none;
-    /* border: 1px solid #e6e6e6; */
-    border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
 }
 
 .post-show-image {
