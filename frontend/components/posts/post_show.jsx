@@ -191,21 +191,21 @@ class PostShow extends React.Component {
                         <div className="caption-div">{this.props.post.caption}</div>
                     </div>
 
-                       <div className='post-comments-container2'>
-                    <div className='post-comments-list2'>
+                       {/* <div className='post-comments-container2'>
+                    <div className='post-comments-list2'> */}
                         <div className='feed-comment-list'>
                             <ul >
                             {comms}
                             </ul>
-                        </div>
-                    </div>
+                        {/* </div>
+                    </div> */}
                 </div>
              
 
                     <div className='likes-comments-time'>
                     {/* <div className='post-show-time'>{this.props.post.created_at}</div> */}
                         <LikeContainer likes={this.props.allLikes} postId={this.props.post.id} />
-                                <div className='post-show-likes'>{this.props.likes} likes</div>
+                        <div className='post-show-likes'>{this.props.likes} likes</div>
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
                     </div>
 

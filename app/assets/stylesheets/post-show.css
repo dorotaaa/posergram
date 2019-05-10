@@ -342,6 +342,7 @@ form input.create-post-comment::placeholder {
     list-style: none;
     padding: 0;
     padding-left: 16px;
+    height: 300px;
 }
 
 .edit-caption-input {
@@ -384,6 +385,7 @@ form input.create-post-comment::placeholder {
     border: none;
     padding-top: 3px;
     padding-right: 10px;
+    cursor: pointer;
 }
 
 .fa-trash-alt {
@@ -391,14 +393,29 @@ form input.create-post-comment::placeholder {
     color: gray;
 }
 
-.empty-heart button {
+.empty-heart {
     display: flex;
     position: relative;
+    border: none;
+    background: none;
 }
 
-.full-heart button{
+.full-heart {
     display: flex;
-    position: absolute;
-    color: red
+    /* position: absolute; */
+    border: none;
+    background: none;
+    /* color: red; */
     /* height: 30px; */
+}
+
+.likes-comments-time {
+    height: 70px;
+    width: 100%;
+}
+
+.post-show-likes {
+    display: flex;
+    padding: 15px;
+    float: left;
 }

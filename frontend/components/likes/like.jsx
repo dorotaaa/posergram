@@ -12,13 +12,13 @@ class Like extends React.Component {
         if (this.props.likerIds.length > 0 && this.props.pastLikes) {
             return (
                 <div className='post-show-like'>
-                    <button onClick={() => this.props.deleteLike(this.props.postId)} className="full-heart"><i className="far fa-heart"></i></button>
+                    <button onClick={() => this.props.deleteLike(this.props.postId)} className="full-heart">Red Heart</button>
                 </div>
             );
         } else {
             return (
-                <div className='post-show-like'>
-                    <button onClick={() => this.props.createLike({ post_id: this.props.postId })} className="empty-heart"><i className="fas fa-heart"></i></button>
+                <div className='post-show-unlike'>
+                    <button onClick={() => this.props.createLike({ post_id: this.props.postId })} className="empty-heart">Empty Heart</button>
                 </div>
             )
         }
