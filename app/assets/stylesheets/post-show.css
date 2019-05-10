@@ -338,6 +338,7 @@ form input.create-post-comment::placeholder {
 
 .feed-comment-list {
     height: 300px;
+    overflow: auto;
 }
 
 .edit-caption-input {
@@ -399,6 +400,7 @@ form input.create-post-comment::placeholder {
     border: none;
     background: none;
     outline: none;
+    cursor: pointer;
 }
 
 .empty-heart {
@@ -411,6 +413,7 @@ form input.create-post-comment::placeholder {
     border: none;
     background: none;
     outline: none;
+    cursor: pointer;
 }
 
 
