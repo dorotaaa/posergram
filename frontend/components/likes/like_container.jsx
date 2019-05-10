@@ -4,16 +4,15 @@ import Like from './like';
 import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let userId = state.session.currentUser
-    let pastLikes = ownProps.likes.includes(userId);
+    let pastLike = ownProps.likes.includes(userId);
     let postId = ownProps.postId;
     let likerIds = ownProps.likes;
     return ({
-        userId,
-        pastLikes,
-        postId,
-        likerIds
+        userId: userId,
+        pastLike: pastLike,
+        postId: postId,
+        likerIds: likerIds,
     });
 };
 

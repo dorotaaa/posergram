@@ -10,7 +10,6 @@ import {deleteComment} from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
     let username = state.entities.users[state.session.currentUser].username;
@@ -20,7 +19,6 @@ const mapStateToProps = (state, ownProps) => {
     let comments = Object.values(state.entities.comments)
     let likes = state.entities.posts[ownProps.photoId].liker_ids.length;
     let allLikes = state.entities.posts[ownProps.photoId].liker_ids;
-    // let comments = Object.values(state.entities.comments)
     return ({
         post: post || {},
         postId: post.id,

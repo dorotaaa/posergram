@@ -119,7 +119,7 @@ class PostShow extends React.Component {
            }
         }
         
-        debugger
+    
         const comms = commsArr.map((comment) => {
 
             return (
@@ -190,16 +190,11 @@ class PostShow extends React.Component {
                         </h2>
                         <div className="caption-div">{this.props.post.caption}</div>
                     </div>
-
-                       {/* <div className='post-comments-container2'>
-                    <div className='post-comments-list2'> */}
                         <div className='feed-comment-list'>
                             <ul >
                             {comms}
                             </ul>
-                        {/* </div>
-                    </div> */}
-                </div>
+                    </div>
              
 
                     <div className='likes-comments-time'>

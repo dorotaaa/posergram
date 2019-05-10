@@ -8,8 +8,7 @@ class Like extends React.Component {
     }
 
     render() {
-        // debugger
-        if (this.props.likerIds.length > 0 && this.props.pastLikes) {
+        if (this.props.likerIds.length > 0 && this.props.pastLike) {
             return (
                 <div className='post-show-like'>
                     <button onClick={() => this.props.deleteLike(this.props.postId)} className="full-heart">

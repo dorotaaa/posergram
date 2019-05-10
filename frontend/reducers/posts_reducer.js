@@ -11,11 +11,9 @@ const postsReducer = (state = {}, action) => {
     let newState = merge({}, state);
     switch (action.type) {
         case RECEIVE_LIKE:
-            // debugger
             newState[action.like.post_id].liker_ids.push(action.like.user_id);
             return newState;
         case REMOVE_LIKE:
-            // debugger
             newState[action.like.post_id].liker_ids = newState[action.like.post_id].liker_ids.filter(id => id !== action.like.user_id);
             return newState;
         case RECEIVE_POSTS:
