@@ -376,10 +376,6 @@ form input.create-post-comment::placeholder {
     margin: 0 auto;
 }
 
-/* .delete-comm-butt {
-    padding: 0;
-} */
-
 .delete-comm-x {
     outline: none;
     background: none;
@@ -394,18 +390,8 @@ form input.create-post-comment::placeholder {
     color: gray;
 }
 
-
-/* .empty-heart {
-    display: flex;
-    float: left;
-    border: none;
-    background: none;
-    outline: none;
-} */
-
 .empty-heart img {
     display: flex;
-    /* position: relative; */
     height: 20px;
 }
 
