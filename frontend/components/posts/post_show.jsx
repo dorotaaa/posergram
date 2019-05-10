@@ -204,8 +204,11 @@ class PostShow extends React.Component {
                         <div className="comment-logo"><img src={window.commLogo} /></div>
                         </div>   
                         <div className="num-likes">{this.props.likes} likes</div>
+                        </div>
+                        <div>
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
-                    </div>
+                        </div>
+                       
 
                     </div>
                 </div>
