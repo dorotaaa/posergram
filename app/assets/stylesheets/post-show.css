@@ -337,7 +337,7 @@ form input.create-post-comment::placeholder {
 }
 
 .feed-comment-list {
-    height: 300px;
+    min-height: 300px;
     overflow: auto;
 }
 
