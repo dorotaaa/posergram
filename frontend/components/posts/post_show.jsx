@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CommentContainer from '../comments/comment_container';
+import LikeContainer from '../likes/like_container';
 import EditPostCaptionContainer from './edit_post_caption_container';
 import Modal from 'react-modal';
 
@@ -13,7 +14,7 @@ class PostShow extends React.Component {
             renderDeleteNCancel: false,
             modalOpen: false,
             showUploadForm: false,
-            // commentId: 0,
+            commentId: 0,
         }
 
         this.handleDelete = this.handleDelete.bind(this);
@@ -21,7 +22,7 @@ class PostShow extends React.Component {
         this.toggleRenderState = this.toggleRenderState.bind(this);
         this.handleModalClick = this.handleModalClick.bind(this);
         this.onModalClose = this.onModalClose.bind(this);
-        // this.handleDeleteComment = this.handleDeleteComment.bind(this)
+        this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
 
 
@@ -42,13 +43,11 @@ class PostShow extends React.Component {
              // this.props.history.push()     
     }
 
-    // handleDeleteComment(e) {
-    //     e.preventDefault();
-    //     this.setState({
-    //         commentId: e.target.dataset.id,
-    //     })
-    //     this.props.deleteComment(commentId)
-    // }
+    handleDeleteComment(commentId) {
+        return ((e) => {
+            this.props.deleteComment(commentId)
+        })
+    }
   
     handleModalClick() {
         this.setState({ modalOpen: true });
@@ -79,7 +78,7 @@ class PostShow extends React.Component {
     }
 
     toggleRenderState(){
-        if (this.props.username === this.props.currentUser) {
+        if (this.props.currentUserId === this.props.userId) {
             this.setState({
                 renderDeleteNCancel: (this.state.renderDeleteNCancel ? false : true)
             })
@@ -96,6 +95,20 @@ class PostShow extends React.Component {
             this.uploadForm = null;
         }
        
+        const deleteComm = (commentId) => {
+            if (this.props.currentUserId === this.props.userId) {
+                return (
+                    <div className="delete-comm-butt">
+                        <button className="delete-comm-x" onClick={this.handleDeleteComment(commentId)}><i className="far fa-trash-alt"></i></button>
+                    </div>
+                )
+            } else {
+                return (<div></div>);
+            }
+        }
+
+
+
         let commsArr = [];
 
         for (let i = 0; i < this.props.commentIds.length; i++) {
@@ -107,15 +120,18 @@ class PostShow extends React.Component {
         }
         
     
-        const comms = commsArr.map((comment, idx) => {
+        const comms = commsArr.map((comment) => {
 
             return (
-                <li className="comment-li" key={idx}>
+                <li className="comment-li" key={comment.id}>
                     <div className="comment-li">
+                    <Link to={`/users/${comment.user_id}`}>
                     <img className="comment-pic" src={this.props.photoUrl}/>
                     <div className="comment-username">{this.props.username}</div>
+                    </Link>
                     <div className="comment">{comment.body} </div>
                     </div>
+                    {deleteComm(comment.id)}
                 </li>
             )
         })
@@ -174,20 +190,20 @@ class PostShow extends React.Component {
                         </h2>
                         <div className="caption-div">{this.props.post.caption}</div>
                     </div>
-
-                       <div className='post-comments-container2'>
-                    <div className='post-comments-list2'>
                         <div className='feed-comment-list'>
                             <ul >
                             {comms}
                             </ul>
-                        </div>
                     </div>
-                </div>
              
 
                     <div className='likes-comments-time'>
                     {/* <div className='post-show-time'>{this.props.post.created_at}</div> */}
+                        <div className="icon-wrapper">
+                        <LikeContainer likes={this.props.allLikes} postId={this.props.post.id} />
+                        <div className="comment-logo"><img src={window.commLogo} /></div>
+                        </div>   
+                        <div className="num-likes">{this.props.likes} likes</div>
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
                     </div>
 

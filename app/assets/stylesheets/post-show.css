@@ -258,7 +258,8 @@
 
 .comment-form {
     height: 20px;
-    border-top: 1px solid #e6e6e6;
+    /* border-top: 1px solid #e6e6e6; */
+    border: none;
 }
 
 .create-post-comment {
@@ -313,6 +314,13 @@ form input.create-post-comment::placeholder {
 .comment-li {
     display: flex;
     padding: 5px 0;
+    justify-content: space-between;
+}
+
+.comment-li a {
+    display: flex;
+    text-decoration: none;
+    color: #262626;
 }
 
 .comment-li li {
@@ -335,6 +343,7 @@ form input.create-post-comment::placeholder {
     list-style: none;
     padding: 0;
     padding-left: 16px;
+    height: 300px;
 }
 
 .edit-caption-input {
@@ -365,4 +374,97 @@ form input.create-post-comment::placeholder {
     font-weight: 600;
     justify-content: center;
     margin: 0 auto;
+}
+
+/* .delete-comm-butt {
+    padding: 0;
+} */
+
+.delete-comm-x {
+    outline: none;
+    background: none;
+    border: none;
+    padding-top: 3px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.fa-trash-alt {
+    font-size: 14px;
+    color: gray;
+}
+
+
+/* .empty-heart {
+    display: flex;
+    float: left;
+    border: none;
+    background: none;
+    outline: none;
+} */
+
+.empty-heart img {
+    display: flex;
+    /* position: relative; */
+    height: 20px;
+}
+
+.full-heart {
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    float: left;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.empty-heart {
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    float: left;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+
+.full-heart img {
+    display: flex;
+    height: 24px;
+}
+
+.num-likes {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.likes-comments-time {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    flex-direction: column;
+    border-top: 1px solid #EFEFEF;
+}
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.comment-logo {
+    padding-top: 15px;
+    padding-right: 15px;
+}
+.comment-logo img {
+    height: 22px;
+}
+
+.post-show-like {
+        height: 41px;
 }
