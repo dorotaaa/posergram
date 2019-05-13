@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import UploadPostContainer from '../users/upload_post_container';
+import { browserHistory } from 'react-router';
 import Modal from 'react-modal';
 
 class NavBar extends React.Component {
@@ -11,7 +12,7 @@ class NavBar extends React.Component {
             displayUpload: "hide-upload",
             showUploadForm: false,
             search: "",
-            searchVisibility: "search-users-container",
+            users: [],
         };
 
         this.handleModalClick = this.handleModalClick.bind(this);
@@ -20,13 +21,37 @@ class NavBar extends React.Component {
         this.hideUpload = this.hideUpload.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.clearSearch = this.clearSearch.bind(this);
-        // this.showUploadForm = this.showUploadForm.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchUsers();
         Modal.setAppElement('body');
     }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState({
+                search: '',
+                users: []
+            });
+        }
+    }
+
+    handleUpdate(field) {
+        return e => {
+            let filtered = this.props.users.filter(user => user.username.includes(e.target.value));
+            if (e.target.value === '') {
+                filtered = [];
+            }
+            this.setState({
+
+                [field]: e.target.value,
+                users: filtered
+            });
+        };
+    }
+
 
     handleChange(field) {
         return event => {
@@ -58,11 +83,6 @@ class NavBar extends React.Component {
         this.setState({ search: "" });
     }
 
-    // showUploadForm() {
-    //     this.setState({ showUploadForm: true })
-    // }
-
-
 
     render() {
 
@@ -73,35 +93,38 @@ class NavBar extends React.Component {
         }
 
 
-        let searchDropdown = "hide-search-dropdown";
-        let searchDropdownSquare = "search-dropdown-square-hide";
+        let searchBar = (
+            <div className='search-bar'>
+                <input
+                    className='search-input'
+                    type="text"
+                    onChange={this.handleUpdate('search')}
+                    value={this.state.search}
+                    placeholder="Search"
+                />
 
-        const searchDivs = Object.values(this.props.fetchUsers).map((user, index) => {
-            if (user.username.toLowerCase().includes(this.state.search) && this.state.search !== "") {
-                searchDropdown = "search-dropdown";
-                searchDropdownSquare = "search-dropdown-square";
-                return (
-                    <div key={`search-dropdown-${index}`} className="search-users-component">
-                        <div className={this.state.searchVisibility}>
-
-
-                            <div>
-                                <div className="search-users-username">
-                                    <Link to={`/users/${user.id}`} onClick={this.clearSearch}>{user.username}</Link>
-                                </div>
-
-                                <div className="search-users-name">
-                                    {user.fullName}
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                )
-
-
-            }
-        });
+                <ul className="searchBar-ul">
+                    {this.state.users.map(user => {
+                        // debugger
+                        return (
+                            <Link key={user.id} to={`/users/${user.id}`}>
+                                <li className="search-dropdown" key={user.id}>
+                                    <div className='search-dropdown-square'>
+                                        <div className='search-photo'>
+                                            <img src={user.photoUrl} />
+                                        <div className='search-info'>
+                                            <div className='search-username'>{user.username}</div>
+                                            <div className='search-fullname'>{user.fullname}</div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </Link>
+                        )
+                    })}
+                </ul>
+            </div>
+        );
 
         let navbar;
         if (this.props.currentUser) {
@@ -118,11 +141,7 @@ class NavBar extends React.Component {
                         </div>
 
                         <div className="navbar-search-bar">
-                            <input type="search" placeholder="Search" onChange={this.handleSearchChange} value={this.state.search} />
-                            <div className={searchDropdownSquare}></div>
-                            <div className={searchDropdown}>
-                                {searchDivs}
-                            </div>
+                            {searchBar}
                         </div>
 
                     <div className="navbar-icons">
