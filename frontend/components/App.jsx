@@ -12,7 +12,6 @@ import PostShowContainer from './posts/post_show_container';
 const App = () => (
         <div>
             <div className="app-div">
-
             <Switch>
                 <Redirect exact from="/" to="/signup"/>
                 <AuthRoute exact path="/signup" component={SignupContainer} /> 

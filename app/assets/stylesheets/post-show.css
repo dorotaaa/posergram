@@ -50,6 +50,7 @@
 
 .header-pic {
     height: 20px;
+    border-radius: 50%;
 }
 
 .show-name {
@@ -84,6 +85,7 @@
 
 .cap-pic {
     height: 20px;
+    border-radius: 50%;
 }
 
 .cap-header {
@@ -318,6 +320,7 @@ form input.create-post-comment::placeholder {
 
 .comment-pic {
     height: 20px;
+    border-radius: 50%;
 }
 
 .comment-username {

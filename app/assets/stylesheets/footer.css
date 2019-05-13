@@ -1,0 +1,42 @@
+.footer-container {
+  text-transform: uppercase;
+}
+
+.session-footer ul {
+  list-style: none;
+  max-width: 935px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color:#003569;
+  font-size: 13px;
+  font-weight: 500;
+  max-width: 100%;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-list li {
+  margin-right: 20px;
+}
+
+.footer-copyright {
+  color: #999999;
+  font-size: 12px;
+  margin-left: 100px;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color:#003569;
+  font-weight: 600;
+}
+
+.footer-list a:visited{
+  text-decoration: none;
+}

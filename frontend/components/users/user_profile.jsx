@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PostShowContainer from '../posts/post_show_container';
-
+import Footer from '../footer/footer';
 
 class UserProfile extends React.Component{
     constructor(props){
@@ -91,7 +91,7 @@ class UserProfile extends React.Component{
 
         return (
         
-        
+            <>
             <div className="show-modal-div">
                 {this.state.showModal ? modal : null}
         <div className='main-profile-div'>
@@ -146,6 +146,10 @@ class UserProfile extends React.Component{
 
         </div> 
             </div>
+            <footer className="footer-container">
+                <Footer />
+            </footer>
+            </>
     )}
 }
 

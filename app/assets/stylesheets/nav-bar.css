@@ -121,7 +121,6 @@
   height: 28px;
   padding: 5px;
   background-color: var(--lighterGray);
-  
   border: #dbdbdb solid 1px;
   border-right: none;
   border-top-left-radius: 3px;
@@ -223,10 +222,35 @@
 .search-photo img {
   height: 32px;
   padding: 16px;
+  border-radius: 50%;
 }
 
 .search-info {
-  padding: 16px;
+  padding-left: 0px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+ 
+}
+
+.search-username {
+  color: black;
+  line-height: 22px;
+  margin-bottom: -4px;
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.search-fullname {
+  color: #999999;
+  font-size: 14px;
+  margin-bottom: -4px;
+  overflow: hidden;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  text-align: left;
 }
 
 .hide-search-dropdown {
@@ -241,7 +265,10 @@
 
 .navbar-search-bar input::placeholder {
   text-align: center;
-  color: var(--grayText);
+  color:grey;
+  font-size: 14px;
+  font-weight: 200;
+
 }
 
 .navbar-search-bar input:focus::placeholder {
