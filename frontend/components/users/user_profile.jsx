@@ -18,16 +18,19 @@ class UserProfile extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
+        debugger
         if ((prevProps.user.id !== this.props.user.id) || (prevProps.posts.length !== this.props.posts.length)){
             // this.props.fetchUser(this.props.user.id);
             // this.setState({showModal: false, showId: 0});
-            this.props.fetchPosts(this.props.currentUserId);
+            this.props.fetchPosts(this.props.user.id);
         }
     }
 
     componentDidMount(){
+        debugger
+        
         this.props.fetchUser(this.props.user.id);
-        // this.props.fetchUsers();
+         // this.props.fetchUsers();
         
     }
 
@@ -49,12 +52,13 @@ class UserProfile extends React.Component{
     }
 
     render() {
-        let user;
-        if (!this.props.user) {
-            user = { username: "", fullname: "", bio: ""};
-        } else {
-            user = this.props.user;
-        }
+        debugger
+        // let user;
+        // if (!this.props.user) {
+        //     user = { username: "", fullname: "", bio: ""};
+        // } else {
+        //     user = this.props.user;
+        // }
 
           
         const modal = this.state.showModal ? (
@@ -110,7 +114,7 @@ class UserProfile extends React.Component{
                 <section className='info-section'>
             
                 <div className='name-div'>
-                    <h1 className="username">{user.username}</h1>
+                    <h1 className="username">{this.props.user.username}</h1>
                         {/* <div>
                         <button className='edit-button'>
                         <Link to="/edit">
@@ -129,9 +133,9 @@ class UserProfile extends React.Component{
 
                     <div className='name-n-bio'>
                         <div className="nameo">
-                        <h1 className='fullname'>{user.fullname}</h1>
+                        <h1 className='fullname'>{this.props.user.fullname}</h1>
                         </div>
-                        <span className='user-bio'>{user.bio}</span>
+                        <span className='user-bio'>{this.props.user.bio}</span>
                     </div>
                 </section>
                 </div>

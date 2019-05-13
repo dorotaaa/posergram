@@ -9,8 +9,9 @@ const usersReducer = (state = {}, action) => {
             return merge({}, action.currentUser.users);
         case RECEIVE_USER:
             return merge({}, state, action.payload.users);
-        // case RECEIVE_USERS:
-        //     return merge({}, state, action.payload.users)
+        case RECEIVE_USERS:
+            debugger
+            return merge({}, state, action.payload)
         case LOGOUT_CURRENT_USER:
             return {};
         default: return state;

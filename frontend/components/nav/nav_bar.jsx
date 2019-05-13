@@ -85,7 +85,7 @@ class NavBar extends React.Component {
 
 
     render() {
-
+        // debugger
         if (this.state.modalOpen) {
             this.uploadForm = <UploadPostContainer/>
         } else {
