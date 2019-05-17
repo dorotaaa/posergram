@@ -30,6 +30,7 @@ class NavBar extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
+        debugger
         if (prevProps.location.pathname !== this.props.location.pathname) {
             this.setState({
                 search: '',

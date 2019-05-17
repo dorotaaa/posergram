@@ -9,6 +9,7 @@ class UserProfile extends React.Component{
         super(props);
 
         this.state = {
+            // user: this.props.user,
             showModal: false,
             showId: 0,
         };
@@ -19,17 +20,18 @@ class UserProfile extends React.Component{
 
     componentDidUpdate(prevProps) {
         debugger
-        if ((prevProps.user.id !== this.props.user.id) || (prevProps.posts.length !== this.props.posts.length)){
+        // 
+        if ((prevProps.match.params.userId !== (this.props.match.params.userId)) || (prevProps.posts.length !== this.props.posts.length)){
             // this.props.fetchUser(this.props.user.id);
             // this.setState({showModal: false, showId: 0});
-            this.props.fetchPosts(this.props.user.id);
+            this.props.fetchPosts(this.props.match.params.userId);
         }
     }
 
     componentDidMount(){
         debugger
-        
-        this.props.fetchUser(this.props.user.id);
+        // this.props.fetchPosts(this.props.user.id);
+        this.props.fetchUser(this.props.match.params.userId);
          // this.props.fetchUsers();
         
     }
@@ -53,12 +55,12 @@ class UserProfile extends React.Component{
 
     render() {
         debugger
-        // let user;
-        // if (!this.props.user) {
-        //     user = { username: "", fullname: "", bio: ""};
-        // } else {
-        //     user = this.props.user;
-        // }
+        let user;
+        if (!this.props.user) {
+            user = { username: "", fullname: "", bio: ""};
+        } else {
+            user = this.props.user;
+        }
 
           
         const modal = this.state.showModal ? (
@@ -66,7 +68,7 @@ class UserProfile extends React.Component{
         ) : null;
 
         
-        const editButton = (this.props.currentUserId === this.props.user.id) ? (
+        const editButton = ((this.props.currentUserId === this.props.match.params.userId)) ? (
             <>
             <div>
             <button className='edit-button'>
@@ -105,7 +107,7 @@ class UserProfile extends React.Component{
                 <div className="another-one">
                     <div className='prof-pic-div'>
                         <div className='photo-upload-button'></div>
-                        <img className='prof-pic photo-dum' src={this.props.user.photoUrl} />
+                        <img className='prof-pic photo-dum' src={user.photoUrl} />
                     </div>
                 </div>
             
@@ -114,7 +116,7 @@ class UserProfile extends React.Component{
                 <section className='info-section'>
             
                 <div className='name-div'>
-                    <h1 className="username">{this.props.user.username}</h1>
+                    <h1 className="username">{user.username}</h1>
                         {/* <div>
                         <button className='edit-button'>
                         <Link to="/edit">
@@ -133,9 +135,9 @@ class UserProfile extends React.Component{
 
                     <div className='name-n-bio'>
                         <div className="nameo">
-                        <h1 className='fullname'>{this.props.user.fullname}</h1>
+                        <h1 className='fullname'>{user.fullname}</h1>
                         </div>
-                        <span className='user-bio'>{this.props.user.bio}</span>
+                        <span className='user-bio'>{user.bio}</span>
                     </div>
                 </section>
                 </div>
