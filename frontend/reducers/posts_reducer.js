@@ -17,7 +17,7 @@ const postsReducer = (state = {}, action) => {
             newState[action.like.post_id].liker_ids = newState[action.like.post_id].liker_ids.filter(id => id !== action.like.user_id);
             return newState;
         case RECEIVE_POSTS:
-            return merge({}, state, action.posts);
+            return merge({}, action.posts);
         case RECEIVE_POST:
         case RECEIVE_COMMENT:
             return merge({}, state, action.payload.posts);

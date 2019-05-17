@@ -77,14 +77,12 @@ class UserProfile extends React.Component{
         <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>)
          : (<div><button className='follow-button'>Follow</button></div>)
 
+
+
             
         const posts = this.props.posts.map((post, idx) => {
-            
-
             return (
-                
-                <li onClick={this.openModal} data-id={post.id} key={idx} className="post-li"> 
-                
+                <li onClick={this.openModal} data-id={post.id} key={idx} className="post-li">
                     <img
                         className="photo"
                         src={post.photo}/>
@@ -92,7 +90,6 @@ class UserProfile extends React.Component{
                 </li>  
             ) 
         })
-
         const reversePosts = posts.reverse();
 
         return (
