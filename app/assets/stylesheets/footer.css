@@ -1,6 +1,6 @@
-.footer-container {
+/* .footer-container {
   text-transform: uppercase;
-}
+} */
 
 .session-footer ul {
   list-style: none;
@@ -13,7 +13,10 @@
   color:#003569;
   font-size: 13px;
   font-weight: 500;
-  max-width: 100%;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  text-transform: uppercase;
 }
 
 .footer-list {
