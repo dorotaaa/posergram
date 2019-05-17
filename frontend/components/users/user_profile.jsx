@@ -9,7 +9,6 @@ class UserProfile extends React.Component{
         super(props);
 
         this.state = {
-            // user: this.props.user,
             showModal: false,
             showId: 0,
         };
@@ -19,8 +18,6 @@ class UserProfile extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        debugger
-        // 
         if ((prevProps.match.params.userId !== (this.props.match.params.userId)) 
             || (prevProps.posts.length !== this.props.posts.length)) {
             this.props.fetchUser(this.props.match.params.userId);
@@ -29,10 +26,7 @@ class UserProfile extends React.Component{
     }
 
     componentDidMount(){
-        debugger
-        // this.props.fetchPosts(this.props.user.id);
         this.props.fetchUser(this.props.match.params.userId);
-         // this.props.fetchUsers();
         
     }
 
@@ -54,7 +48,6 @@ class UserProfile extends React.Component{
     }
 
     render() {
-        debugger
         let user;
         if (!this.props.user) {
             user = { username: "", fullname: "", bio: ""};

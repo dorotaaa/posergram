@@ -30,7 +30,7 @@ class NavBar extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
+        
         if (prevProps.location.pathname !== this.props.location.pathname) {
             this.setState({
                 search: '',
@@ -86,7 +86,6 @@ class NavBar extends React.Component {
 
 
     render() {
-        // debugger
         if (this.state.modalOpen) {
             this.uploadForm = <UploadPostContainer/>
         } else {
@@ -106,7 +105,7 @@ class NavBar extends React.Component {
 
                 <ul className="searchBar-ul">
                     {this.state.users.map(user => {
-                        // debugger
+                        
                         return (
                             <Link key={user.id} to={`/users/${user.id}`}>
                                 <li className="search-dropdown" key={user.id}>

@@ -6,7 +6,6 @@ import { RECEIVE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 
 const postsReducer = (state = {}, action) => {
-    debugger
     Object.freeze(state);
     let newState = merge({}, state);
     switch (action.type) {

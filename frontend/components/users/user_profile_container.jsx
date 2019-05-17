@@ -7,11 +7,11 @@ import UserProfile from './user_profile';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     let currentUser = state.session.currentUser
     let user = state.entities.users[ownProps.match.params.userId];
     let posts = Object.values(state.entities.posts)
-    debugger
+    
     return ({
         user: user,
         posts: posts,
