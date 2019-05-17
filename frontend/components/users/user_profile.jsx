@@ -23,7 +23,6 @@ class UserProfile extends React.Component{
         // 
         if ((prevProps.match.params.userId !== (this.props.match.params.userId))){
             this.props.fetchUser(this.props.match.params.userId);
-            this.props.fetchPosts(this.props.match.params.userId);
         //     // this.setState({showModal: false, showId: 0});
         //    
         // }
@@ -72,14 +71,14 @@ class UserProfile extends React.Component{
         ) : null;
 
         
-        const editButton = ((this.props.currentUserId === this.props.match.params.userId)) ? (
+        let editButton = ((this.props.currentUser) === (this.props.match.params.userId)) ? (
             <>
             <div>
             <button className='edit-button'>
                 <Link to="/edit">Edit Profile</Link></button>
             </div>
-            <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>) : 
-            <div><button className='follow-button'>Follow</button></div>
+        <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>)
+         : (<div><button className='follow-button'>Follow</button></div>)
 
             
         const posts = this.props.posts.map((post, idx) => {

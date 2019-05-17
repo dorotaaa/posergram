@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     let posts = Object.values(state.entities.posts)
     // let postsArr = [];
     //     for (let i = 0; i < posts.length; i++) {
-    //         if ((posts[i].user_id) === userId) {
+    //         if ((posts[i].user_id) === user.id) {
     //             postsArr.push(posts[i])
     //         }
     //         return postsArr;
@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
     return ({
         user: user,
         posts: posts,
-        currentUserId: currentUser,
+        currentUser: currentUser,
     })
 }
 

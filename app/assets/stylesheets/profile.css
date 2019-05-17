@@ -130,6 +130,28 @@
 }
 
 
+.follow-button {
+    background: #3897f0 !important;
+    border: 1px solid  #3897f0;
+    color: #ffff;
+    position: relative;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    padding: 5px 9px;
+    text-align: center;
+    text-transform: inherit;
+    text-overflow: ellipsis;
+    outline: 0;
+    background: 0 0;
+    user-select: none;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+
 .stats {
     margin-bottom: 20px;
     display: flex;
@@ -149,8 +171,7 @@
     font-size: 16px;
     line-height: 24px;
     word-wrap: break-word;
-    float: left;
-    
+    float: left;  
 }
 
 .nameo {
