@@ -21,9 +21,13 @@ class UserProfile extends React.Component{
     componentDidUpdate(prevProps) {
         debugger
         // 
-        if ((prevProps.match.params.userId !== (this.props.match.params.userId)) || (prevProps.posts.length !== this.props.posts.length)){
-            // this.props.fetchUser(this.props.user.id);
-            // this.setState({showModal: false, showId: 0});
+        if ((prevProps.match.params.userId !== (this.props.match.params.userId))){
+            this.props.fetchUser(this.props.match.params.userId);
+            this.props.fetchPosts(this.props.match.params.userId);
+        //     // this.setState({showModal: false, showId: 0});
+        //    
+        // }
+        } else if (prevProps.posts.length !== this.props.posts.length) {
             this.props.fetchPosts(this.props.match.params.userId);
         }
     }
