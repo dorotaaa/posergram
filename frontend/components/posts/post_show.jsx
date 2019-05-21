@@ -126,8 +126,8 @@ class PostShow extends React.Component {
                 <li className="comment-li" key={comment.id}>
                     <div className="comment-li">
                     <Link to={`/users/${comment.user_id}`}>
-                        <img className="comment-pic" src={this.props.photoUrl}/>
-                        <div className="comment-username">{this.props.username}</div>
+                        <img className="comment-pic" src={this.props.currPhoto}/>
+                        <div className="comment-username">{this.props.currUsername}</div>
                     </Link>
                         <div className="comment">{comment.body} </div>
                         </div>
