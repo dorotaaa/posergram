@@ -26,7 +26,7 @@
 } 
 
 .post-header{
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     position: relative;
     background-color: #fff;
@@ -36,7 +36,18 @@
     border-bottom: 1px solid #efefef;
     padding: 16px;
     right: 0;
-    height: 40px;
+    height: 40px; */
+
+    background-color: #fff;
+    border-top: 1px solid #efefef;
+    /* height: 72px; */
+    border-right: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    margin: 0;
 }
 
 .post-header button {
@@ -45,7 +56,7 @@
     cursor: pointer;
     outline: none;
     font-weight: 600; 
-    padding: 0;
+    padding-right: 12px;
 }
 
 .header-pic {
@@ -54,9 +65,12 @@
 }
 
 .show-name {
-    margin-left: -170px;
-    margin-bottom: 5px;
+    padding-right: 100px;
 }
+
+/* .dots {
+    margin-top: 10px;
+} */
 
 .dots img{
     height: 5px;
