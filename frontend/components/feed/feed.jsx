@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import CommentContainer from '../comment/comment_container';
-import LikeContainer from '../like/like_container';
+import CommentContainer from '../comments/comment_container';
+import LikeContainer from '../likes/like_container';
 
 
 class Feed extends React.Component {

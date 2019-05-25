@@ -133,11 +133,11 @@ class NavBar extends React.Component {
                     <div id="navbar" className="navbar">
 
                         <div className="navbar-posergram-logo">
-                            <a href="#">
+                            <Link to="/feed">
                                 <i className="fab fa-instagram"></i>
                                 <div id="nav-div" className="navbar-divider"></div>
                                 <span id="nav-logo" className="navbar-logo">{<img src={window.logo}/>}</span>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="navbar-search-bar">
