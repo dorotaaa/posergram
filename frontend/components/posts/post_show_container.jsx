@@ -43,6 +43,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchUsers: () => dispatch(fetchUsers()),
         deletePost: (id) => dispatch(deletePost(id)),
         fetchPost: (id) => dispatch(fetchPost(id)),
+        deleteComment: (id) => dispatch(deleteComment(id)),
     });
 };
 
