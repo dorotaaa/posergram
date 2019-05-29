@@ -5,9 +5,9 @@ import { fetchPosts } from '../../actions/post_actions';
 import { fetchUser } from '../../actions/user_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
+    debugger
     const currentUserId = parseInt(state.session.currentUser);
-    // debugger
     const currentUser = state.entities.users[currentUserId];
     const posts = Object.values(state.entities.posts).reverse();
     return ({
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     });
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return ({
         fetchUser: id => dispatch(fetchUser(id)),
         fetchPosts: (userId) => dispatch(fetchPosts(userId))

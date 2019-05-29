@@ -10,17 +10,18 @@ class Feed extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts(this.props.match.params.userId);
-        this.props.fetchUser(this.props.match.params.userId);
+        debugger
+        this.props.fetchPosts(this.props.currentUserId);
+        this.props.fetchUser(this.props.currentUserId);
     }
 
 
     postComments(post) {
-        // debugger
+        debugger
         if (post.comments) {
             return (
                 post.comments.map(comment => {
-                    // debugger
+                    debugger
                     return (
                         <div key={comment.id} className='feed-comment-list'>
                             <ul key={comment.id}>
@@ -48,6 +49,7 @@ class Feed extends React.Component {
                 <div></div>
             )
         }
+        debugger
         return (
             <div>
                 <div className='feed-container'>
