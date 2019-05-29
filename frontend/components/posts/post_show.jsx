@@ -208,8 +208,6 @@ class PostShow extends React.Component {
                         <div>
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
                         </div>
-                       
-
                     </div>
                 </div>
             </div>

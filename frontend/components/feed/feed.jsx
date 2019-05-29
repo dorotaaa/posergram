@@ -12,43 +12,44 @@ class Feed extends React.Component {
     componentDidMount() {
         debugger
         this.props.fetchPosts(this.props.currentUserId);
-        this.props.fetchUser(this.props.currentUserId);
+        // this.props.fetchUser(this.props.currentUserId);
     }
 
 
-    postComments(post) {
-        debugger
-        if (post.comments) {
-            return (
-                post.comments.map(comment => {
-                    debugger
-                    return (
-                        <div key={comment.id} className='feed-comment-list'>
-                            <ul key={comment.id}>
-                                <li key={comment.id}>
-                                    <Link to={`/users/${comment.user_id}`}><span className='post-username2'>{comment.username} </span></Link>
-                                    <span className='post-caption-feed'>{comment.body}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    )
+    // postComments(post) {
+    //     debugger
+    //     if (post.comments) {
+    //         return (
+    //             post.comments.map(comment => {
+    //                 debugger
+    //                 return (
+    //                     <div key={comment.id} className='feed-comment-list'>
+    //                         <ul key={comment.id}>
+    //                             <li key={comment.id}>
+    //                                 <Link to={`/users/${comment.user_id}`}><span className='post-username2'>{comment.username} </span></Link>
+    //                                 <span className='post-caption-feed'>{comment.body}</span>
+    //                             </li>
+    //                         </ul>
+    //                     </div>
+    //                 )
 
-                })
-            )
-        } else {
-            return (
-                <div></div>
-            )
-        }
-    }
+    //             })
+    //         )
+    //     } else {
+    //         return (
+    //             <div></div>
+    //         )
+    //     }
+    // }
 
 
     render() {
-        if (this.props.posts === undefined || this.props.currentUser.following_ids === undefined) {
+        debugger
+        if (this.props.posts === undefined) {
             return (
                 <div></div>
             )
-        }
+        } else {
         debugger
         return (
             <div>
@@ -59,12 +60,12 @@ class Feed extends React.Component {
                             return (
                                 <div key={post.id} className='feed-post' tabIndex="0">
                                     <div className='post-bar'>
-                                        <div className='canvas'><Link to={`/users/${post.user_id}`}><img className='post-prof-pic' src={post.user_photo} /> </Link></div>
+                                        <div className='canvas'><Link to={`/users/${post.user_id}`}><img className='post-prof-pic' src={this.props.currentUser.photoUrl} /> </Link></div>
                                         <div><h2 className='post-username'><Link to={`/users/${post.user_id}`}>{post.username}</Link></h2></div>
 
                                     </div>
 
-                                    <img className='post-index-img' src={post.photo_url} />
+                                    <img className='post-index-img' src={post.photo} />
                                     <div className='comment-bar'>
                                         <div className='post-like-container'>
                                             <LikeContainer likes={likers} postId={post.id} />
@@ -76,11 +77,11 @@ class Feed extends React.Component {
                                             <span className='post-caption-feed'>{post.caption}</span>
                                         </div>
 
-                                        <div className='post-comments-container'>
+                                        {/* <div className='post-comments-container'>
                                             <div className='post-comments-list'>{this.postComments(post)}</div>
                                             <div className='post-feed-time'>{post.created_at}</div>
                                             <CommentContainer postId={post.id} />
-                                        </div>
+                                        </div> */}
                                         <div></div>
 
                                     </div>
@@ -91,6 +92,7 @@ class Feed extends React.Component {
                 </div>
             </div>
         );
+    }
     }
 }
 
