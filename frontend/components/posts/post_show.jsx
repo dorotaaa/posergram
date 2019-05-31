@@ -191,7 +191,7 @@ class PostShow extends React.Component {
                         <div className="caption-div">{this.props.post.caption}</div>
                     </div>
                         <div className='feed-comment-list'>
-                            <ul >
+                            <ul>
                             {comms}
                             </ul>
                     </div>

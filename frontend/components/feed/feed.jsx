@@ -59,22 +59,22 @@ class Feed extends React.Component {
                             const likers = post.liker_ids ? post.liker_ids : '';
                             return (
                                 <div key={post.id} className='feed-post' tabIndex="0">
-                                    <div className='post-bar'>
+                                    <div className='header-post-bar'>
                                         <div className='canvas'><Link to={`/users/${post.user_id}`}><img className='post-prof-pic' src={this.props.currentUser.photoUrl} /> </Link></div>
-                                        <div><h2 className='post-username'><Link to={`/users/${post.user_id}`}>{post.username}</Link></h2></div>
+                                        <div><h2 className='post-feed-username'><Link to={`/users/${post.user_id}`}>{post.username}</Link></h2></div>
 
                                     </div>
 
                                     <img className='post-index-img' src={post.photo} />
-                                    <div className='comment-bar'>
-                                        <div className='post-like-container'>
+                                    <div className='likes-and-comments'>
+                                        <section className='post-like-container'>
                                             <LikeContainer likes={likers} postId={post.id} />
                                             <div className='post-show-likes'>{likers.length} likes</div>
-                                        </div>
+                                        </section>
 
-                                        <div className='post-caption-container'>
-                                            <Link to={`/users/${post.user_id}`}><h2 className='post-username2'>{post.username} </h2></Link>
-                                            <span className='post-caption-feed'>{post.caption}</span>
+                                        <div className='post-caption-span'>
+                                            <Link to={`/users/${post.user_id}`}><div className='post-cap-username'>{post.username} </div></Link>
+                                            <div className='post-caption-feed'>{post.caption}</div>
                                         </div>
 
                                         {/* <div className='post-comments-container'>

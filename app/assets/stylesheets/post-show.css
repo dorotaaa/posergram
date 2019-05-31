@@ -422,7 +422,7 @@ form input.create-post-comment::placeholder {
     display: flex;
     padding-top: 15px;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 16px;
     padding-bottom: 10px;
     float: left;
     border: none;
@@ -434,7 +434,7 @@ form input.create-post-comment::placeholder {
 
 .full-heart img {
     display: flex;
-    height: 24px;
+    width: 24px;
 }
 
 .num-likes {

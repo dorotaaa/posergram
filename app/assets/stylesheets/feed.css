@@ -2,9 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 614px !important;
-    margin-top: 136px;
-    padding-left: 0px;
-    justify-content: center;
+    padding-top: 60px;
 }
 
 .feed-container{
@@ -45,7 +43,7 @@
 
 }
 
-.post-bar{
+.header-post-bar{
     background: white;
     height: 27px;
     width: 582px;
@@ -58,12 +56,13 @@
     padding: 16px 21px 16px 11px;
 }
 
-.comment-bar{
+.likes-and-comments {
     background: white;
     color: black;
-    display: inline-block;
-    width: 582px;
-    padding: 0px 16px 0px 16px;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 220px;
     border-bottom: 1px solid #e6e6e6;
     border-left: 1px solid #e6e6e6;
     border-right: 1px solid #e6e6e6;
@@ -73,13 +72,17 @@
 
 
 
-.post-username{
+.post-cap-username{
     color: #262626;
     font-weight: 600;
-    padding-left: 5px;
-    display: inline;
     font-size: 14px;
+}
 
+.post-feed-username{
+    color: #262626;
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 5px;
 }
 
 
@@ -104,10 +107,12 @@
 
 .post-caption-feed{
     font-size: 14px;
-    
+    padding-left: 5px;  
 }
-.post-caption-container{
-    padding-bottom: 6px;
+.post-caption-span{
+    padding-left: 16px;
+    margin-top: 8px;
+    display: inline-flex;
 }
 
 .post-comments-list{
@@ -121,11 +126,10 @@
     margin: 0;
 }
 
-
-.post-feed-like{
+/* .post-feed-like{
     padding-top: 6px;
     height: 30px;
-}
+} */
 
 .post-feed-time{
     color: #999;
@@ -134,4 +138,14 @@
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: .2px;
+}
+
+.post-show-likes {
+    margin-left: -50px;
+    padding-left: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    float: left;
+    font-weight: 600;
 }
