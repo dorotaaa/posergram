@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
         userId: user,
         username: username,
         currUsername: currUsername,
-        commentIds: commentIds,
+        commentIds: commentIds || [],
         comments: comments || [],
         currentUserId: currentUser,
         profile: ownProps.profile,

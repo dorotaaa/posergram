@@ -25,7 +25,7 @@ end
     @comment = Comment.find(params[:id])
     # @comment.user_id = current_user.id
     @comment.destroy
-    render json: {id: @comment.id}
+    render :delete
   end
 
   private
