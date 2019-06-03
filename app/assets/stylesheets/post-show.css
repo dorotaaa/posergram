@@ -46,6 +46,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 16px;
     margin: 0;
 }
@@ -69,9 +70,10 @@
     padding-right: 100px;
 }
 
-/* .dots {
-    margin-top: 10px;
-} */
+.photo-n-name {
+    display: flex;
+}
+
 
 .dots img{
     height: 5px;

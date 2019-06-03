@@ -168,14 +168,15 @@ class PostShow extends React.Component {
 
                 <div className="header-div">
 
-            <header className="post-header">
+                <header className="post-header">
+                <div className="photo-n-name">
                 <button onClick={this.props.closeModal}>
                     <img className="header-pic" src={this.props.photoUrl}/>
                 </button>
                 <button onClick={this.props.closeModal}>
                     <div className="show-name">{this.props.username}</div>
                 </button>
-
+                </div>
                 <div className="dots">
                     <button id="dot-btn"
                         onClick={this.toggleRenderState}>
