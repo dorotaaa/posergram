@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Feed from './feed';
 import { withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
-import { fetchUser } from '../../actions/user_actions';
+import { fetchComments } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state) => {
@@ -20,7 +20,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return ({
         // fetchUser: id => dispatch(fetchUser(id)),
-        fetchPosts: (userId) => dispatch(fetchPosts(userId))
+        fetchPosts: (userId) => dispatch(fetchPosts(userId)), 
+        fetchComments: () => dispatch(fetchComments()),
     });
 };
 

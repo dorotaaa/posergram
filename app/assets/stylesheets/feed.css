@@ -116,7 +116,7 @@
 }
 
 .post-comments-list{
-    max-height: 92px;
+    height: 92px;
     overflow: scroll;
 }
 

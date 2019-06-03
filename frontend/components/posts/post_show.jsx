@@ -201,7 +201,7 @@ class PostShow extends React.Component {
                     {/* <div className='post-show-time'>{this.props.post.created_at}</div> */}
                         <div className="icon-wrapper">
                         <LikeContainer likes={this.props.allLikes} postId={this.props.post.id} />
-                        <div className="comment-logo"><img src={window.commLogo} /></div>
+                        {/* <div className="comment-logo"><img src={window.commLogo} /></div> */}
                         </div>   
                         <div className="num-likes">{this.props.likes} likes</div>
                         </div>

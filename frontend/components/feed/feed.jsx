@@ -7,20 +7,21 @@ import LikeContainer from '../likes/like_container';
 class Feed extends React.Component {
     constructor(props) {
         super(props);
+
+        // this.postComments = this.postComments.bind(this);
     }
 
     componentDidMount() {
         debugger
         this.props.fetchPosts(this.props.currentUserId);
-        // this.props.fetchUser(this.props.currentUserId);
     }
 
 
-    // postComments(post) {
+    // postComments() {
     //     debugger
-    //     if (post.comments) {
+    //     if (post.comment_ids {
     //         return (
-    //             post.comments.map(comment => {
+    //             post.comment_ids.map(comment_id => {
     //                 debugger
     //                 return (
     //                     <div key={comment.id} className='feed-comment-list'>
@@ -77,13 +78,11 @@ class Feed extends React.Component {
                                             <div className='post-caption-feed'>{post.caption}</div>
                                         </div>
 
-                                        {/* <div className='post-comments-container'>
-                                            <div className='post-comments-list'>{this.postComments(post)}</div>
-                                            <div className='post-feed-time'>{post.created_at}</div>
-                                            <CommentContainer postId={post.id} />
-                                        </div> */}
+                                        <div className='post-comments-container'>
+                                            <div className='post-comments-list'></div>
+                                            <CommentContainer postId={post.id}/>
+                                        </div>
                                         <div></div>
-
                                     </div>
                                 </div>
                             )
