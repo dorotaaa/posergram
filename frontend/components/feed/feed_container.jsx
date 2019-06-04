@@ -10,10 +10,12 @@ const mapStateToProps = (state) => {
     const currentUserId = parseInt(state.session.currentUser);
     const currentUser = state.entities.users[currentUserId];
     const posts = Object.values(state.entities.posts).reverse();
+    const comments = state.entities.comments;
     return ({
         currentUser,
         posts,
-        currentUserId
+        currentUserId,
+        comments,
     });
 };
 

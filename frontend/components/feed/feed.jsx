@@ -4,11 +4,12 @@ import CommentContainer from '../comments/comment_container';
 import LikeContainer from '../likes/like_container';
 
 
+
 class Feed extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.postComments = this.postComments.bind(this);
+        this.feedComms = this.feedComms.bind(this);
     }
 
     componentDidMount() {
@@ -16,33 +17,28 @@ class Feed extends React.Component {
         this.props.fetchPosts(this.props.currentUserId);
     }
 
+    feedComms(commentIds) {
+        debugger
+        if (commentIds !== []) {
+            debugger
+        return (
+            commentIds.map(commentId=> {
+           (<div key={this.props.comments[commentId].id} className='feed-comment-list'>
+               <ul key={this.props.comments[commentId].id}>
+                   <li key={this.props.comments[commentId].id}>
+                       <Link to={`/users/${this.props.comments[commentId].user_id}`}><span className='post-username2'>{this.props.comments[commentId].user_id} </span></Link>
+                       <span className='post-caption-feed'>{this.props.comments[commentId].body}</span>
+                   </li>
+               </ul>
+           </div>)
+       }))} else {
+           return (
+               <div>yo</div>
+            )
+       }
+    }
 
-    // postComments() {
-    //     debugger
-    //     if (post.comment_ids {
-    //         return (
-    //             post.comment_ids.map(comment_id => {
-    //                 debugger
-    //                 return (
-    //                     <div key={comment.id} className='feed-comment-list'>
-    //                         <ul key={comment.id}>
-    //                             <li key={comment.id}>
-    //                                 <Link to={`/users/${comment.user_id}`}><span className='post-username2'>{comment.username} </span></Link>
-    //                                 <span className='post-caption-feed'>{comment.body}</span>
-    //                             </li>
-    //                         </ul>
-    //                     </div>
-    //                 )
-
-    //             })
-    //         )
-    //     } else {
-    //         return (
-    //             <div></div>
-    //         )
-    //     }
-    // }
-
+     
 
     render() {
         debugger
@@ -58,7 +54,10 @@ class Feed extends React.Component {
                     <div className='feed-index'>
                         {this.props.posts.map(post => {
                             const likers = post.liker_ids ? post.liker_ids : '';
+                            const commentIds = post.comment_ids ? post.comment_ids : [];
+                            debugger
                             return (
+        
                                 <div key={post.id} className='feed-post' tabIndex="0">
                                     <div className='header-post-bar'>
                                         <div className='canvas'><Link to={`/users/${post.user_id}`}><img className='post-prof-pic' src={this.props.currentUser.photoUrl} /> </Link></div>
@@ -79,7 +78,9 @@ class Feed extends React.Component {
                                         </div>
 
                                         <div className='post-comments-container'>
-                                            <div className='post-comments-list'></div>
+                                            <div className='post-comments-list'>
+                                                {this.feedComms(commentIds)}
+                                            </div>
                                             <CommentContainer postId={post.id}/>
                                         </div>
                                         <div></div>
