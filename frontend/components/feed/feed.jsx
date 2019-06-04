@@ -18,12 +18,12 @@ class Feed extends React.Component {
     }
 
     feedComms(commentIds) {
-        debugger
+        // debugger
         if (commentIds !== []) {
-            debugger
+            // debugger
         return (
             commentIds.map(commentId=> {
-           (<div key={this.props.comments[commentId].id} className='feed-comment-list'>
+          return (<div key={this.props.comments[commentId].id} className='feed-comment-list'>
                <ul key={this.props.comments[commentId].id}>
                    <li key={this.props.comments[commentId].id}>
                        <Link to={`/users/${this.props.comments[commentId].user_id}`}><span className='post-username2'>{this.props.comments[commentId].user_id} </span></Link>
@@ -41,13 +41,13 @@ class Feed extends React.Component {
      
 
     render() {
-        debugger
+        // debugger
         if (this.props.posts === undefined) {
             return (
                 <div></div>
             )
         } else {
-        debugger
+        // debugger
         return (
             <div>
                 <div className='feed-container'>
@@ -55,7 +55,7 @@ class Feed extends React.Component {
                         {this.props.posts.map(post => {
                             const likers = post.liker_ids ? post.liker_ids : '';
                             const commentIds = post.comment_ids ? post.comment_ids : [];
-                            debugger
+                            // debugger
                             return (
         
                                 <div key={post.id} className='feed-post' tabIndex="0">

@@ -20,6 +20,7 @@ const receiveComment = (payload) => {
 };
 
 const removeComment = ({commentId, post}) => {
+    debugger
     return {
         type: REMOVE_COMMENT,
         commentId,
@@ -42,8 +43,10 @@ export const createComment = comment => dispatch => {
 };
 
 export const deleteComment = id => (dispatch) => {
+    debugger
     return CommentAPIUtil.deleteComment(id)
         .then((payload) => {
+            debugger
             return dispatch(removeComment(payload));
         });
 };

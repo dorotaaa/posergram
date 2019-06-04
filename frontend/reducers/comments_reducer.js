@@ -5,6 +5,7 @@ import { RECEIVE_USER, RECEIVE_USERS} from '../actions/user_actions';
 import { RECEIVE_POST, RECEIVE_POSTS } from '../actions/post_actions';
 
 const commentsReducer = (state = {}, action) => {
+
     Object.freeze(state);
    
     switch (action.type) {
@@ -18,6 +19,7 @@ const commentsReducer = (state = {}, action) => {
         case RECEIVE_POSTS:
             return merge({}, state, action.payload.comments);
         case REMOVE_COMMENT:
+        debugger
             let newState = merge({}, state);
             delete newState[action.commentId];
             return newState; 

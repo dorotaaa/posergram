@@ -21,7 +21,9 @@ const postsReducer = (state = {}, action) => {
         case RECEIVE_COMMENT:
             return merge({}, state, action.payload.posts);
         case REMOVE_COMMENT:
-            return merge({}, state, action.post);
+        debugger
+            newState[action.post.id] = action.post;
+            return newState;
         case REMOVE_POST:
             delete newState[action.postId];
             return newState;
