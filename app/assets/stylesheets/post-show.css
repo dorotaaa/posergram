@@ -350,7 +350,8 @@ form input.create-post-comment::placeholder {
 .feed-comment-list ul {
     list-style: none;
     padding: 0;
-    padding-left: 16px; 
+    padding-left: 16px;
+    margin: 0;
 }
 
 .feed-comment-list {

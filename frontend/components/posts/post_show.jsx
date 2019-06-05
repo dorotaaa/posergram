@@ -116,14 +116,14 @@ class PostShow extends React.Component {
         }
         
     
-        const comms = commsArr.map((comment) => {
+        const comms = commsArr.reverse().map((comment) => {
 
             return (
                 <li className="comment-li" key={comment.id}>
                     <div className="comment-li">
                     <Link onClick={this.props.closeModal} to={`/users/${comment.user_id}`}>
-                        <img className="comment-pic" src={this.props.currPhoto}/>
-                        <div className="comment-username">{this.props.currUsername}</div>
+                        <img className="comment-pic" src={this.props.users[comment.user_id].photoUrl}/>
+                            <div className="comment-username">{this.props.users[comment.user_id].username}</div>
                     </Link>
                         <div className="comment">{comment.body} </div>
                         </div>

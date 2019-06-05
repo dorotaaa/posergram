@@ -41,6 +41,7 @@
     text-decoration: none;
     color: #262626;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .header-post-bar{
@@ -123,18 +124,22 @@
 
 .feed-comment-list2 ul{
     list-style-type: none;
-    padding: 5px 0px 0px 0px;
+    padding: 5px 0px 0px 16px;
     margin: 0;
+    display: flex;
+}
+
+.feed-comment-list2 li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .feed-comment-list2 {
     max-height: 92px;
     overflow: auto;
 }
-/* .post-feed-like{
-    padding-top: 6px;
-    height: 30px;
-} */
+
 
 .post-feed-time{
     color: #999;
