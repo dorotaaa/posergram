@@ -15,7 +15,7 @@ class Feed extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        
         this.props.fetchPosts(this.props.currentUserId);
     }
 
@@ -35,9 +35,9 @@ class Feed extends React.Component {
 
     feedComms(post) {
 
-        debugger
+        
         if (post.comment_ids) {
-            // debugger
+            
         return ( 
             post.comment_ids.reverse().map(commentId=> {
           return (<div key={this.props.comments[commentId].id} className='feed-comment-list2'>
@@ -65,20 +65,20 @@ class Feed extends React.Component {
     render() {
 
 
-        // debugger
+        
         if (this.props.posts === undefined) {
             return (
                 <div></div>
             )
         } else {
-        // debugger
+        
         return (
             <div>
                 <div className='feed-container'>
                     <div className='feed-index'>
                         {this.props.posts.map(post => {
                             const likers = post.liker_ids ? post.liker_ids : '';
-                            // debugger
+                            
                             return (
         
                                 <div key={post.id} className='feed-post' tabIndex="0">

@@ -6,7 +6,7 @@ import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     const currentUserId = parseInt(state.session.currentUser);
     const currentUser = state.entities.users[currentUserId];
     const posts = Object.values(state.entities.posts).reverse();

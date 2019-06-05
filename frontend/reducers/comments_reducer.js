@@ -1,7 +1,7 @@
 import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import { merge } from 'lodash';
 import { REMOVE_POST } from '../actions/post_actions';
-import { RECEIVE_USER, RECEIVE_USERS} from '../actions/user_actions';
+import { RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_POST, RECEIVE_POSTS } from '../actions/post_actions';
 
 const commentsReducer = (state = {}, action) => {
@@ -19,7 +19,6 @@ const commentsReducer = (state = {}, action) => {
         case RECEIVE_POSTS:
             return merge({}, state, action.payload.comments);
         case REMOVE_COMMENT:
-        debugger
             let newState = merge({}, state);
             delete newState[action.commentId];
             return newState; 
