@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PostShowContainer from '../posts/post_show_container';
 import Footer from '../footer/footer';
+import FollowContainer from '../follows/follow_container';
 
 class UserProfile extends React.Component{
     constructor(props){
@@ -68,7 +69,7 @@ class UserProfile extends React.Component{
                 <Link to="/edit">Edit Profile</Link></button>
             </div>
         <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>)
-         : (<div><button className='follow-button'>Follow</button></div>)
+         : (<div><FollowContainer/></div>)
 
 
 

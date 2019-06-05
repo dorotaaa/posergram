@@ -6,8 +6,6 @@ import { fetchPost, deletePost } from '../../actions/post_actions';
 import {deleteComment} from '../../actions/comment_actions';
 
 
-
-
 const mapStateToProps = (state, ownProps) => {
     let post = state.entities.posts[ownProps.photoId];
     let user = ownProps.user.id;
