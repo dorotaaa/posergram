@@ -7,15 +7,6 @@ json.posts do
         end
     json.username post.user.username
     json.liker_ids post.likers.pluck(:id)
-        # json.comments do
-        #     json.array!(post.comments) do |comment|
-        #     json.id comment.id
-        #         json.username comment.user.username
-        #         json.body comment.body
-        #         json.post_id comment.post_id
-        #         json.user_id comment.user_id
-        #     end
-        # end
     end
 end
 end

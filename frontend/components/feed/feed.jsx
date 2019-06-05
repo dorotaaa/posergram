@@ -18,7 +18,7 @@ class Feed extends React.Component {
     }
 
     feedComms(post) {
-        // debugger
+        debugger
         if (post.comment_ids) {
             // debugger
         return ( 
@@ -26,7 +26,10 @@ class Feed extends React.Component {
           return (<div key={this.props.comments[commentId].id} className='feed-comment-list2'>
                <ul>
                    <li key={this.props.comments[commentId].id}>
-                       <Link to={`/users/${this.props.comments[commentId].user_id}`}><span className='post-username2'>{this.props.comments[commentId].user_id} </span></Link>
+                       <Link to={`/users/${this.props.comments[commentId].user_id}`}>
+                          <img className="post-prof-pic" src={this.props.users[this.props.comments[commentId].user_id].photoUrl}/>
+                       <span className='post-username2'>{this.props.users[this.props.comments[commentId].user_id].username}</span>
+                       </Link>
                        <span className='post-caption-feed'>{this.props.comments[commentId].body}</span>
                    </li>
                </ul>
