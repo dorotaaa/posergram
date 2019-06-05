@@ -8,10 +8,11 @@ import UserProfile from './user_profile';
 
 const mapStateToProps = (state, ownProps) => {
     debugger
-    let currentUser = state.session.currentUser
+    let currentUser = state.session.currentUser;
     let user = state.entities.users[ownProps.match.params.userId];
-    let posts = Object.values(state.entities.posts)
-    
+    let posts = Object.values(state.entities.posts);
+    // let followers = state.entities.users[ownProps.match.params.userId].follower_ids || [];
+    // let followings = state.entities.users[ownProps.match.params.userId].following_ids || [];
     return ({
         user: user,
         posts: posts,

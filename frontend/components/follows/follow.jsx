@@ -8,25 +8,25 @@ class Follow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.currId);
+        this.props.fetchUser(this.props.currentUserId);
     }
 
     render() {
-        if (this.props.currentUser == undefined || this.props.currentUser.following_ids == undefined) {
-            return (
-                <div></div>
-            )
-        }
-        if (this.props.currentUser.following_ids.includes(this.props.followingId)) {
+        // if (this.props.currentUser === undefined || this.props.currentUser.followingIds == undefined) {
+        //     return (
+        //         <div></div>
+        //     )
+        // }
+        if (this.props.currentUser.followingIds.includes(this.props.currentUserId)) {
             return (
                 <div>
-                    <button onClick={() => this.props.deleteFollow(this.props.followingId)} className='follow-button'>Following</button>
+                    <button onClick={() => this.props.deleteFollow(this.props.currentUserId)} className='follow-button'>Following</button>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <button onClick={() => this.props.createFollow({ user_id: this.props.followingId })} className='follow-button'>Follow</button>
+                    <button onClick={() => this.props.createFollow(this.props.currentUserId)} className='follow-button'>Follow</button>
                 </div>
             )
         }

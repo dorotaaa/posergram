@@ -8,11 +8,9 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     let currentUserId = state.session.currentUser;
     let currentUser = state.entities.users[state.session.currentUser];
-    let followingId = state.entities.users[state.session.currentUser].id;
     return ({
         currentUserId,
         currentUser,
-        followingId,
     });
 };
 
@@ -20,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         fetchUser: (id) => dispatch(fetchUser(id)),
         createFollow: (follow) => dispatch(createFollow(follow)),
-        deleteFollow: (id) => dispatch(deleteFollow(id))
+        deleteFollow: (follow) => dispatch(deleteFollow(follow))
     });
 };
 

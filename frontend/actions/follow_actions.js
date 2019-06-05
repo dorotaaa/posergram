@@ -13,12 +13,20 @@ const removeFollow = follow => ({
     follow
 });
 
-export const createFollow = follow => dispatch => (
-    FollowAPIUtil.createFollow(follow)
-        .then(follow => dispatch(receiveFollow(follow)))
-);
+export const createFollow = (follow) => (dispatch) => {
+    debugger
+    return FollowAPIUtil.createFollow(follow).
+        then((follow) => {
+            debugger
+            return dispatch(receiveFollow(follow));
+        });
+};
 
-export const deleteFollow = id => dispatch => (
-    FollowAPIUtil.deleteFollow(id)
-        .then(follow => dispatch(removeFollow(follow)))
-);
+export const deleteFollow = (follow) => (dispatch) => {
+    debugger
+    return FollowAPIUtil.deleteFollow(follow).
+        then(() => {
+            debugger
+            return dispatch(removeFollow(follow));
+        });
+};
