@@ -3,20 +3,25 @@ import { withRouter }from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
 import { logout } from '../../actions/session_actions';
 import { fetchPosts } from '../../actions/post_actions';
+import { createFollow, deleteFollow } from '../../actions/follow_actions';
 import UserProfile from './user_profile';
 
 
 const mapStateToProps = (state, ownProps) => {
     debugger
-    let currentUser = state.session.currentUser;
+    let currentUserId = state.session.currentUser;
     let user = state.entities.users[ownProps.match.params.userId];
+    let currentUser = state.entities.users[currentUserId];
     let posts = Object.values(state.entities.posts);
+    let followingId = parseInt(ownProps.match.params.userId);
     // let followers = state.entities.users[ownProps.match.params.userId].follower_ids || [];
     // let followings = state.entities.users[ownProps.match.params.userId].following_ids || [];
     return ({
         user: user,
         posts: posts,
         currentUser: currentUser,
+        currentUserId: currentUserId,
+        followingId: followingId,
     })
 }
 
@@ -25,7 +30,9 @@ const mapDispatchToProps = dispatch => {
     return ({
         fetchUser: id => dispatch(fetchUser(id)),
         logout: () => dispatch(logout()),
-        fetchPosts: (userId) => dispatch(fetchPosts(userId))   
+        fetchPosts: (userId) => dispatch(fetchPosts(userId)),
+        createFollow: (follow) => dispatch(createFollow(follow)),
+        deleteFollow: (follow) => dispatch(deleteFollow(follow)),   
     })
 }
 

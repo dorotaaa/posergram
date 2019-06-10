@@ -3,16 +3,7 @@
         json.extract! user, :id, :username, :fullname
         json.photoUrl url_for(user.photo)
 
-            if user.followers
-                json.followerIds user.followers.pluck(:id)
-            else
-                json.followerIds []
-            end
-
-            if user.followings
-                json.followingIds user.followings.pluck(:id)
-            else
-            json.followingIds []
-        end
+        json.follower_ids user.followers.pluck(:id)
+        json.following_ids user.followings.pluck(:id)
     end
 end

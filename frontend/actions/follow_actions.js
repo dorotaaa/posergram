@@ -22,10 +22,10 @@ export const createFollow = (follow) => (dispatch) => {
         });
 };
 
-export const deleteFollow = (follow) => (dispatch) => {
+export const deleteFollow = (id) => (dispatch) => {
     debugger
-    return FollowAPIUtil.deleteFollow(follow).
-        then(() => {
+    return FollowAPIUtil.deleteFollow(id).
+        then((follow) => {
             debugger
             return dispatch(removeFollow(follow));
         });

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PostShowContainer from '../posts/post_show_container';
 import Footer from '../footer/footer';
-import FollowContainer from '../follows/follow_container';
+
 
 class UserProfile extends React.Component{
     constructor(props){
@@ -16,6 +16,7 @@ class UserProfile extends React.Component{
         this.handleLogout = this.handleLogout.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.follow = this.follow.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -47,6 +48,23 @@ class UserProfile extends React.Component{
         }); 
     }
 
+    follow() {
+        debugger
+        if (this.props.currentUser.following_ids.includes(this.props.followingId)) {
+            return (
+                <div>
+                    <button onClick={() => this.props.deleteFollow(this.props.followingId)} className='following-button'>Following</button>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <button onClick={() => this.props.createFollow({ user_id: this.props.followingId })} className='follow-button'>Follow</button>
+                </div>
+            )
+        }
+    }
+
     render() {
         let user;
         if (!this.props.user) {
@@ -61,14 +79,14 @@ class UserProfile extends React.Component{
         ) : null;
 
         
-        let editButton = ((this.props.currentUser.toString()) === (this.props.match.params.userId)) ? (
+        let editButton = ((this.props.currentUserId.toString()) === (this.props.match.params.userId)) ? (
             <>
             <div>
             <button className='edit-button'>
                 <Link to="/edit">Edit Profile</Link></button>
             </div>
         <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>)
-         : (<div><FollowContainer/></div>)
+         : (<div>{this.follow()}</div>)
 
 
 
