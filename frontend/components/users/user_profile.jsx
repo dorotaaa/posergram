@@ -12,6 +12,7 @@ class UserProfile extends React.Component{
         this.state = {
             showModal: false,
             showId: 0,
+            loaded: false,
         };
         this.handleLogout = this.handleLogout.bind(this);
         this.openModal = this.openModal.bind(this);
@@ -28,7 +29,12 @@ class UserProfile extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchUser(this.props.match.params.userId);
+        debugger
+        this.props.fetchUser(this.props.match.params.userId).then(() => {
+            this.setState({
+                loaded: true,
+            })
+        });
     }
 
     handleLogout() {
@@ -66,105 +72,111 @@ class UserProfile extends React.Component{
     }
 
     render() {
-        let user;
-        if (!this.props.user) {
-            user = { username: "", fullname: "", bio: ""};
-        } else {
-            user = this.props.user;
-        }
+        if (this.state.loaded) {
+            let user = this.props.user;
+            if (!this.props.user) {
+                user = { username: "", fullname: "", bio: "" };
+            } else {
+                user = this.props.user;
+            }
+            debugger
 
-          
-        const modal = this.state.showModal ? (
-            <PostShowContainer profile={this} closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId}/>
-        ) : null;
-
-        
-        let editButton = ((this.props.currentUserId.toString()) === (this.props.match.params.userId)) ? (
-            <>
-            <div>
-            <button className='edit-button'>
-                <Link to="/edit">Edit Profile</Link></button>
-            </div>
-        <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>)
-         : (<div>{this.follow()}</div>)
+            const modal = this.state.showModal ? (
+                <PostShowContainer profile={this} closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId} />
+            ) : null;
 
 
-
-            
-        const posts = this.props.posts.map((post, idx) => {
-            return (
-                <li onClick={this.openModal} data-id={post.id} key={idx} className="post-li">
-                    <img
-                        className="photo"
-                        src={post.photo}/>
-                        <div className="img-div"></div>
-                </li>  
-            ) 
-        })
-        const reversePosts = posts.reverse();
-
-        return (
-        
-            <>
-            <div className="show-modal-div">
-                {this.state.showModal ? modal : null}
-        <div className='main-profile-div'>
-
-            <header className='profile-header'>
-
-                <div className="another-one">
-                    <div className='prof-pic-div'>
-                        <div className='photo-upload-button'></div>
-                        <img className='prof-pic photo-dum' src={user.photoUrl} />
+            let editButton = ((this.props.currentUserId.toString()) === (this.props.match.params.userId)) ? (
+                <>
+                    <div>
+                        <button className='edit-button'>
+                            <Link to="/edit">Edit Profile</Link></button>
                     </div>
-                </div>
-            
+                    <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout" /></button></div></>)
+                : (<div>{this.follow()}</div>)
 
-            <div className='info-container'>
-                <section className='info-section'>
-            
-                <div className='name-div'>
-                    <h1 className="username">{user.username}</h1>
-                        {/* <div>
+
+
+
+            const posts = this.props.posts.map((post, idx) => {
+                return (
+                    <li onClick={this.openModal} data-id={post.id} key={idx} className="post-li">
+                        <img
+                            className="photo"
+                            src={post.photo} />
+                        <div className="img-div"></div>
+                    </li>
+                )
+            })
+            const reversePosts = posts.reverse();
+
+            return (
+
+                <>
+                    <div className="show-modal-div">
+                        {this.state.showModal ? modal : null}
+                        <div className='main-profile-div'>
+
+                            <header className='profile-header'>
+
+                                <div className="another-one">
+                                    <div className='prof-pic-div'>
+                                        <div className='photo-upload-button'></div>
+                                        <img className='prof-pic photo-dum' src={user.photoUrl} />
+                                    </div>
+                                </div>
+
+
+                                <div className='info-container'>
+                                    <section className='info-section'>
+
+                                        <div className='name-div'>
+                                            <h1 className="username">{user.username}</h1>
+                                            {/* <div>
                         <button className='edit-button'>
                         <Link to="/edit">
                             Edit Profile</Link></button>
                         </div>
                     <div><button onClick={() => this.handleLogout()} className='fob-button'><img src={window.fob} alt="Logout"/></button></div> */}
-                    {editButton}
-                </div>
+                                            {editButton}
+                                        </div>
 
 
-                <ul className='stats'>
-                    <li className='stat'><span className='number'></span>{reversePosts.length} posts</li>
-                    <li className='stat'><span className='number'></span> followers</li>
-                    <li className='stat'><span className='number'></span> following</li>
-                </ul>
+                                        <ul className='stats'>
+                                            <li className='stat'><span className='number'></span>{reversePosts.length} posts</li>
+                                            <li className='stat'><span className='number'></span>{user.follower_ids.length} followers</li>
+                                            <li className='stat'><span className='number'></span>{user.following_ids.length} following</li>
+                                        </ul>
 
-                    <div className='name-n-bio'>
-                        <div className="nameo">
-                        <h1 className='fullname'>{user.fullname}</h1>
+                                        <div className='name-n-bio'>
+                                            <div className="nameo">
+                                                <h1 className='fullname'>{user.fullname}</h1>
+                                            </div>
+                                            <span className='user-bio'>{user.bio}</span>
+                                        </div>
+                                    </section>
+                                </div>
+                            </header>
+
+                            <div className="post-divider"></div>
+                            <div className="posts">
+                                <div className="profile-posts">
+                                    {reversePosts}
+                                </div>
+                            </div>
+
                         </div>
-                        <span className='user-bio'>{user.bio}</span>
                     </div>
-                </section>
-                </div>
-            </header> 
-
-            <div className="post-divider"></div>
-                <div className="posts">
-                <div className="profile-posts">
-                    {reversePosts}
-                </div>
-            </div>
-
-        </div> 
-            </div>
-            <footer className="footer-container">
-                <Footer />
-            </footer>
-            </>
-    )}
+                    <footer className="footer-container">
+                        <Footer />
+                    </footer>
+                </>
+            )} else {
+                return (
+                    <div></div>
+                )
+            }
+        }   
 }
 
 export default withRouter(UserProfile);
