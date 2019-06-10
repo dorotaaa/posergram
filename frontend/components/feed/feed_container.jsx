@@ -6,10 +6,12 @@ import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    
     const currentUserId = parseInt(state.session.currentUser);
     const currentUser = state.entities.users[currentUserId];
-    const posts = Object.values(state.entities.posts).reverse();
+    // const posts = Object.values(state.entities.posts).reverse();
+    let followingPosts = Object.values(state.entities.posts).filter(post => currentUser.following_ids.includes(post.user_id));
+    let currentUserPosts = Object.values(state.entities.posts).filter(post => (currentUserId === post.user_id));
+    const posts = followingPosts.concat(currentUserPosts).reverse();
     const comments = state.entities.comments;
     const users = state.entities.users;
     return ({
@@ -18,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
         currentUserId,
         comments,
         users,
+        
     });
 };
 

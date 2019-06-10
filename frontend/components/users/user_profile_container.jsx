@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
     let currentUserId = state.session.currentUser;
     let user = state.entities.users[ownProps.match.params.userId];
     let currentUser = state.entities.users[currentUserId];
-    let posts = Object.values(state.entities.posts);
+    let posts = Object.values(state.entities.posts).filter(
+        post => (state.entities.users[ownProps.match.params.userId].id === post.user_id));
     let followingId = parseInt(ownProps.match.params.userId);
     return ({
         user: user,
