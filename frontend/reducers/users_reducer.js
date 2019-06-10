@@ -16,12 +16,10 @@ const usersReducer = (state = {}, action) => {
         case LOGOUT_CURRENT_USER:
             return {};
         case RECEIVE_FOLLOW:
-            // debugger
             newState[action.follow.follower_id].following_ids.push(action.follow.user_id);
             newState[action.follow.user_id].follower_ids.push(action.follow.follower_id);
             return newState;
         case REMOVE_FOLLOW:
-            // debugger
             let followingUserFollowingIds = newState[action.follow.follower_id].following_ids;
             let followedUserFollowerIds = newState[action.follow.user_id].follower_ids;
             newState[action.follow.user_id].follower_ids = followedUserFollowerIds.filter(id => id !== action.follow.follower_id);

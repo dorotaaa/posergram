@@ -29,7 +29,7 @@ class UserProfile extends React.Component{
     }
 
     componentDidMount(){
-        debugger
+        
         this.props.fetchUser(this.props.match.params.userId).then(() => {
             this.setState({
                 loaded: true,
@@ -55,7 +55,7 @@ class UserProfile extends React.Component{
     }
 
     follow() {
-        debugger
+       
         if (this.props.currentUser.following_ids.includes(this.props.followingId)) {
             return (
                 <div>
@@ -79,7 +79,7 @@ class UserProfile extends React.Component{
             } else {
                 user = this.props.user;
             }
-            debugger
+            
 
             const modal = this.state.showModal ? (
                 <PostShowContainer profile={this} closeModal={this.closeModal} user={this.props.user} photoId={this.state.showId} />
