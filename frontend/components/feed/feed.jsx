@@ -15,7 +15,6 @@ class Feed extends React.Component {
     }
 
     componentDidMount() {
-        
         this.props.fetchPosts(this.props.currentUserId);
     }
 
