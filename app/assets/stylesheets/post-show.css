@@ -444,7 +444,7 @@ form input.create-post-comment::placeholder {
 
 .num-likes {
     text-align: left;
-    padding-left: 10px;
+    padding-left: 16px;
 }
 
 .likes-comments-time {
@@ -470,4 +470,16 @@ form input.create-post-comment::placeholder {
 
 .post-show-like {
         height: 41px;
+}
+
+.no-likes {
+    color: #262626;
+    /* margin-bottom: 10px;
+    margin-top: 10px; */
+    padding-left: 16px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .2px;
+    text-align: left;
 }

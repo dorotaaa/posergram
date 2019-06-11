@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CommentContainer from '../comments/comment_container';
 import LikeContainer from '../likes/like_container';
+import {timeSince} from '../../util/date_util';
 
 
 
@@ -82,7 +83,8 @@ class Feed extends React.Component {
                                  numLikes = "like";
                              } else {
                                  numLikes = "likes";
-                             } 
+                             }
+                             const timestamp = timeSince(post.created_at);
                             return (
         
                                 <div key={post.id} className='feed-post' tabIndex="0">
@@ -108,6 +110,7 @@ class Feed extends React.Component {
                                             <div className='post-comments-list'>
                                                 {this.feedComms(post)}
                                             </div>
+                                            <div className="timestamp">{timestamp}</div>
                                             <CommentContainer postId={post.id}/>
                                         </div>
                                         <div></div>

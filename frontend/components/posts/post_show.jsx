@@ -4,7 +4,7 @@ import CommentContainer from '../comments/comment_container';
 import LikeContainer from '../likes/like_container';
 import EditPostCaptionContainer from './edit_post_caption_container';
 import Modal from 'react-modal';
-
+import { timeSince } from '../../util/date_util';
 
 class PostShow extends React.Component {
     constructor(props){
@@ -94,7 +94,7 @@ class PostShow extends React.Component {
         } else if (this.props.likes === 1) {
             return (<div className="num-likes">{this.props.likes} like </div>)
         } else {
-            return (<div className="num-likes">BE THE FIRST TO LIKE THIS PHOTO </div>)
+            return (<div className="no-likes">Be the first to like this photo</div>)
         }
     }
 
@@ -215,6 +215,7 @@ class PostShow extends React.Component {
                         </div>   
                         {this.numLikes()}
                         </div>
+                        <div className="timestamp">{timeSince(this.props.post.created_at)}</div>
                         <div>
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
                         </div>
