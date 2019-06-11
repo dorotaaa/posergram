@@ -304,6 +304,7 @@ form input.create-post-comment::placeholder {
 
 .hidden-submit:disabled {
     opacity: 0.3;
+    background: none;
   pointer-events: none;
   outline: 0;
 }
