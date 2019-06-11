@@ -7,7 +7,8 @@ class PostForm extends React.Component {
         
         this.state = {
             caption: this.props.caption,
-            user_id: this.props.user_id
+            user_id: this.props.user_id,
+            disabledOrNot: true,
         }
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,7 +41,8 @@ class PostForm extends React.Component {
 
     handleUpdate(field) {
         return e => this.setState({
-            [field]: e.target.value
+            [field]: e.target.value,
+            disabledOrNot: false
         })
     }
 
@@ -48,8 +50,12 @@ class PostForm extends React.Component {
         
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        reader.onloadend = () =>
-            this.setState({ imageUrl: reader.result, imageFile: file });
+        reader.onloadend = () => {
+            this.setState({ imageUrl: reader.result, 
+                            imageFile: file,
+                            disabledOrNot: false
+                        });
+                    };
 
         if (file) {
             reader.readAsDataURL(file);
@@ -60,21 +66,28 @@ class PostForm extends React.Component {
 
 
     render() {
+
+        let postPreview;
+        if (this.state.imageUrl) {
+            postPreview = <img className="post-pic-preview" src={this.state.imageUrl} />
+        } else {
+            postPreview = <label className="select-file" htmlFor="file-selector">SELECT FILE</label>
+        };
+
         return (
             <div tabIndex="0" ref={this.focusRef} className="upload-div">
                 <div className="upload-form-div">
-                    <form className="upload-form" onSubmit={this.handleSubmit}>
-                        <div className='upload-button'>
+                    <form className="upload-form" onSubmit={this.handleSubmit} disabled={this.state.disabledOrNot}>
+                        <label className='upload-button' htmlFor="file-selector">
                            
-                           
-                                
-                                <label className="upload-button" htmlFor="file">
-                                    <img className="upload-heart" src={window.upload} />
-                                    <input className="inputfile" type="file" onChange={this.handleFile} />
-                                </label>
                            
 
-                        </div>
+                                {/* <label className="upload-button" htmlFor="file-selector">
+                                    <img src={window.upload} />
+                                </label> */}
+                                <input className="inputfile" type="file" onChange={this.handleFile} id="file-selector"/>
+                            {postPreview}
+                        </label>
                         <div>
                             <div className="caption-input">
                                 <input
@@ -83,7 +96,8 @@ class PostForm extends React.Component {
                                     placeholder="Write a caption..."
                                     onChange={this.handleUpdate("caption")} />
                             </div>
-                            <button className="submitButton" onClick={this.handleSubmit}>Submit</button>
+                            
+                            <button className="submitButton" onClick={this.handleSubmit} disabled={this.state.disabledOrNot}>Submit</button>
                         </div>
                        
                     </form>
