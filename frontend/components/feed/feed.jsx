@@ -77,7 +77,12 @@ class Feed extends React.Component {
                     <div className='feed-index'>
                         {this.props.posts.map(post => {
                             const likers = post.liker_ids ? post.liker_ids : '';
-                            
+                            let numLikes;
+                             if (post.liker_ids.length === 1) {
+                                 numLikes = "like";
+                             } else {
+                                 numLikes = "likes";
+                             } 
                             return (
         
                                 <div key={post.id} className='feed-post' tabIndex="0">
@@ -91,7 +96,7 @@ class Feed extends React.Component {
                                     <div className='likes-and-comments'>
                                         <section className='post-like-container'>
                                             <LikeContainer likes={likers} postId={post.id} />
-                                            <div className='post-show-likes'>{likers.length} likes</div>
+                                            <div className='post-show-likes'>{likers.length} {numLikes}</div>
                                         </section>
 
                                         <div className='post-caption-span'>

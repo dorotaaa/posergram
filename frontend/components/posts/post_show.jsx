@@ -23,6 +23,7 @@ class PostShow extends React.Component {
         this.handleModalClick = this.handleModalClick.bind(this);
         this.onModalClose = this.onModalClose.bind(this);
         this.handleDeleteComment = this.handleDeleteComment.bind(this);
+        this.numLikes = this.numLikes.bind(this);
     }
 
 
@@ -87,6 +88,16 @@ class PostShow extends React.Component {
         }
     }
 
+    numLikes(){
+        if (this.props.likes > 1) {
+            return (<div className="num-likes">{this.props.likes} likes </div>)
+        } else if (this.props.likes === 1) {
+            return (<div className="num-likes">{this.props.likes} like </div>)
+        } else {
+            return (<div className="num-likes">BE THE FIRST TO LIKE THIS PHOTO </div>)
+        }
+    }
+
     render(){
 
         if (this.state.modalOpen) {
@@ -94,6 +105,8 @@ class PostShow extends React.Component {
         } else {
             this.uploadForm = null;
         }
+
+        
        
         const deleteComm = (commentId) => {
                 return (
@@ -200,7 +213,7 @@ class PostShow extends React.Component {
                         <LikeContainer likes={this.props.allLikes} postId={this.props.post.id} />
                         {/* <div className="comment-logo"><img src={window.commLogo} /></div> */}
                         </div>   
-                        <div className="num-likes">{this.props.likes} likes</div>
+                        {this.numLikes()}
                         </div>
                         <div>
                         <CommentContainer postId={this.props.post.id} username={this.props.currentUser} />
