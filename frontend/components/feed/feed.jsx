@@ -79,7 +79,7 @@ class Feed extends React.Component {
                         {this.props.posts.map(post => {
                             const likers = post.liker_ids ? post.liker_ids : '';
                             let numLikes;
-                             if (post.liker_ids.length === 1) {
+                             if (likers.length === 1) {
                                  numLikes = "like";
                              } else {
                                  numLikes = "likes";
