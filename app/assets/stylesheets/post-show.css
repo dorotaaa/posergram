@@ -143,7 +143,7 @@
     background: rgba(0, 0, 0, 0.6);
     /* z-index: 100; */
     top: 0;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .close-button-wrp {
