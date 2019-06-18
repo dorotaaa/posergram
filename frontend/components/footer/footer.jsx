@@ -7,11 +7,11 @@ const Footer = () => {
                 <footer className="footer" >
                     <ul className="footer-list" >
                         <li>
-                            <a href="" target="_blank">Portfolio</a>
+                            <a href="https://dorotaaa.github.io/" target="_blank">Portfolio</a>
                         </li>
 
                         <li>
-                            <a href="" target="_blank">AngelList</a>
+                            <a href="https://angel.co/dorota-sawicki?public_profile=1" target="_blank">AngelList</a>
                         </li>
 
                         <li>

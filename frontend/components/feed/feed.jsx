@@ -19,6 +19,7 @@ class Feed extends React.Component {
         this.props.fetchPosts(this.props.currentUserId);
     }
 
+
     handleDeleteComment(commentId) {
         return ((e) => {
             this.props.deleteComment(commentId)
