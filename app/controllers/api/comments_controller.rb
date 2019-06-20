@@ -23,7 +23,6 @@ end
 
   def destroy
     @comment = Comment.find(params[:id])
-    # @comment.user_id = current_user.id
     @comment.destroy
     render :delete
   end
