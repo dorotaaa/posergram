@@ -7,7 +7,6 @@ class EditPost extends React.Component {
         this.state = {
             id: this.props.post.id,
             caption: this.props.post.caption,
-            // user_id: this.props.post.user_id
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
