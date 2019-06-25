@@ -27,7 +27,6 @@ const mapStateToProps = (state, ownProps) => {
         currentUserId: currentUser,
         profile: ownProps.profile,
         photoUrl: photoUrl,
-        // currPhoto: currPhoto,
         likes: likes,
         allLikes: allLikes,
         users
