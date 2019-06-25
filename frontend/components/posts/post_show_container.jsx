@@ -22,7 +22,6 @@ const mapStateToProps = (state, ownProps) => {
         postId: post.id,
         userId: user,
         username: username,
-        // currUsername: currUsername,
         commentIds: commentIds || [],
         comments: comments || [],
         currentUserId: currentUser,
