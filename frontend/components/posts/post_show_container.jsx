@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
     let username = state.entities.users[user].username;
     let photoUrl = state.entities.users[user].photoUrl;
     let currentUser = state.entities.users[state.session.currentUser].id;
-    // let currUsername = state.entities.users[state.session.currentUser].username;
     let commentIds = state.entities.posts[ownProps.photoId].comment_ids;
     let comments = Object.values(state.entities.comments);
     let likes = state.entities.posts[ownProps.photoId].liker_ids.length;
